@@ -3,6 +3,8 @@
 
 Product Transaction Information on `expand`
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ProductTransaction`
@@ -12,14 +14,14 @@ Product Transaction Information on `expand`
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `ProcessorVersion` | `String` | Optional | Processor Version | String getProcessorVersion() | setProcessorVersion(String processorVersion) |
-| `IndustryType` | [`IndustryTypeEnum`](../../doc/models/industry-type-enum.md) | Optional | Industry Type<br><br>**Constraints**: *Maximum Length*: `45` | IndustryTypeEnum getIndustryType() | setIndustryType(IndustryTypeEnum industryType) |
+| `IndustryType` | `Object` | Optional | - | Object getIndustryType() | setIndustryType(Object industryType) |
 | `Title` | `String` | Optional | Title<br><br>**Constraints**: *Maximum Length*: `64` | String getTitle() | setTitle(String title) |
-| `PaymentMethod` | [`PaymentMethodEnum`](../../doc/models/payment-method-enum.md) | Optional | Payment method | PaymentMethodEnum getPaymentMethod() | setPaymentMethod(PaymentMethodEnum paymentMethod) |
-| `Processor` | [`ProcessorEnum`](../../doc/models/processor-enum.md) | Optional | Processor | ProcessorEnum getProcessor() | setProcessor(ProcessorEnum processor) |
+| `PaymentMethod` | [`PaymentMethod`](../../doc/models/payment-method.md) | Optional | - | PaymentMethod getPaymentMethod() | setPaymentMethod(PaymentMethod paymentMethod) |
+| `Processor` | `Object` | Optional | - | Object getProcessor() | setProcessor(Object processor) |
 | `Mcc` | `String` | Optional | MCC<br><br>**Constraints**: *Maximum Length*: `4`, *Pattern*: `^\d+$` | String getMcc() | setMcc(String mcc) |
-| `TaxSurchargeConfig` | [`TaxSurchargeConfigEnum`](../../doc/models/tax-surcharge-config-enum.md) | Optional | Tax Surcharge Config<br><br>**Default**: `TaxSurchargeConfigEnum.ENUM_2` | TaxSurchargeConfigEnum getTaxSurchargeConfig() | setTaxSurchargeConfig(TaxSurchargeConfigEnum taxSurchargeConfig) |
+| `TaxSurchargeConfig` | `Object` | Optional | - | Object getTaxSurchargeConfig() | setTaxSurchargeConfig(Object taxSurchargeConfig) |
 | `TerminalId` | `String` | Optional | Terminal ID<br><br>**Constraints**: *Maximum Length*: `24` | String getTerminalId() | setTerminalId(String terminalId) |
-| `Partner` | [`PartnerEnum`](../../doc/models/partner-enum.md) | Optional | Partner<br><br>**Constraints**: *Maximum Length*: `24` | PartnerEnum getPartner() | setPartner(PartnerEnum partner) |
+| `Partner` | `Object` | Optional | - | Object getPartner() | setPartner(Object partner) |
 | `ProductAchPvStoreId` | `String` | Optional | Product Ach Pv Store ID | String getProductAchPvStoreId() | setProductAchPvStoreId(String productAchPvStoreId) |
 | `InvoiceAdjustmentTitle` | `String` | Optional | Invoice Adjustment Title | String getInvoiceAdjustmentTitle() | setInvoiceAdjustmentTitle(String invoiceAdjustmentTitle) |
 | `LocationId` | `String` | Optional | Location ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getLocationId() | setLocationId(String locationId) |
@@ -72,7 +74,7 @@ Product Transaction Information on `expand`
 | `ReceiptAddAccountAboveSignature` | `String` | Optional | Receipt Add Account Above Signature<br><br>**Constraints**: *Maximum Length*: `1032` | String getReceiptAddAccountAboveSignature() | setReceiptAddAccountAboveSignature(String receiptAddAccountAboveSignature) |
 | `ReceiptAddRecurringAboveSignature` | `String` | Optional | Receipt Add Recurring Above Signature<br><br>**Constraints**: *Maximum Length*: `1032` | String getReceiptAddRecurringAboveSignature() | setReceiptAddRecurringAboveSignature(String receiptAddRecurringAboveSignature) |
 | `ReceiptVtAboveSignature` | `String` | Optional | Receipt VT Above Signature<br><br>**Constraints**: *Maximum Length*: `1032` | String getReceiptVtAboveSignature() | setReceiptVtAboveSignature(String receiptVtAboveSignature) |
-| `DefaultTransactionType` | [`DefaultTransactionTypeEnum`](../../doc/models/default-transaction-type-enum.md) | Optional | Default Transaction Type | DefaultTransactionTypeEnum getDefaultTransactionType() | setDefaultTransactionType(DefaultTransactionTypeEnum defaultTransactionType) |
+| `DefaultTransactionType` | `Object` | Optional | - | Object getDefaultTransactionType() | setDefaultTransactionType(Object defaultTransactionType) |
 | `Username` | `String` | Optional | Username<br><br>**Constraints**: *Maximum Length*: `512` | String getUsername() | setUsername(String username) |
 | `Password` | `String` | Optional | Passowrd<br><br>**Constraints**: *Maximum Length*: `512` | String getPassword() | setPassword(String password) |
 | `CurrentBatch` | `Double` | Optional | Current Batch<br><br>**Default**: `1d`<br><br>**Constraints**: `>= 1`, `<= 9999` | Double getCurrentBatch() | setCurrentBatch(Double currentBatch) |
@@ -82,14 +84,14 @@ Product Transaction Information on `expand`
 | `QuickInvoiceAllow` | `Boolean` | Optional | Quick Invoice Allow | Boolean getQuickInvoiceAllow() | setQuickInvoiceAllow(Boolean quickInvoiceAllow) |
 | `Level3Allow` | `Boolean` | Optional | Level3 Allow | Boolean getLevel3Allow() | setLevel3Allow(Boolean level3Allow) |
 | `PayfacEnable` | `Boolean` | Optional | Payfac Enable | Boolean getPayfacEnable() | setPayfacEnable(Boolean payfacEnable) |
-| `Enable3ds` | `Boolean` | Optional | Enable 3DS | Boolean getEnable3ds() | setEnable3ds(Boolean enable3ds) |
+| `Enable3Ds` | `Boolean` | Optional | Enable 3DS | Boolean getEnable3Ds() | setEnable3Ds(Boolean enable3Ds) |
 | `SalesOfficeId` | `String` | Optional | Sales Office ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getSalesOfficeId() | setSalesOfficeId(String salesOfficeId) |
 | `HostedPaymentPageMaxAllowed` | `Double` | Optional | Hosted Payment Page Max Allowed<br><br>**Default**: `5d`<br><br>**Constraints**: `>= 1`, `<= 999` | Double getHostedPaymentPageMaxAllowed() | setHostedPaymentPageMaxAllowed(Double hostedPaymentPageMaxAllowed) |
 | `HostedPaymentPageAllow` | `Boolean` | Optional | Hosted Payment Page Allow | Boolean getHostedPaymentPageAllow() | setHostedPaymentPageAllow(Boolean hostedPaymentPageAllow) |
 | `SurchargeId` | `String` | Optional | Surcharge ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getSurchargeId() | setSurchargeId(String surchargeId) |
 | `AllowBigCommerce` | `Boolean` | Optional | Allow Big Commerce | Boolean getAllowBigCommerce() | setAllowBigCommerce(Boolean allowBigCommerce) |
-| `Level3Default` | [`Level3Default`](../../doc/models/level-3-default.md) | Optional | Level3 Default | Level3Default getLevel3Default() | setLevel3Default(Level3Default level3Default) |
-| `CauSubscribeTypeId` | [`CauSubscribeTypeIdEnum`](../../doc/models/cau-subscribe-type-id-enum.md) | Optional | Cau Subscribe Type ID | CauSubscribeTypeIdEnum getCauSubscribeTypeId() | setCauSubscribeTypeId(CauSubscribeTypeIdEnum cauSubscribeTypeId) |
+| `Level3Default` | [`Level3Default1`](../../doc/models/level-3-default-1.md) | Optional | - | Level3Default1 getLevel3Default() | setLevel3Default(Level3Default1 level3Default) |
+| `CauSubscribeTypeId` | `Object` | Optional | - | Object getCauSubscribeTypeId() | setCauSubscribeTypeId(Object cauSubscribeTypeId) |
 | `CauAccountNumber` | `String` | Optional | Cau Account Number<br><br>**Constraints**: *Minimum Length*: `32`, *Maximum Length*: `32`, *Pattern*: `^[a-zA-Z0-9\-]+$` | String getCauAccountNumber() | setCauAccountNumber(String cauAccountNumber) |
 | `LocationBillingAccountId` | `String` | Optional | Location Billing Account ID | String getLocationBillingAccountId() | setLocationBillingAccountId(String locationBillingAccountId) |
 | `ProductBillingGroupId` | `String` | Optional | Product Billing Group ID | String getProductBillingGroupId() | setProductBillingGroupId(String productBillingGroupId) |
@@ -112,7 +114,7 @@ Product Transaction Information on `expand`
 | `AllowSecondaryAmount` | `Boolean` | Optional | Allow Retained Amount | Boolean getAllowSecondaryAmount() | setAllowSecondaryAmount(Boolean allowSecondaryAmount) |
 | `ShowGooglePay` | `Boolean` | Optional | Vt Require Street | Boolean getShowGooglePay() | setShowGooglePay(Boolean showGooglePay) |
 | `ShowApplePay` | `Boolean` | Optional | Vt Require Street | Boolean getShowApplePay() | setShowApplePay(Boolean showApplePay) |
-| `BatchRiskConfig` | [`BatchRiskConfig`](../../doc/models/batch-risk-config.md) | Optional | Batch Risk Config | BatchRiskConfig getBatchRiskConfig() | setBatchRiskConfig(BatchRiskConfig batchRiskConfig) |
+| `BatchRiskConfig` | [`BatchRiskConfig1`](../../doc/models/batch-risk-config-1.md) | Optional | - | BatchRiskConfig1 getBatchRiskConfig() | setBatchRiskConfig(BatchRiskConfig1 batchRiskConfig) |
 | `CurrencyCode` | `Double` | Optional | Currency Code | Double getCurrencyCode() | setCurrencyCode(Double currencyCode) |
 | `EnableAchValidation` | `Boolean` | Optional | Enable ACH Validation | Boolean getEnableAchValidation() | setEnableAchValidation(Boolean enableAchValidation) |
 | `EnableAchRetry` | `Boolean` | Optional | Enable ACH Retry | Boolean getEnableAchRetry() | setEnableAchRetry(Boolean enableAchRetry) |
@@ -131,8 +133,9 @@ Product Transaction Information on `expand`
 | `IsSecondaryAmountAllowed` | `Boolean` | Optional | Allow Retained Amount | Boolean getIsSecondaryAmountAllowed() | setIsSecondaryAmountAllowed(Boolean isSecondaryAmountAllowed) |
 | `FortisId` | `String` | Optional | - | String getFortisId() | setFortisId(String fortisId) |
 | `ProductBillingGroupCode` | `String` | Optional | Product Billing Group Code | String getProductBillingGroupCode() | setProductBillingGroupCode(String productBillingGroupCode) |
-| `CauSubscribeTypeCode` | [`CauSubscribeTypeCodeEnum`](../../doc/models/cau-subscribe-type-code-enum.md) | Optional | Cau Subscribe Type Code | CauSubscribeTypeCodeEnum getCauSubscribeTypeCode() | setCauSubscribeTypeCode(CauSubscribeTypeCodeEnum cauSubscribeTypeCode) |
+| `CauSubscribeTypeCode` | `Object` | Optional | - | Object getCauSubscribeTypeCode() | setCauSubscribeTypeCode(Object cauSubscribeTypeCode) |
 | `MerchantCode` | `String` | Optional | Merchant Code<br><br>**Constraints**: *Maximum Length*: `24` | String getMerchantCode() | setMerchantCode(String merchantCode) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -140,11 +143,7 @@ Product Transaction Information on `expand`
 {
   "processor_version": "1_0_0",
   "title": "My terminal",
-  "payment_method": "cc",
-  "processor": "zgate",
   "mcc": "1111",
-  "tax_surcharge_config": 2,
-  "partner": "standalone",
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
   "vt_clerk_number": true,
   "vt_billing_phone": true,
@@ -193,7 +192,6 @@ Product Transaction Information on `expand`
   "hosted_payment_page_allow": false,
   "surcharge_id": "11e95f8ec39de8fbdb0a4f1a",
   "allow_big_commerce": false,
-  "cau_subscribe_type_id": 0,
   "location_billing_account_id": "11eb88b873980c64a21e5fd2",
   "product_billing_group_id": "nofees",
   "account_number": "12345678",
@@ -229,8 +227,19 @@ Product Transaction Information on `expand`
   "is_secondary_amount_allowed": false,
   "fortis_id": "8149742",
   "product_billing_group_code": "nofees",
-  "cau_subscribe_type_code": 0,
-  "industry_type": "retail"
+  "industry_type": {
+    "key1": "val1",
+    "key2": "val2"
+  },
+  "payment_method": "cc",
+  "processor": {
+    "key1": "val1",
+    "key2": "val2"
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

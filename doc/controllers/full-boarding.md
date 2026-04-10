@@ -14,7 +14,7 @@ FullBoardingController fullBoardingController = client.getFullBoardingController
 This method is used to fully board a merchant to the platform. When using this method, you must provide data for each "Required" property. See the description for each of these properties for more information about their requirement criteria.
 
 ```java
-CompletableFuture<ResponseFullboarding> merchantBoardingFullAsync(
+CompletableFuture<ApiResponse<ResponseFullboarding>> merchantBoardingFullAsync(
     final V1FullboardingRequest body)
 ```
 
@@ -26,7 +26,7 @@ CompletableFuture<ResponseFullboarding> merchantBoardingFullAsync(
 
 ## Response Type
 
-[`ResponseFullboarding`](../../doc/models/response-fullboarding.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseFullboarding`](../../doc/models/response-fullboarding.md).
 
 ## Example Usage
 
@@ -35,7 +35,7 @@ V1FullboardingRequest body = new V1FullboardingRequest.Builder(
     "email@domain.com",
     "Discount Home Goods",
     "5555551234",
-    OwnershipTypeEnum.LLP,
+    OwnershipType.NP,
     "0000000000",
     15,
     150,
@@ -54,7 +54,7 @@ V1FullboardingRequest body = new V1FullboardingRequest.Builder(
             "TX",
             "75087",
             "US",
-            AddressTypeEnum.LOCATION
+            AddressType.CORPORATE
         )
         .addressLine2("Apt 707")
         .build()
@@ -86,7 +86,7 @@ V1FullboardingRequest body = new V1FullboardingRequest.Builder(
             "James Bond",
             "111111111",
             "1234567",
-            AccountType12Enum.CHECKING
+            AccountType12.CHECKING
         )
         .isPrimary(true)
         .build()
@@ -97,7 +97,6 @@ V1FullboardingRequest body = new V1FullboardingRequest.Builder(
 .legalName("Total Home Goods, LLP")
 .website("http://www.example.com")
 .ecMonthlyVolume(22)
-.preferredLanguage(PreferredLanguageEnum.FRCA)
 .signerIp("192.168.0.10")
 .build();
 
@@ -107,9 +106,9 @@ fullBoardingController.merchantBoardingFullAsync(body).thenAccept(result -> {
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -144,6 +143,6 @@ fullBoardingController.merchantBoardingFullAsync(body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

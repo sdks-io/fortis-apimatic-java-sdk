@@ -1,6 +1,8 @@
 
 # List 17
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `List17`
@@ -16,11 +18,12 @@
 | `ReturnFeeTransactionId` | `String` | Optional | Return Fee Transaction ID.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getReturnFeeTransactionId() | setReturnFeeTransactionId(String returnFeeTransactionId) |
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
-| `RejectedTransaction` | [`RejectedTransaction`](../../doc/models/rejected-transaction.md) | Optional | Transaction Information on `expand` | RejectedTransaction getRejectedTransaction() | setRejectedTransaction(RejectedTransaction rejectedTransaction) |
-| `RetryTransaction` | [`RetryTransaction`](../../doc/models/retry-transaction.md) | Optional | Transaction Information on `expand` | RetryTransaction getRetryTransaction() | setRetryTransaction(RetryTransaction retryTransaction) |
-| `ReturnFeeTransaction` | [`ReturnFeeTransaction`](../../doc/models/return-fee-transaction.md) | Optional | Transaction Information on `expand` | ReturnFeeTransaction getReturnFeeTransaction() | setReturnFeeTransaction(ReturnFeeTransaction returnFeeTransaction) |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` | CreatedUser getCreatedUser() | setCreatedUser(CreatedUser createdUser) |
+| `RejectedTransaction` | [`Transaction`](../../doc/models/transaction.md) | Optional | - | Transaction getRejectedTransaction() | setRejectedTransaction(Transaction rejectedTransaction) |
+| `RetryTransaction` | [`Transaction`](../../doc/models/transaction.md) | Optional | - | Transaction getRetryTransaction() | setRetryTransaction(Transaction retryTransaction) |
+| `ReturnFeeTransaction` | [`Transaction`](../../doc/models/transaction.md) | Optional | - | Transaction getReturnFeeTransaction() | setReturnFeeTransaction(Transaction returnFeeTransaction) |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - | User9 getCreatedUser() | setCreatedUser(User9 createdUser) |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` | List<Changelog> getChangelogs() | setChangelogs(List<Changelog> changelogs) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -32,7 +35,11 @@
   "return_fee_transaction_id": "11e95f8ec39de8fbdb0a4f1a",
   "created_ts": 1422040992,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "return_fee": 230
+  "return_fee": 230,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

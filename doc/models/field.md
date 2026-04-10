@@ -1,6 +1,8 @@
 
 # Field
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Field`
@@ -10,14 +12,19 @@
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `Field` | `String` | Optional | Field name used on the sort | String getField() | setField(String field) |
-| `Order` | [`OrderEnum`](../../doc/models/order-enum.md) | Optional | Sort direction ASC/DESC | OrderEnum getOrder() | setOrder(OrderEnum order) |
+| `Order` | [`Order`](../../doc/models/order.md) | Optional | - | Order getOrder() | setOrder(Order order) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
 ```json
 {
   "field": "last_name",
-  "order": "asc"
+  "order": "asc",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

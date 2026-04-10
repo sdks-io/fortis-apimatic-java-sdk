@@ -1,6 +1,8 @@
 
 # File
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `File`
@@ -11,7 +13,7 @@
 |  --- | --- | --- | --- | --- | --- |
 | `File` | `Object` | Optional | File Object | Object getFile() | setFile(Object file) |
 | `ResourceId` | `String` | Optional | Resource Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getResourceId() | setResourceId(String resourceId) |
-| `Resource` | [`Resource2Enum`](../../doc/models/resource-2-enum.md) | Optional | Resource | Resource2Enum getResource() | setResource(Resource2Enum resource) |
+| `Resource` | [`Resource2`](../../doc/models/resource-2.md) | Optional | - | Resource2 getResource() | setResource(Resource2 resource) |
 | `ProductFileId` | `String` | Optional | Product File Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getProductFileId() | setProductFileId(String productFileId) |
 | `FileCategoryId` | `String` | Optional | File Category Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getFileCategoryId() | setFileCategoryId(String fileCategoryId) |
 | `VisibilityGroupId` | `String` | Optional | Visibility Group Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getVisibilityGroupId() | setVisibilityGroupId(String visibilityGroupId) |
@@ -23,13 +25,13 @@
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
 ```json
 {
   "resource_id": "11e95f8ec39de8fbdb0a4f1a",
-  "resource": "Contact",
   "product_file_id": "11e95f8ec39de8fbdb0a4f1a",
   "file_category_id": "11e95f8ec39de8fbdb0a4f1a",
   "visibility_group_id": "11e95f8ec39de8fbdb0a4f1a",
@@ -38,6 +40,11 @@
   "modified_ts": 1422040992,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "file": {
+    "key1": "val1",
+    "key2": "val2"
+  },
+  "resource": "Location",
+  "exampleAdditionalProperty": {
     "key1": "val1",
     "key2": "val2"
   }

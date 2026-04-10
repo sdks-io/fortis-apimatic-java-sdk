@@ -1,6 +1,8 @@
 
 # Response Ticket
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ResponseTicket`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Type` | [`Type87Enum`](../../doc/models/type-87-enum.md) | Optional | Resource Type<br><br>**Default**: `Type87Enum.TICKET` | Type87Enum getType() | setType(Type87Enum type) |
+| `Type` | [`Type87`](../../doc/models/type-87.md) | Optional | - | Type87 getType() | setType(Type87 type) |
 | `Data` | [`Data24`](../../doc/models/data-24.md) | Optional | - | Data24 getData() | setData(Data24 data) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -24,8 +27,20 @@
     "account_number": "account_number0",
     "billing_address": {
       "postal_code": "postal_code0",
-      "street": "street8"
+      "street": "street8",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

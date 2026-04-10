@@ -3,6 +3,8 @@
 
 Email Blacklist Information on `expand`
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `EmailBlacklist`
@@ -15,6 +17,7 @@ Email Blacklist Information on `expand`
 | `IsBlacklisted` | `Boolean` | Optional | isBlacklisted | Boolean getIsBlacklisted() | setIsBlacklisted(Boolean isBlacklisted) |
 | `Detail` | `Boolean` | Optional | Contact Id | Boolean getDetail() | setDetail(Boolean detail) |
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -23,7 +26,11 @@ Email Blacklist Information on `expand`
   "id": "11e95f8ec39de8fbdb0a4f1a",
   "isBlacklisted": true,
   "detail": true,
-  "created_ts": 1422040992
+  "created_ts": 1422040992,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -11,7 +11,7 @@ TransactionsUpdatesController transactionsUpdatesController = client.getTransact
 ## Methods
 
 * [Void](../../doc/controllers/transactions-updates.md#void)
-* [Void 1](../../doc/controllers/transactions-updates.md#void-1)
+* [Patch Void](../../doc/controllers/transactions-updates.md#patch-void)
 * [Auth Complete](../../doc/controllers/transactions-updates.md#auth-complete)
 * [Auth Increment](../../doc/controllers/transactions-updates.md#auth-increment)
 * [Partial Reversal](../../doc/controllers/transactions-updates.md#partial-reversal)
@@ -24,9 +24,9 @@ TransactionsUpdatesController transactionsUpdatesController = client.getTransact
 Void a transaction
 
 ```java
-CompletableFuture<ResponseTransaction> voidAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> voidAsync(
     final String transactionId,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -34,11 +34,11 @@ CompletableFuture<ResponseTransaction> voidAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `transactionId` | `String` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -50,9 +50,9 @@ transactionsUpdatesController.voidAsync(transactionId, null).thenAccept(result -
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -1113,18 +1113,18 @@ transactionsUpdatesController.voidAsync(transactionId, null).thenAccept(result -
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Void 1
+# Patch Void
 
 Void a transaction
 
 ```java
-CompletableFuture<ResponseTransaction> void1Async(
+CompletableFuture<ApiResponse<ResponseTransaction>> patchVoidAsync(
     final String transactionId,
     final V1TransactionsVoidRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -1133,11 +1133,11 @@ CompletableFuture<ResponseTransaction> void1Async(
 |  --- | --- | --- | --- |
 | `transactionId` | `String` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsVoidRequest`](../../doc/models/v1-transactions-void-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -1147,15 +1147,15 @@ V1TransactionsVoidRequest body = new V1TransactionsVoidRequest.Builder()
     .description("some description")
     .build();
 
-transactionsUpdatesController.void1Async(transactionId, body, null).thenAccept(result -> {
+transactionsUpdatesController.patchVoidAsync(transactionId, body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -2219,7 +2219,7 @@ transactionsUpdatesController.void1Async(transactionId, body, null).thenAccept(r
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -2228,10 +2228,10 @@ transactionsUpdatesController.void1Async(transactionId, body, null).thenAccept(r
 Perform an auth complete transaction
 
 ```java
-CompletableFuture<ResponseTransaction> authCompleteAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> authCompleteAsync(
     final String transactionId,
     final V1TransactionsAuthCompleteRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -2240,11 +2240,11 @@ CompletableFuture<ResponseTransaction> authCompleteAsync(
 |  --- | --- | --- | --- |
 | `transactionId` | `String` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsAuthCompleteRequest`](../../doc/models/v1-transactions-auth-complete-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -2258,13 +2258,11 @@ V1TransactionsAuthCompleteRequest body = new V1TransactionsAuthCompleteRequest.B
     .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
     .customerId("customerid")
     .description("some description")
-    .iiasInd(IiasIndEnum.ENUM_1)
     .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .installment(true)
     .installmentNumber(1)
     .installmentCount(1)
-    .recurringFlag(RecurringFlagEnum.YES)
     .installmentCounter(1)
     .installmentTotal(1)
     .subscription(false)
@@ -2299,7 +2297,6 @@ V1TransactionsAuthCompleteRequest body = new V1TransactionsAuthCompleteRequest.B
     .autoDeclineCvvOverride(false)
     .autoDeclineStreetOverride(false)
     .autoDeclineZipOverride(false)
-    .ebtType(EbtTypeEnum.FOOD_STAMP)
     .deferredAuth(true)
     .build();
 
@@ -2309,9 +2306,9 @@ transactionsUpdatesController.authCompleteAsync(transactionId, body, null).thenA
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -3375,7 +3372,7 @@ transactionsUpdatesController.authCompleteAsync(transactionId, body, null).thenA
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -3384,10 +3381,10 @@ transactionsUpdatesController.authCompleteAsync(transactionId, body, null).thenA
 Perform an auth increment transaction
 
 ```java
-CompletableFuture<ResponseTransaction> authIncrementAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> authIncrementAsync(
     final String transactionId,
     final V1TransactionsAuthIncrementRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -3396,11 +3393,11 @@ CompletableFuture<ResponseTransaction> authIncrementAsync(
 |  --- | --- | --- | --- |
 | `transactionId` | `String` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsAuthIncrementRequest`](../../doc/models/v1-transactions-auth-increment-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -3416,13 +3413,11 @@ V1TransactionsAuthIncrementRequest body = new V1TransactionsAuthIncrementRequest
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -3456,7 +3451,6 @@ V1TransactionsAuthIncrementRequest body = new V1TransactionsAuthIncrementRequest
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .deferredAuth(true)
 .build();
 
@@ -3466,9 +3460,9 @@ transactionsUpdatesController.authIncrementAsync(transactionId, body, null).then
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -4532,7 +4526,7 @@ transactionsUpdatesController.authIncrementAsync(transactionId, body, null).then
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -4541,10 +4535,10 @@ transactionsUpdatesController.authIncrementAsync(transactionId, body, null).then
 Perform a partial reversal
 
 ```java
-CompletableFuture<ResponseTransaction> partialReversalAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> partialReversalAsync(
     final String transactionId,
     final V1TransactionsPartialReversalRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -4553,11 +4547,11 @@ CompletableFuture<ResponseTransaction> partialReversalAsync(
 |  --- | --- | --- | --- |
 | `transactionId` | `String` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsPartialReversalRequest`](../../doc/models/v1-transactions-partial-reversal-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -4573,13 +4567,11 @@ V1TransactionsPartialReversalRequest body = new V1TransactionsPartialReversalReq
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -4613,7 +4605,6 @@ V1TransactionsPartialReversalRequest body = new V1TransactionsPartialReversalReq
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .build();
 
 transactionsUpdatesController.partialReversalAsync(transactionId, body, null).thenAccept(result -> {
@@ -4622,9 +4613,9 @@ transactionsUpdatesController.partialReversalAsync(transactionId, body, null).th
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -5688,7 +5679,7 @@ transactionsUpdatesController.partialReversalAsync(transactionId, body, null).th
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -5697,10 +5688,10 @@ transactionsUpdatesController.partialReversalAsync(transactionId, body, null).th
 Perform a refund transaction
 
 ```java
-CompletableFuture<ResponseTransaction> refundTransactionAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> refundTransactionAsync(
     final String transactionId,
     final V1TransactionsRefundRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -5709,11 +5700,11 @@ CompletableFuture<ResponseTransaction> refundTransactionAsync(
 |  --- | --- | --- | --- |
 | `transactionId` | `String` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsRefundRequest`](../../doc/models/v1-transactions-refund-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -5727,13 +5718,11 @@ V1TransactionsRefundRequest body = new V1TransactionsRefundRequest.Builder()
     .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
     .customerId("customerid")
     .description("some description")
-    .iiasInd(IiasIndEnum.ENUM_1)
     .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .installment(true)
     .installmentNumber(1)
     .installmentCount(1)
-    .recurringFlag(RecurringFlagEnum.YES)
     .installmentCounter(1)
     .installmentTotal(1)
     .subscription(false)
@@ -5768,7 +5757,6 @@ V1TransactionsRefundRequest body = new V1TransactionsRefundRequest.Builder()
     .autoDeclineCvvOverride(false)
     .autoDeclineStreetOverride(false)
     .autoDeclineZipOverride(false)
-    .ebtType(EbtTypeEnum.FOOD_STAMP)
     .build();
 
 transactionsUpdatesController.refundTransactionAsync(transactionId, body, null).thenAccept(result -> {
@@ -5777,9 +5765,9 @@ transactionsUpdatesController.refundTransactionAsync(transactionId, body, null).
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -6843,7 +6831,7 @@ transactionsUpdatesController.refundTransactionAsync(transactionId, body, null).
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -6852,10 +6840,10 @@ transactionsUpdatesController.refundTransactionAsync(transactionId, body, null).
 Increment the authorized transaction amount to include a tip
 
 ```java
-CompletableFuture<ResponseTransaction> tipAdjustmentAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> tipAdjustmentAsync(
     final String transactionId,
     final V1TransactionsTipAdjustRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -6864,11 +6852,11 @@ CompletableFuture<ResponseTransaction> tipAdjustmentAsync(
 |  --- | --- | --- | --- |
 | `transactionId` | `String` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsTipAdjustRequest`](../../doc/models/v1-transactions-tip-adjust-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -6885,13 +6873,11 @@ V1TransactionsTipAdjustRequest body = new V1TransactionsTipAdjustRequest.Builder
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -6924,7 +6910,6 @@ V1TransactionsTipAdjustRequest body = new V1TransactionsTipAdjustRequest.Builder
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -6934,7 +6919,6 @@ V1TransactionsTipAdjustRequest body = new V1TransactionsTipAdjustRequest.Builder
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -6948,9 +6932,9 @@ transactionsUpdatesController.tipAdjustmentAsync(transactionId, body, null).then
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -8014,6 +7998,6 @@ transactionsUpdatesController.tipAdjustmentAsync(transactionId, body, null).then
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

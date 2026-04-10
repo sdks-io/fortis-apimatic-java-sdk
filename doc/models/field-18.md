@@ -1,6 +1,8 @@
 
 # Field 18
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Field18`
@@ -17,6 +19,7 @@
 | `Readonly` | `Boolean` | Optional | Read Only | Boolean getReadonly() | setReadonly(Boolean readonly) |
 | `Visible` | `Boolean` | Optional | Visible | Boolean getVisible() | setVisible(Boolean visible) |
 | `Value` | `String` | Optional | Value | String getValue() | setValue(String value) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -33,7 +36,11 @@
   ],
   "required": true,
   "readonly": true,
-  "visible": true
+  "visible": true,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

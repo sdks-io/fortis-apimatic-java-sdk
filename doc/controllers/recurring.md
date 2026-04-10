@@ -17,23 +17,23 @@ RecurringController recurringController = client.getRecurringController();
 
 ## Methods
 
-* [Create a New Recurring Record](../../doc/controllers/recurring.md#create-a-new-recurring-record)
-* [List All Recurring Record](../../doc/controllers/recurring.md#list-all-recurring-record)
-* [Delete Recurring Record](../../doc/controllers/recurring.md#delete-recurring-record)
-* [View Single Recurring Record](../../doc/controllers/recurring.md#view-single-recurring-record)
-* [Update Recurring Payment](../../doc/controllers/recurring.md#update-recurring-payment)
-* [Activate Recurring Payment](../../doc/controllers/recurring.md#activate-recurring-payment)
-* [Defer Recurring Payment](../../doc/controllers/recurring.md#defer-recurring-payment)
-* [Place on Hold Recurring Payment](../../doc/controllers/recurring.md#place-on-hold-recurring-payment)
-* [Skip Recurring Payment](../../doc/controllers/recurring.md#skip-recurring-payment)
+* [Createanewrecurringrecord](../../doc/controllers/recurring.md#createanewrecurringrecord)
+* [Listallrecurringrecord](../../doc/controllers/recurring.md#listallrecurringrecord)
+* [Deleterecurringrecord](../../doc/controllers/recurring.md#deleterecurringrecord)
+* [Viewsinglerecurringrecord](../../doc/controllers/recurring.md#viewsinglerecurringrecord)
+* [Updaterecurringpayment](../../doc/controllers/recurring.md#updaterecurringpayment)
+* [Activaterecurringpayment](../../doc/controllers/recurring.md#activaterecurringpayment)
+* [Deferrecurringpayment](../../doc/controllers/recurring.md#deferrecurringpayment)
+* [Placeonholdrecurringpayment](../../doc/controllers/recurring.md#placeonholdrecurringpayment)
+* [Skiprecurringpayment](../../doc/controllers/recurring.md#skiprecurringpayment)
 
 
-# Create a New Recurring Record
+# Createanewrecurringrecord
 
 ```java
-CompletableFuture<ResponseRecurring> createANewRecurringRecordAsync(
+CompletableFuture<ApiResponse<ResponseRecurring>> createanewrecurringrecordAsync(
     final V1RecurringsRequest body,
-    final List<Expand26Enum> expand)
+    final List<Expand26> expand)
 ```
 
 ## Parameters
@@ -41,18 +41,18 @@ CompletableFuture<ResponseRecurring> createANewRecurringRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1RecurringsRequest`](../../doc/models/v1-recurrings-request.md) | Body, Required | - |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseRecurring`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseRecurring`](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
 ```java
 V1RecurringsRequest body = new V1RecurringsRequest.Builder(
     1,
-    IntervalTypeEnum.D,
+    IntervalType.M,
     "11e95f8ec39de8fbdb0a4f1a",
     "2021-12-01",
     300
@@ -67,11 +67,9 @@ V1RecurringsRequest body = new V1RecurringsRequest.Builder(
 .endDate("2021-12-01")
 .installmentTotalCount(20)
 .notificationDays(2)
-.paymentMethod(PaymentMethod1Enum.CC)
 .productTransactionId("11e95f8ec39de8fbdb0a4f1a")
 .recurringId("11e95f8ec39de8fbdb0a4f1a")
 .recurringApiId("recurring1234abcd")
-.status(StatusEnum.ACTIVE)
 .termsAgree(true)
 .termsAgreeIp("192.168.0.10")
 .recurringC1("recurring custom data 1")
@@ -81,15 +79,15 @@ V1RecurringsRequest body = new V1RecurringsRequest.Builder(
 .secondaryAmount(100)
 .build();
 
-recurringController.createANewRecurringRecordAsync(body, null).thenAccept(result -> {
+recurringController.createanewrecurringrecordAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -564,43 +562,43 @@ recurringController.createANewRecurringRecordAsync(body, null).thenAccept(result
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# List All Recurring Record
+# Listallrecurringrecord
 
 ```java
-CompletableFuture<ResponseRecurringsCollection> listAllRecurringRecordAsync(
-    final Page page,
+CompletableFuture<ApiResponse<ResponseRecurringsCollection>> listallrecurringrecordAsync(
+    final Page1 page,
     final List<Order21> order,
     final List<FilterBy> filterBy,
-    final List<Expand26Enum> expand,
-    final Format1Enum format,
+    final List<Expand26> expand,
+    final Format1 format,
     final String typeahead,
-    final List<Field43Enum> fields)
+    final List<Field43> fields)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `String` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field43Enum>`](../../doc/models/field-43-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field43>`](../../doc/models/field-43.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`ResponseRecurringsCollection`](../../doc/models/response-recurrings-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseRecurringsCollection`](../../doc/models/response-recurrings-collection.md).
 
 ## Example Usage
 
 ```java
-Page page = new Page.Builder()
+Page1 page = new Page1.Builder()
     .number(1)
     .size(50)
     .build();
@@ -608,7 +606,7 @@ Page page = new Page.Builder()
 List<Order21> order = Arrays.asList(
     new Order21.Builder(
         "first_name",
-        OperatorEnum.ASC
+        Operator.ASC
     )
     .build()
 );
@@ -617,7 +615,7 @@ List<FilterBy> filterBy = Arrays.asList(
     new FilterBy.Builder(
         "first_name",
         FilterByOperator.fromOperator1(
-            Operator1Enum.ENUM_1
+            Operator1.ENUM_1
         ),
         FilterByValue.fromFilterByValueCase1(
             FilterByValueCase1.fromString(
@@ -628,15 +626,15 @@ List<FilterBy> filterBy = Arrays.asList(
     .build()
 );
 
-recurringController.listAllRecurringRecordAsync(page, order, filterBy, null, null, null, null).thenAccept(result -> {
+recurringController.listallrecurringrecordAsync(page, order, filterBy, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -1133,13 +1131,13 @@ recurringController.listAllRecurringRecordAsync(page, order, filterBy, null, nul
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Delete Recurring Record
+# Deleterecurringrecord
 
 ```java
-CompletableFuture<ResponseRecurring> deleteRecurringRecordAsync(
+CompletableFuture<ApiResponse<ResponseRecurring>> deleterecurringrecordAsync(
     final String recurringId)
 ```
 
@@ -1151,22 +1149,22 @@ CompletableFuture<ResponseRecurring> deleteRecurringRecordAsync(
 
 ## Response Type
 
-[`ResponseRecurring`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseRecurring`](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
 ```java
 String recurringId = "11e95f8ec39de8fbdb0a4f1a";
 
-recurringController.deleteRecurringRecordAsync(recurringId).thenAccept(result -> {
+recurringController.deleterecurringrecordAsync(recurringId).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -1638,16 +1636,16 @@ recurringController.deleteRecurringRecordAsync(recurringId).thenAccept(result ->
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Recurring Record
+# Viewsinglerecurringrecord
 
 ```java
-CompletableFuture<ResponseRecurring> viewSingleRecurringRecordAsync(
+CompletableFuture<ApiResponse<ResponseRecurring>> viewsinglerecurringrecordAsync(
     final String recurringId,
-    final List<Expand26Enum> expand,
-    final List<Field43Enum> fields)
+    final List<Expand26> expand,
+    final List<Field43> fields)
 ```
 
 ## Parameters
@@ -1655,26 +1653,26 @@ CompletableFuture<ResponseRecurring> viewSingleRecurringRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `recurringId` | `String` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field43Enum>`](../../doc/models/field-43-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field43>`](../../doc/models/field-43.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`ResponseRecurring`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseRecurring`](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
 ```java
 String recurringId = "11e95f8ec39de8fbdb0a4f1a";
-recurringController.viewSingleRecurringRecordAsync(recurringId, null, null).thenAccept(result -> {
+recurringController.viewsinglerecurringrecordAsync(recurringId, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -2146,16 +2144,16 @@ recurringController.viewSingleRecurringRecordAsync(recurringId, null, null).then
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Update Recurring Payment
+# Updaterecurringpayment
 
 ```java
-CompletableFuture<ResponseRecurring> updateRecurringPaymentAsync(
+CompletableFuture<ApiResponse<ResponseRecurring>> updaterecurringpaymentAsync(
     final String recurringId,
     final V1RecurringsRequest1 body,
-    final List<Expand26Enum> expand)
+    final List<Expand26> expand)
 ```
 
 ## Parameters
@@ -2164,11 +2162,11 @@ CompletableFuture<ResponseRecurring> updateRecurringPaymentAsync(
 |  --- | --- | --- | --- |
 | `recurringId` | `String` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1RecurringsRequest1`](../../doc/models/v1-recurrings-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseRecurring`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseRecurring`](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
@@ -2183,15 +2181,12 @@ V1RecurringsRequest1 body = new V1RecurringsRequest1.Builder()
     .endDate("2021-12-01")
     .installmentTotalCount(20)
     .interval(1)
-    .intervalType(IntervalTypeEnum.D)
     .locationId("11e95f8ec39de8fbdb0a4f1a")
     .notificationDays(2)
-    .paymentMethod(PaymentMethod1Enum.CC)
     .productTransactionId("11e95f8ec39de8fbdb0a4f1a")
     .recurringId("11e95f8ec39de8fbdb0a4f1a")
     .recurringApiId("recurring1234abcd")
     .startDate("2021-12-01")
-    .status(StatusEnum.ACTIVE)
     .transactionAmount(300)
     .termsAgree(true)
     .termsAgreeIp("192.168.0.10")
@@ -2202,15 +2197,15 @@ V1RecurringsRequest1 body = new V1RecurringsRequest1.Builder()
     .contactId("11e95f8ec39de8fbdb0a4f1a")
     .build();
 
-recurringController.updateRecurringPaymentAsync(recurringId, body, null).thenAccept(result -> {
+recurringController.updaterecurringpaymentAsync(recurringId, body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -2685,16 +2680,16 @@ recurringController.updateRecurringPaymentAsync(recurringId, body, null).thenAcc
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Activate Recurring Payment
+# Activaterecurringpayment
 
 ```java
-CompletableFuture<ResponseRecurring> activateRecurringPaymentAsync(
+CompletableFuture<ApiResponse<ResponseRecurring>> activaterecurringpaymentAsync(
     final String recurringId,
-    final List<Expand26Enum> expand)
+    final List<Expand26> expand)
 ```
 
 ## Parameters
@@ -2702,25 +2697,25 @@ CompletableFuture<ResponseRecurring> activateRecurringPaymentAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `recurringId` | `String` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseRecurring`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseRecurring`](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
 ```java
 String recurringId = "11e95f8ec39de8fbdb0a4f1a";
-recurringController.activateRecurringPaymentAsync(recurringId, null).thenAccept(result -> {
+recurringController.activaterecurringpaymentAsync(recurringId, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -3192,16 +3187,16 @@ recurringController.activateRecurringPaymentAsync(recurringId, null).thenAccept(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Defer Recurring Payment
+# Deferrecurringpayment
 
 ```java
-CompletableFuture<ResponseRecurring> deferRecurringPaymentAsync(
+CompletableFuture<ApiResponse<ResponseRecurring>> deferrecurringpaymentAsync(
     final String recurringId,
     final V1RecurringsDeferPaymentRequest body,
-    final List<Expand26Enum> expand)
+    final List<Expand26> expand)
 ```
 
 ## Parameters
@@ -3210,11 +3205,11 @@ CompletableFuture<ResponseRecurring> deferRecurringPaymentAsync(
 |  --- | --- | --- | --- |
 | `recurringId` | `String` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1RecurringsDeferPaymentRequest`](../../doc/models/v1-recurrings-defer-payment-request.md) | Body, Required | - |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseRecurring`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseRecurring`](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
@@ -3225,15 +3220,15 @@ V1RecurringsDeferPaymentRequest body = new V1RecurringsDeferPaymentRequest.Build
 )
 .build();
 
-recurringController.deferRecurringPaymentAsync(recurringId, body, null).thenAccept(result -> {
+recurringController.deferrecurringpaymentAsync(recurringId, body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -3708,16 +3703,16 @@ recurringController.deferRecurringPaymentAsync(recurringId, body, null).thenAcce
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Place on Hold Recurring Payment
+# Placeonholdrecurringpayment
 
 ```java
-CompletableFuture<ResponseRecurring> placeOnHoldRecurringPaymentAsync(
+CompletableFuture<ApiResponse<ResponseRecurring>> placeonholdrecurringpaymentAsync(
     final String recurringId,
-    final List<Expand26Enum> expand)
+    final List<Expand26> expand)
 ```
 
 ## Parameters
@@ -3725,25 +3720,25 @@ CompletableFuture<ResponseRecurring> placeOnHoldRecurringPaymentAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `recurringId` | `String` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseRecurring`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseRecurring`](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
 ```java
 String recurringId = "11e95f8ec39de8fbdb0a4f1a";
-recurringController.placeOnHoldRecurringPaymentAsync(recurringId, null).thenAccept(result -> {
+recurringController.placeonholdrecurringpaymentAsync(recurringId, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -4215,16 +4210,16 @@ recurringController.placeOnHoldRecurringPaymentAsync(recurringId, null).thenAcce
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Skip Recurring Payment
+# Skiprecurringpayment
 
 ```java
-CompletableFuture<ResponseRecurring> skipRecurringPaymentAsync(
+CompletableFuture<ApiResponse<ResponseRecurring>> skiprecurringpaymentAsync(
     final String recurringId,
     final V1RecurringsSkipPaymentRequest body,
-    final List<Expand26Enum> expand)
+    final List<Expand26> expand)
 ```
 
 ## Parameters
@@ -4233,11 +4228,11 @@ CompletableFuture<ResponseRecurring> skipRecurringPaymentAsync(
 |  --- | --- | --- | --- |
 | `recurringId` | `String` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1RecurringsSkipPaymentRequest`](../../doc/models/v1-recurrings-skip-payment-request.md) | Body, Required | - |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseRecurring`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseRecurring`](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
@@ -4248,15 +4243,15 @@ V1RecurringsSkipPaymentRequest body = new V1RecurringsSkipPaymentRequest.Builder
 )
 .build();
 
-recurringController.skipRecurringPaymentAsync(recurringId, body, null).thenAccept(result -> {
+recurringController.skiprecurringpaymentAsync(recurringId, body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -4731,6 +4726,6 @@ recurringController.skipRecurringPaymentAsync(recurringId, body, null).thenAccep
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

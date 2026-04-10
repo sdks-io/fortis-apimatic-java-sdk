@@ -3,6 +3,8 @@
 
 The Alternative Bank Account.
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `AltBankAccount`
@@ -15,6 +17,7 @@ The Alternative Bank Account.
 | `AccountNumber` | `String` | Optional | Bank account number.<br><br>**Constraints**: *Maximum Length*: `17` | String getAccountNumber() | setAccountNumber(String accountNumber) |
 | `AccountHolderName` | `String` | Optional | Name on bank account.<br><br>**Constraints**: *Maximum Length*: `40` | String getAccountHolderName() | setAccountHolderName(String accountHolderName) |
 | `DepositType` | `String` | Optional | Deposit type. | String getDepositType() | setDepositType(String depositType) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -23,7 +26,11 @@ The Alternative Bank Account.
   "routing_number": "011103093",
   "account_number": "01234567890123",
   "account_holder_name": "Bob Fairview",
-  "deposit_type": "fees_adjustments"
+  "deposit_type": "fees_adjustments",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

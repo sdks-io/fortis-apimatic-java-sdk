@@ -1,22 +1,22 @@
 # Transactions-ACH
 
 ```java
-TransactionsACHController transactionsACHController = client.getTransactionsACHController();
+TransactionsAchController transactionsAchController = client.getTransactionsAchController();
 ```
 
 ## Class Name
 
-`TransactionsACHController`
+`TransactionsAchController`
 
 ## Methods
 
 * [ACH Credit](../../doc/controllers/transactions-ach.md#ach-credit)
-* [ACH Credit - Previous Transaction](../../doc/controllers/transactions-ach.md#ach-credit---previous-transaction)
-* [ACH Credit - Tokenized](../../doc/controllers/transactions-ach.md#ach-credit---tokenized)
+* [ACH Credit-Previous Transaction](../../doc/controllers/transactions-ach.md#ach-credit-previous-transaction)
+* [ACH Credit-Tokenized](../../doc/controllers/transactions-ach.md#ach-credit-tokenized)
 * [ACH Debit](../../doc/controllers/transactions-ach.md#ach-debit)
-* [ACH Debit - Previous Transaction](../../doc/controllers/transactions-ach.md#ach-debit---previous-transaction)
-* [ACH Debit - Tokenized](../../doc/controllers/transactions-ach.md#ach-debit---tokenized)
-* [ACH Refund - Previous Transaction](../../doc/controllers/transactions-ach.md#ach-refund---previous-transaction)
+* [ACH Debit-Previous Transaction](../../doc/controllers/transactions-ach.md#ach-debit-previous-transaction)
+* [ACH Debit-Tokenized](../../doc/controllers/transactions-ach.md#ach-debit-tokenized)
+* [ACH Refund-Previous Transaction](../../doc/controllers/transactions-ach.md#ach-refund-previous-transaction)
 
 
 # ACH Credit
@@ -24,9 +24,9 @@ TransactionsACHController transactionsACHController = client.getTransactionsACHC
 ACH Transaction that is intended for a Blind Refund, where a previous transaction id is not known. Must have Fortis approval prior to use.
 
 ```java
-CompletableFuture<ResponseTransaction> aCHCreditAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> achCreditAsync(
     final V1TransactionsAchCreditKeyedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -34,11 +34,11 @@ CompletableFuture<ResponseTransaction> aCHCreditAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchCreditKeyedRequest`](../../doc/models/v1-transactions-ach-credit-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -47,7 +47,7 @@ V1TransactionsAchCreditKeyedRequest body = new V1TransactionsAchCreditKeyedReque
     1,
     "smith",
     "24345",
-    AccountType16Enum.CHECKING,
+    AccountType16.CHECKING,
     "051904524"
 )
 .checkinDate("2021-12-01")
@@ -57,13 +57,11 @@ V1TransactionsAchCreditKeyedRequest body = new V1TransactionsAchCreditKeyedReque
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -97,22 +95,20 @@ V1TransactionsAchCreditKeyedRequest body = new V1TransactionsAchCreditKeyedReque
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .achIdentifier("P")
-.achSecCode(AchSecCode31Enum.C21)
 .effectiveDate("2021-12-01")
 .checkNumber("8520748520963")
 .build();
 
-transactionsACHController.aCHCreditAsync(body, null).thenAccept(result -> {
+transactionsAchController.achCreditAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -1176,18 +1172,18 @@ transactionsACHController.aCHCreditAsync(body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# ACH Credit - Previous Transaction
+# ACH Credit-Previous Transaction
 
 ACH Transaction that is intended for a Blind Refund, where using a previous transaction id to re process. Must have Fortis approval prior to use.
 
 ```java
-CompletableFuture<ResponseTransaction> aCHCreditPreviousTransactionAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> achCreditPreviousTransactionAsync(
     final V1TransactionsAchCreditPrevTrxnRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -1195,11 +1191,11 @@ CompletableFuture<ResponseTransaction> aCHCreditPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchCreditPrevTrxnRequest`](../../doc/models/v1-transactions-ach-credit-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -1214,13 +1210,11 @@ V1TransactionsAchCreditPrevTrxnRequest body = new V1TransactionsAchCreditPrevTrx
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -1254,23 +1248,21 @@ V1TransactionsAchCreditPrevTrxnRequest body = new V1TransactionsAchCreditPrevTrx
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .achIdentifier("P")
-.achSecCode(AchSecCode31Enum.C21)
 .effectiveDate("2021-12-01")
 .accountHolderName("smith")
 .previousTransactionId("11e95f8ec39de8fbdb0a4f1a")
 .build();
 
-transactionsACHController.aCHCreditPreviousTransactionAsync(body, null).thenAccept(result -> {
+transactionsAchController.achCreditPreviousTransactionAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -2334,18 +2326,18 @@ transactionsACHController.aCHCreditPreviousTransactionAsync(body, null).thenAcce
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# ACH Credit - Tokenized
+# ACH Credit-Tokenized
 
 ACH Transaction using an ACH Token_id that is intended for a Blind Refund, where a previous transaction id is not known. Must have approval prior to use.
 
 ```java
-CompletableFuture<ResponseTransaction> aCHCreditTokenizedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> achCreditTokenizedAsync(
     final V1TransactionsAchCreditTokenRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -2353,11 +2345,11 @@ CompletableFuture<ResponseTransaction> aCHCreditTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchCreditTokenRequest`](../../doc/models/v1-transactions-ach-credit-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -2372,13 +2364,11 @@ V1TransactionsAchCreditTokenRequest body = new V1TransactionsAchCreditTokenReque
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -2412,24 +2402,22 @@ V1TransactionsAchCreditTokenRequest body = new V1TransactionsAchCreditTokenReque
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .achIdentifier("P")
-.achSecCode(AchSecCode31Enum.C21)
 .effectiveDate("2021-12-01")
 .accountHolderName("smith")
 .accountVaultId("11e95f8ec39de8fbdb0a4f1a")
 .tokenId("11e95f8ec39de8fbdb0a4f1a")
 .build();
 
-transactionsACHController.aCHCreditTokenizedAsync(body, null).thenAccept(result -> {
+transactionsAchController.achCreditTokenizedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -3493,7 +3481,7 @@ transactionsACHController.aCHCreditTokenizedAsync(body, null).thenAccept(result 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -3502,9 +3490,9 @@ transactionsACHController.aCHCreditTokenizedAsync(body, null).thenAccept(result 
 Creates an ACH Sale transaction to debit the customers bank account.
 
 ```java
-CompletableFuture<ResponseTransaction> aCHDebitAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> achDebitAsync(
     final V1TransactionsAchDebitKeyedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -3512,11 +3500,11 @@ CompletableFuture<ResponseTransaction> aCHDebitAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchDebitKeyedRequest`](../../doc/models/v1-transactions-ach-debit-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -3525,7 +3513,7 @@ V1TransactionsAchDebitKeyedRequest body = new V1TransactionsAchDebitKeyedRequest
     1,
     "smith",
     "24345",
-    AccountType16Enum.CHECKING,
+    AccountType16.CHECKING,
     "051904524"
 )
 .checkinDate("2021-12-01")
@@ -3535,13 +3523,11 @@ V1TransactionsAchDebitKeyedRequest body = new V1TransactionsAchDebitKeyedRequest
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -3575,22 +3561,20 @@ V1TransactionsAchDebitKeyedRequest body = new V1TransactionsAchDebitKeyedRequest
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .achIdentifier("P")
-.achSecCode(AchSecCode31Enum.C21)
 .effectiveDate("2021-12-01")
 .checkNumber("8520748520963")
 .build();
 
-transactionsACHController.aCHDebitAsync(body, null).thenAccept(result -> {
+transactionsAchController.achDebitAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -4654,18 +4638,18 @@ transactionsACHController.aCHDebitAsync(body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# ACH Debit - Previous Transaction
+# ACH Debit-Previous Transaction
 
 Create an ACH Sale transaction with a previous ACH transaction_id.
 
 ```java
-CompletableFuture<ResponseTransaction> aCHDebitPreviousTransactionAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> achDebitPreviousTransactionAsync(
     final V1TransactionsAchDebitPrevTrxnRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -4673,11 +4657,11 @@ CompletableFuture<ResponseTransaction> aCHDebitPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchDebitPrevTrxnRequest`](../../doc/models/v1-transactions-ach-debit-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -4692,13 +4676,11 @@ V1TransactionsAchDebitPrevTrxnRequest body = new V1TransactionsAchDebitPrevTrxnR
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -4732,23 +4714,21 @@ V1TransactionsAchDebitPrevTrxnRequest body = new V1TransactionsAchDebitPrevTrxnR
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .achIdentifier("P")
-.achSecCode(AchSecCode31Enum.C21)
 .effectiveDate("2021-12-01")
 .accountHolderName("smith")
 .previousTransactionId("11e95f8ec39de8fbdb0a4f1a")
 .build();
 
-transactionsACHController.aCHDebitPreviousTransactionAsync(body, null).thenAccept(result -> {
+transactionsAchController.achDebitPreviousTransactionAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -5812,18 +5792,18 @@ transactionsACHController.aCHDebitPreviousTransactionAsync(body, null).thenAccep
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# ACH Debit - Tokenized
+# ACH Debit-Tokenized
 
 Utilize an ACH Token_id previously created to process an ACH Sale transaction.
 
 ```java
-CompletableFuture<ResponseTransaction> aCHDebitTokenizedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> achDebitTokenizedAsync(
     final V1TransactionsAchDebitTokenRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -5831,11 +5811,11 @@ CompletableFuture<ResponseTransaction> aCHDebitTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchDebitTokenRequest`](../../doc/models/v1-transactions-ach-debit-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -5850,13 +5830,11 @@ V1TransactionsAchDebitTokenRequest body = new V1TransactionsAchDebitTokenRequest
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -5890,24 +5868,22 @@ V1TransactionsAchDebitTokenRequest body = new V1TransactionsAchDebitTokenRequest
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .achIdentifier("P")
-.achSecCode(AchSecCode31Enum.C21)
 .effectiveDate("2021-12-01")
 .accountHolderName("smith")
 .accountVaultId("11e95f8ec39de8fbdb0a4f1a")
 .tokenId("11e95f8ec39de8fbdb0a4f1a")
 .build();
 
-transactionsACHController.aCHDebitTokenizedAsync(body, null).thenAccept(result -> {
+transactionsAchController.achDebitTokenizedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -6971,18 +6947,18 @@ transactionsACHController.aCHDebitTokenizedAsync(body, null).thenAccept(result -
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# ACH Refund - Previous Transaction
+# ACH Refund-Previous Transaction
 
 Create a new ACH refund transaction using previous transaction id
 
 ```java
-CompletableFuture<ResponseTransaction> aCHRefundPreviousTransactionAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> achRefundPreviousTransactionAsync(
     final V1TransactionsAchRefundPrevTrxnRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -6990,11 +6966,11 @@ CompletableFuture<ResponseTransaction> aCHRefundPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchRefundPrevTrxnRequest`](../../doc/models/v1-transactions-ach-refund-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -7009,13 +6985,11 @@ V1TransactionsAchRefundPrevTrxnRequest body = new V1TransactionsAchRefundPrevTrx
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -7049,23 +7023,21 @@ V1TransactionsAchRefundPrevTrxnRequest body = new V1TransactionsAchRefundPrevTrx
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .achIdentifier("P")
-.achSecCode(AchSecCode31Enum.C21)
 .effectiveDate("2021-12-01")
 .accountHolderName("smith")
 .previousTransactionId("11e95f8ec39de8fbdb0a4f1a")
 .build();
 
-transactionsACHController.aCHRefundPreviousTransactionAsync(body, null).thenAccept(result -> {
+transactionsAchController.achRefundPreviousTransactionAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -8129,6 +8101,6 @@ transactionsACHController.aCHRefundPreviousTransactionAsync(body, null).thenAcce
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

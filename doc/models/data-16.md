@@ -1,6 +1,8 @@
 
 # Data 16
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Data16`
@@ -21,12 +23,12 @@
 | `ExpireDate` | `String` | Optional | Expire Date of Paylink. Optional<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` | String getExpireDate() | setExpireDate(String expireDate) |
 | `DisplayProductTransactionReceiptDetails` | `Boolean` | Optional | Display Product Transaction Receipt Details. Show the receipt details after the successful payment | Boolean getDisplayProductTransactionReceiptDetails() | setDisplayProductTransactionReceiptDetails(Boolean displayProductTransactionReceiptDetails) |
 | `DisplayBillingFields` | `Boolean` | Optional | Display Billing Fields to show the billing field inputs in the paylink form | Boolean getDisplayBillingFields() | setDisplayBillingFields(Boolean displayBillingFields) |
-| `DeliveryMethod` | [`DeliveryMethodEnum`](../../doc/models/delivery-method-enum.md) | Optional | Delivery Method<br><br>> 0 - Do not send, use the expand parameter of payment_url in the create paylink request to obtain the payment_url to embed into your messaging system.<br>> <br>> 1 - Email. Will send an email to the provided address in the email field.<br>> <br>> 2 - SMS. Text message the Paylink. Check with sales rep for cost.<br>> <br>> 3 - Both | DeliveryMethodEnum getDeliveryMethod() | setDeliveryMethod(DeliveryMethodEnum deliveryMethod) |
+| `DeliveryMethod` | `Object` | Optional | - | Object getDeliveryMethod() | setDeliveryMethod(Object deliveryMethod) |
 | `CellPhone` | `String` | Optional | Required if delivery_method is set to 2[SMS], 3[Both email and sms], this will be the recipient of the SMS<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `10`, *Pattern*: `^\d{1,10}$` | String getCellPhone() | setCellPhone(String cellPhone) |
 | `Description` | `String` | Optional | Add a Description for reporting purposes<br><br>**Constraints**: *Maximum Length*: `64` | String getDescription() | setDescription(String description) |
 | `StoreToken` | `Boolean` | Optional | Store Token to create a token_id(account_vault_id) to be used for future payment types(CC Sale Tokenized, ACH Debit Tokenized) | Boolean getStoreToken() | setStoreToken(Boolean storeToken) |
 | `StoreTokenTitle` | `String` | Optional | Store Token Title can be used to set the name of the token, sucha John Smith<br><br>**Constraints**: *Maximum Length*: `16` | String getStoreTokenTitle() | setStoreTokenTitle(String storeTokenTitle) |
-| `PaylinkAction` | [`PaylinkActionEnum`](../../doc/models/paylink-action-enum.md) | Optional | the action that will be used by the form when making the payment possible values: sale, auth-only | PaylinkActionEnum getPaylinkAction() | setPaylinkAction(PaylinkActionEnum paylinkAction) |
+| `PaylinkAction` | `Object` | Optional | - | Object getPaylinkAction() | setPaylinkAction(Object paylinkAction) |
 | `BankFundedOnlyOverride` | `Boolean` | Optional | Bank Funded Only Override | Boolean getBankFundedOnlyOverride() | setBankFundedOnlyOverride(Boolean bankFundedOnlyOverride) |
 | `Tags` | `List<String>` | Optional | Used to apply tags to a paylink. | List<String> getTags() | setTags(List<String> tags) |
 | `RedirectUrlDelay` | `Double` | Optional | Redirect URL Delay in seconds<br><br>**Default**: `15d`<br><br>**Constraints**: `<= 15` | Double getRedirectUrlDelay() | setRedirectUrlDelay(Double redirectUrlDelay) |
@@ -34,12 +36,13 @@
 | `RedirectUrlOnDecline` | `String` | Optional | Redirect URL On Declined transactions | String getRedirectUrlOnDecline() | setRedirectUrlOnDecline(String redirectUrlOnDecline) |
 | `Id` | `String` | Optional | System generatedPaylink Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getId() | setId(String id) |
 | `StatusId` | `Boolean` | Optional | (DEPRECATED) Status Id | Boolean getStatusId() | setStatusId(Boolean statusId) |
-| `StatusCode` | [`StatusCode12Enum`](../../doc/models/status-code-12-enum.md) | Optional | The various statuses of the paylink.  0=Unpaid \| 1=Paid | StatusCode12Enum getStatusCode() | setStatusCode(StatusCode12Enum statusCode) |
+| `StatusCode` | `Object` | Optional | - | Object getStatusCode() | setStatusCode(Object statusCode) |
 | `Active` | `Boolean` | Optional | Paylink is still Active | Boolean getActive() | setActive(Boolean active) |
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
 | `ModifiedUserId` | `String` | Optional | Last User ID that updated the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getModifiedUserId() | setModifiedUserId(String modifiedUserId) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -54,7 +57,6 @@
   "expire_date": "2021-12-01",
   "display_product_transaction_receipt_details": true,
   "display_billing_fields": true,
-  "delivery_method": 0,
   "cell_phone": "3339998822",
   "description": "Description",
   "store_token": false,
@@ -63,13 +65,16 @@
   "redirect_url_delay": 15,
   "id": "11e95f8ec39de8fbdb0a4f1a",
   "status_id": true,
-  "status_code": 1,
   "active": true,
   "created_ts": 1422040992,
   "modified_ts": 1422040992,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "location_api_id": "location_api_id2"
+  "location_api_id": "location_api_id2",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

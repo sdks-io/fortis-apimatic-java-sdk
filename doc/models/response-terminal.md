@@ -1,6 +1,8 @@
 
 # Response Terminal
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ResponseTerminal`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Type` | [`Type82Enum`](../../doc/models/type-82-enum.md) | Optional | Resource Type<br><br>**Default**: `Type82Enum.TERMINAL` | Type82Enum getType() | setType(Type82Enum type) |
+| `Type` | [`Type82`](../../doc/models/type-82.md) | Optional | - | Type82 getType() | setType(Type82 type) |
 | `Data` | [`Data23`](../../doc/models/data-23.md) | Optional | - | Data23 getData() | setData(Data23 data) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -22,7 +25,15 @@
     "default_product_transaction_id": "default_product_transaction_id6",
     "terminal_application_id": "terminal_application_id0",
     "terminal_cvm_id": "terminal_cvm_id0",
-    "terminal_manufacturer_code": "1"
+    "terminal_manufacturer_code": "1",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

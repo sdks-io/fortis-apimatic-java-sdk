@@ -1,6 +1,8 @@
 
 # Conditions 41
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Conditions41`
@@ -9,15 +11,20 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Method` | [`Method5Enum`](../../doc/models/method-5-enum.md) | Optional | - | Method5Enum getMethod() | setMethod(Method5Enum method) |
-| `Values` | [`Values5Enum`](../../doc/models/values-5-enum.md) | Optional | - | Values5Enum getValues() | setValues(Values5Enum values) |
+| `Method` | [`Method5`](../../doc/models/method-5.md) | Optional | - | Method5 getMethod() | setMethod(Method5 method) |
+| `Values` | [`Values5`](../../doc/models/values-5.md) | Optional | - | Values5 getValues() | setValues(Values5 values) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
 ```json
 {
   "method": "oxor",
-  "values": "accountvault_c1"
+  "values": "accountvault_c1",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

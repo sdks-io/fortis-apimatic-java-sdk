@@ -1,6 +1,8 @@
 
 # Data 24
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Data24`
@@ -13,7 +15,7 @@
 | `ExpDate` | `String` | Optional | The Expiration Date for the credit card. | String getExpDate() | setExpDate(String expDate) |
 | `Cvv` | `String` | Optional | CVV<br><br>**Constraints**: *Maximum Length*: `4` | String getCvv() | setCvv(String cvv) |
 | `AccountNumber` | `String` | Optional | Account number<br><br>> A credit card number. Length 13-19.<br><br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `19`, *Pattern*: `^[\d]+$` | String getAccountNumber() | setAccountNumber(String accountNumber) |
-| `BillingAddress` | [`BillingAddress5`](../../doc/models/billing-address-5.md) | Optional | Billing Address Object | BillingAddress5 getBillingAddress() | setBillingAddress(BillingAddress5 billingAddress) |
+| `BillingAddress` | [`BillingAddress9`](../../doc/models/billing-address-9.md) | Optional | - | BillingAddress9 getBillingAddress() | setBillingAddress(BillingAddress9 billingAddress) |
 | `ContactId` | `String` | Optional | Used to associate the Ticket with a Contact.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getContactId() | setContactId(String contactId) |
 | `ContactApiId` | `String` | Optional | Used to associate the Ticket with a Contact. | String getContactApiId() | setContactApiId(String contactApiId) |
 | `LocationId` | [`Data24LocationId`](../../doc/models/containers/data-24-location-id.md) | Optional | This is a container for any-of cases. | Data24LocationId getLocationId() | setLocationId(Data24LocationId locationId) |
@@ -21,6 +23,7 @@
 | `Id` | `String` | Optional | A unique, system-generated identifier for the Ticket.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getId() | setId(String id) |
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -36,7 +39,15 @@
   "cvv": "cvv0",
   "billing_address": {
     "postal_code": "postal_code0",
-    "street": "street8"
+    "street": "street8",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

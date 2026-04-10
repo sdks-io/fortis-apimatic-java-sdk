@@ -11,49 +11,49 @@ TransactionsCreditCardController transactionsCreditCardController = client.getTr
 ## Methods
 
 * [CC Auth Only](../../doc/controllers/transactions-credit-card.md#cc-auth-only)
-* [CC Auth Only - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-auth-only---previous-transaction)
-* [CC Auth Only - Swiped](../../doc/controllers/transactions-credit-card.md#cc-auth-only---swiped)
-* [CC Auth Only - Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-auth-only---tap-to-pay)
-* [CC Auth Only - Terminal](../../doc/controllers/transactions-credit-card.md#cc-auth-only---terminal)
-* [CC Auth Only - Ticket](../../doc/controllers/transactions-credit-card.md#cc-auth-only---ticket)
-* [CC Auth Only - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-auth-only---tokenized)
-* [CC Auth Only - Wallet](../../doc/controllers/transactions-credit-card.md#cc-auth-only---wallet)
-* [CC AVS](../../doc/controllers/transactions-credit-card.md#cc-avs)
-* [CC AVS - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-avs---previous-transaction)
-* [CC AVS - Swiped](../../doc/controllers/transactions-credit-card.md#cc-avs---swiped)
-* [CC AVS - Terminal](../../doc/controllers/transactions-credit-card.md#cc-avs---terminal)
-* [CC AVS - Ticket](../../doc/controllers/transactions-credit-card.md#cc-avs---ticket)
-* [CC AVS - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-avs---tokenized)
-* [CC AVS - Wallet](../../doc/controllers/transactions-credit-card.md#cc-avs---wallet)
+* [CC Auth Only-Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-auth-only-previous-transaction)
+* [CC Auth Only-Swiped](../../doc/controllers/transactions-credit-card.md#cc-auth-only-swiped)
+* [CC Auth Only-Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-auth-only-tap-to-pay)
+* [CC Auth Only-Terminal](../../doc/controllers/transactions-credit-card.md#cc-auth-only-terminal)
+* [CC Auth Only-Ticket](../../doc/controllers/transactions-credit-card.md#cc-auth-only-ticket)
+* [CC Auth Only-Tokenized](../../doc/controllers/transactions-credit-card.md#cc-auth-only-tokenized)
+* [CC Auth Only-Wallet](../../doc/controllers/transactions-credit-card.md#cc-auth-only-wallet)
+* [CCAVS](../../doc/controllers/transactions-credit-card.md#ccavs)
+* [CCAVS-Previous Transaction](../../doc/controllers/transactions-credit-card.md#ccavs-previous-transaction)
+* [CCAVS-Swiped](../../doc/controllers/transactions-credit-card.md#ccavs-swiped)
+* [CCAVS-Terminal](../../doc/controllers/transactions-credit-card.md#ccavs-terminal)
+* [CCAVS-Ticket](../../doc/controllers/transactions-credit-card.md#ccavs-ticket)
+* [CCAVS-Tokenized](../../doc/controllers/transactions-credit-card.md#ccavs-tokenized)
+* [CCAVS-Wallet](../../doc/controllers/transactions-credit-card.md#ccavs-wallet)
 * [CC Balance Inquiry](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry)
-* [CC Balance Inquiry - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---previous-transaction)
-* [CC Balance Inquiry - Swiped](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---swiped)
-* [CC Balance Inquiry - Terminal](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---terminal)
-* [CC Balance Inquiry - Ticket](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---ticket)
-* [CC Balance Inquiry - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---tokenized)
-* [CC Balance Inquiry - Wallet](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---wallet)
+* [CC Balance Inquiry-Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-previous-transaction)
+* [CC Balance Inquiry-Swiped](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-swiped)
+* [CC Balance Inquiry-Terminal](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-terminal)
+* [CC Balance Inquiry-Ticket](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-ticket)
+* [CC Balance Inquiry-Tokenized](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-tokenized)
+* [CC Balance Inquiry-Wallet](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-wallet)
 * [CC Force](../../doc/controllers/transactions-credit-card.md#cc-force)
-* [CC Force - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-force---previous-transaction)
-* [CC Force - Swiped](../../doc/controllers/transactions-credit-card.md#cc-force---swiped)
-* [CC Force - Ticket](../../doc/controllers/transactions-credit-card.md#cc-force---ticket)
-* [CC Force - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-force---tokenized)
-* [CC Force - Wallet](../../doc/controllers/transactions-credit-card.md#cc-force---wallet)
+* [CC Force-Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-force-previous-transaction)
+* [CC Force-Swiped](../../doc/controllers/transactions-credit-card.md#cc-force-swiped)
+* [CC Force-Ticket](../../doc/controllers/transactions-credit-card.md#cc-force-ticket)
+* [CC Force-Tokenized](../../doc/controllers/transactions-credit-card.md#cc-force-tokenized)
+* [CC Force-Wallet](../../doc/controllers/transactions-credit-card.md#cc-force-wallet)
 * [CC Refund](../../doc/controllers/transactions-credit-card.md#cc-refund)
-* [CC Refund - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-refund---previous-transaction)
-* [CC Refund - Swiped](../../doc/controllers/transactions-credit-card.md#cc-refund---swiped)
-* [CC Refund - Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-refund---tap-to-pay)
-* [CC Refund - Terminal](../../doc/controllers/transactions-credit-card.md#cc-refund---terminal)
-* [CC Refund - Ticket](../../doc/controllers/transactions-credit-card.md#cc-refund---ticket)
-* [CC Refund - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-refund---tokenized)
-* [CC Refund - Wallet](../../doc/controllers/transactions-credit-card.md#cc-refund---wallet)
+* [CC Refund-Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-refund-previous-transaction)
+* [CC Refund-Swiped](../../doc/controllers/transactions-credit-card.md#cc-refund-swiped)
+* [CC Refund-Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-refund-tap-to-pay)
+* [CC Refund-Terminal](../../doc/controllers/transactions-credit-card.md#cc-refund-terminal)
+* [CC Refund-Ticket](../../doc/controllers/transactions-credit-card.md#cc-refund-ticket)
+* [CC Refund-Tokenized](../../doc/controllers/transactions-credit-card.md#cc-refund-tokenized)
+* [CC Refund-Wallet](../../doc/controllers/transactions-credit-card.md#cc-refund-wallet)
 * [CC Sale](../../doc/controllers/transactions-credit-card.md#cc-sale)
-* [CC Sale - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-sale---previous-transaction)
-* [CC Sale - Swiped](../../doc/controllers/transactions-credit-card.md#cc-sale---swiped)
-* [CC Sale - Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-sale---tap-to-pay)
-* [CC Sale - Terminal](../../doc/controllers/transactions-credit-card.md#cc-sale---terminal)
-* [CC Sale - Ticket](../../doc/controllers/transactions-credit-card.md#cc-sale---ticket)
-* [CC Sale - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-sale---tokenized)
-* [CC Sale - Wallet](../../doc/controllers/transactions-credit-card.md#cc-sale---wallet)
+* [CC Sale-Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-sale-previous-transaction)
+* [CC Sale-Swiped](../../doc/controllers/transactions-credit-card.md#cc-sale-swiped)
+* [CC Sale-Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-sale-tap-to-pay)
+* [CC Sale-Terminal](../../doc/controllers/transactions-credit-card.md#cc-sale-terminal)
+* [CC Sale-Ticket](../../doc/controllers/transactions-credit-card.md#cc-sale-ticket)
+* [CC Sale-Tokenized](../../doc/controllers/transactions-credit-card.md#cc-sale-tokenized)
+* [CC Sale-Wallet](../../doc/controllers/transactions-credit-card.md#cc-sale-wallet)
 
 
 # CC Auth Only
@@ -61,9 +61,9 @@ TransactionsCreditCardController transactionsCreditCardController = client.getTr
 Create a new keyed Credit Card authorization only transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCAuthOnlyAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccAuthOnlyAsync(
     final V1TransactionsCcAuthOnlyKeyedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -71,11 +71,11 @@ CompletableFuture<ResponseTransaction> cCAuthOnlyAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyKeyedRequest`](../../doc/models/v1-transactions-cc-auth-only-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -92,13 +92,11 @@ V1TransactionsCcAuthOnlyKeyedRequest body = new V1TransactionsCcAuthOnlyKeyedReq
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -132,7 +130,6 @@ V1TransactionsCcAuthOnlyKeyedRequest body = new V1TransactionsCcAuthOnlyKeyedReq
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -142,28 +139,26 @@ V1TransactionsCcAuthOnlyKeyedRequest body = new V1TransactionsCcAuthOnlyKeyedReq
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
 .accountHolderName("smith")
-.entryModeId(EntryModeIdEnum.K)
 .trackData("T051904524T 741025349520O 8520748520963")
 .pin("1234")
 .ksn("1234")
 .build();
 
-transactionsCreditCardController.cCAuthOnlyAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccAuthOnlyAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -1227,18 +1222,18 @@ transactionsCreditCardController.cCAuthOnlyAsync(body, null).thenAccept(result -
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Previous Transaction
+# CC Auth Only-Previous Transaction
 
 Create a new Credit Card authorization only transaction using previous transaction id
 
 ```java
-CompletableFuture<ResponseTransaction> cCAuthOnlyPreviousTransactionAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccAuthOnlyPreviousTransactionAsync(
     final V1TransactionsCcAuthOnlyPrevTrxnRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -1246,11 +1241,11 @@ CompletableFuture<ResponseTransaction> cCAuthOnlyPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyPrevTrxnRequest`](../../doc/models/v1-transactions-cc-auth-only-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -1263,13 +1258,11 @@ V1TransactionsCcAuthOnlyPrevTrxnRequest body = new V1TransactionsCcAuthOnlyPrevT
     .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
     .customerId("customerid")
     .description("some description")
-    .iiasInd(IiasIndEnum.ENUM_1)
     .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .installment(true)
     .installmentNumber(1)
     .installmentCount(1)
-    .recurringFlag(RecurringFlagEnum.YES)
     .installmentCounter(1)
     .installmentTotal(1)
     .subscription(false)
@@ -1304,7 +1297,6 @@ V1TransactionsCcAuthOnlyPrevTrxnRequest body = new V1TransactionsCcAuthOnlyPrevT
     .autoDeclineCvvOverride(false)
     .autoDeclineStreetOverride(false)
     .autoDeclineZipOverride(false)
-    .ebtType(EbtTypeEnum.FOOD_STAMP)
     .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
     .secureProtocolVersion(2)
     .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -1314,7 +1306,6 @@ V1TransactionsCcAuthOnlyPrevTrxnRequest body = new V1TransactionsCcAuthOnlyPrevT
     .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
     .clerkId("1234")
     .voucherNumber("1234")
-    .initiationType(InitiationTypeEnum.M103)
     .billPayment(true)
     .delayCharge(true)
     .deferredAuth(true)
@@ -1324,15 +1315,15 @@ V1TransactionsCcAuthOnlyPrevTrxnRequest body = new V1TransactionsCcAuthOnlyPrevT
     .accountHolderName("smith")
     .build();
 
-transactionsCreditCardController.cCAuthOnlyPreviousTransactionAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccAuthOnlyPreviousTransactionAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -2396,18 +2387,18 @@ transactionsCreditCardController.cCAuthOnlyPreviousTransactionAsync(body, null).
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Swiped
+# CC Auth Only-Swiped
 
 Create a new swiped Credit Card authorization only transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCAuthOnlySwipedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccAuthOnlySwipedAsync(
     final V1TransactionsCcAuthOnlySwipedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -2415,11 +2406,11 @@ CompletableFuture<ResponseTransaction> cCAuthOnlySwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlySwipedRequest`](../../doc/models/v1-transactions-cc-auth-only-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -2435,13 +2426,11 @@ V1TransactionsCcAuthOnlySwipedRequest body = new V1TransactionsCcAuthOnlySwipedR
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -2475,7 +2464,6 @@ V1TransactionsCcAuthOnlySwipedRequest body = new V1TransactionsCcAuthOnlySwipedR
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -2485,25 +2473,23 @@ V1TransactionsCcAuthOnlySwipedRequest body = new V1TransactionsCcAuthOnlySwipedR
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
-.entryModeId(EntryModeIdEnum.K)
 .accountHolderName("smith")
 .build();
 
-transactionsCreditCardController.cCAuthOnlySwipedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccAuthOnlySwipedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -3567,18 +3553,18 @@ transactionsCreditCardController.cCAuthOnlySwipedAsync(body, null).thenAccept(re
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Tap to Pay
+# CC Auth Only-Tap to Pay
 
 Create a new Tap To Pay Credit Card authorization only transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCAuthOnlyTapToPayAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccAuthOnlyTapToPayAsync(
     final V1TransactionsCcAuthOnlyTaptopayRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -3586,11 +3572,11 @@ CompletableFuture<ResponseTransaction> cCAuthOnlyTapToPayAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyTaptopayRequest`](../../doc/models/v1-transactions-cc-auth-only-taptopay-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -3606,13 +3592,11 @@ V1TransactionsCcAuthOnlyTaptopayRequest body = new V1TransactionsCcAuthOnlyTapto
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -3647,13 +3631,11 @@ V1TransactionsCcAuthOnlyTaptopayRequest body = new V1TransactionsCcAuthOnlyTapto
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
 .secureDirectoryServerTransactionId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .terminalSerialNumber("1234567890")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -3661,15 +3643,15 @@ V1TransactionsCcAuthOnlyTaptopayRequest body = new V1TransactionsCcAuthOnlyTapto
 .ebtCashEligibleAmount(0)
 .build();
 
-transactionsCreditCardController.cCAuthOnlyTapToPayAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccAuthOnlyTapToPayAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -4733,16 +4715,16 @@ transactionsCreditCardController.cCAuthOnlyTapToPayAsync(body, null).thenAccept(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Terminal
+# CC Auth Only-Terminal
 
 Create a new terminal Credit Card authorization only transaction
 
 ```java
-CompletableFuture<ResponseTransactionProcessing> cCAuthOnlyTerminalAsync(
+CompletableFuture<ApiResponse<ResponseTransactionProcessing>> ccAuthOnlyTerminalAsync(
     final V1TransactionsCcAuthOnlyTerminalRequest body)
 ```
 
@@ -4754,7 +4736,7 @@ CompletableFuture<ResponseTransactionProcessing> cCAuthOnlyTerminalAsync(
 
 ## Response Type
 
-[`ResponseTransactionProcessing`](../../doc/models/response-transaction-processing.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransactionProcessing`](../../doc/models/response-transaction-processing.md).
 
 ## Example Usage
 
@@ -4771,13 +4753,11 @@ V1TransactionsCcAuthOnlyTerminalRequest body = new V1TransactionsCcAuthOnlyTermi
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -4809,7 +4789,6 @@ V1TransactionsCcAuthOnlyTerminalRequest body = new V1TransactionsCcAuthOnlyTermi
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -4819,24 +4798,22 @@ V1TransactionsCcAuthOnlyTerminalRequest body = new V1TransactionsCcAuthOnlyTermi
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
-.eFormat(EFormatEnum.MAGNESAFE)
 .build();
 
-transactionsCreditCardController.cCAuthOnlyTerminalAsync(body).thenAccept(result -> {
+transactionsCreditCardController.ccAuthOnlyTerminalAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -4867,18 +4844,18 @@ transactionsCreditCardController.cCAuthOnlyTerminalAsync(body).thenAccept(result
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Ticket
+# CC Auth Only-Ticket
 
 Create a new ticket Credit Card authorization only transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCAuthOnlyTicketAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccAuthOnlyTicketAsync(
     final V1TransactionsCcAuthOnlyTicketRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -4886,11 +4863,11 @@ CompletableFuture<ResponseTransaction> cCAuthOnlyTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyTicketRequest`](../../doc/models/v1-transactions-cc-auth-only-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -4906,13 +4883,11 @@ V1TransactionsCcAuthOnlyTicketRequest body = new V1TransactionsCcAuthOnlyTicketR
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -4946,7 +4921,6 @@ V1TransactionsCcAuthOnlyTicketRequest body = new V1TransactionsCcAuthOnlyTicketR
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -4956,7 +4930,6 @@ V1TransactionsCcAuthOnlyTicketRequest body = new V1TransactionsCcAuthOnlyTicketR
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -4965,15 +4938,15 @@ V1TransactionsCcAuthOnlyTicketRequest body = new V1TransactionsCcAuthOnlyTicketR
 .accountHolderName("smith")
 .build();
 
-transactionsCreditCardController.cCAuthOnlyTicketAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccAuthOnlyTicketAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -6037,18 +6010,18 @@ transactionsCreditCardController.cCAuthOnlyTicketAsync(body, null).thenAccept(re
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Tokenized
+# CC Auth Only-Tokenized
 
 Create a new tokenized Credit Card authorization only transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCAuthOnlyTokenizedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccAuthOnlyTokenizedAsync(
     final V1TransactionsCcAuthOnlyTokenRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -6056,11 +6029,11 @@ CompletableFuture<ResponseTransaction> cCAuthOnlyTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyTokenRequest`](../../doc/models/v1-transactions-cc-auth-only-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -6075,13 +6048,11 @@ V1TransactionsCcAuthOnlyTokenRequest body = new V1TransactionsCcAuthOnlyTokenReq
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -6115,7 +6086,6 @@ V1TransactionsCcAuthOnlyTokenRequest body = new V1TransactionsCcAuthOnlyTokenReq
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -6125,7 +6095,6 @@ V1TransactionsCcAuthOnlyTokenRequest body = new V1TransactionsCcAuthOnlyTokenReq
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -6135,15 +6104,15 @@ V1TransactionsCcAuthOnlyTokenRequest body = new V1TransactionsCcAuthOnlyTokenReq
 .tokenId("11e95f8ec39de8fbdb0a4f1a")
 .build();
 
-transactionsCreditCardController.cCAuthOnlyTokenizedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccAuthOnlyTokenizedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -7207,18 +7176,18 @@ transactionsCreditCardController.cCAuthOnlyTokenizedAsync(body, null).thenAccept
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Wallet
+# CC Auth Only-Wallet
 
 Create a new Wallet Credit Card authorization only transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCAuthOnlyWalletAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccAuthOnlyWalletAsync(
     final V1TransactionsCcAuthOnlyWalletRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -7226,11 +7195,11 @@ CompletableFuture<ResponseTransaction> cCAuthOnlyWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyWalletRequest`](../../doc/models/v1-transactions-cc-auth-only-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -7238,7 +7207,7 @@ CompletableFuture<ResponseTransaction> cCAuthOnlyWalletAsync(
 V1TransactionsCcAuthOnlyWalletRequest body = new V1TransactionsCcAuthOnlyWalletRequest.Builder(
     1,
     "wallet_data2",
-    WalletProviderEnum.GOOGLEPAY
+    WalletProvider.GOOGLEPAY
 )
 .checkinDate("2021-12-01")
 .checkoutDate("2021-12-01")
@@ -7247,13 +7216,11 @@ V1TransactionsCcAuthOnlyWalletRequest body = new V1TransactionsCcAuthOnlyWalletR
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -7287,7 +7254,6 @@ V1TransactionsCcAuthOnlyWalletRequest body = new V1TransactionsCcAuthOnlyWalletR
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -7297,7 +7263,6 @@ V1TransactionsCcAuthOnlyWalletRequest body = new V1TransactionsCcAuthOnlyWalletR
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -7307,15 +7272,15 @@ V1TransactionsCcAuthOnlyWalletRequest body = new V1TransactionsCcAuthOnlyWalletR
 .walletKeyId("11ee2bd392f32cb8aefd5bb5")
 .build();
 
-transactionsCreditCardController.cCAuthOnlyWalletAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccAuthOnlyWalletAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -8379,18 +8344,18 @@ transactionsCreditCardController.cCAuthOnlyWalletAsync(body, null).thenAccept(re
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS
+# CCAVS
 
 Create a new keyed Credit Card AVS only transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCAVSAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccavsAsync(
     final V1TransactionsCcAvsOnlyKeyedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -8398,11 +8363,11 @@ CompletableFuture<ResponseTransaction> cCAVSAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlyKeyedRequest`](../../doc/models/v1-transactions-cc-avs-only-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -8418,13 +8383,11 @@ V1TransactionsCcAvsOnlyKeyedRequest body = new V1TransactionsCcAvsOnlyKeyedReque
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -8459,7 +8422,6 @@ V1TransactionsCcAvsOnlyKeyedRequest body = new V1TransactionsCcAvsOnlyKeyedReque
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -8469,28 +8431,26 @@ V1TransactionsCcAvsOnlyKeyedRequest body = new V1TransactionsCcAvsOnlyKeyedReque
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
 .accountHolderName("smith")
-.entryModeId(EntryModeIdEnum.K)
 .trackData("T051904524T 741025349520O 8520748520963")
 .pin("1234")
 .ksn("1234")
 .build();
 
-transactionsCreditCardController.cCAVSAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccavsAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -9554,18 +9514,18 @@ transactionsCreditCardController.cCAVSAsync(body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Previous Transaction
+# CCAVS-Previous Transaction
 
 Create a new Credit Card AVS only transaction using previous transaction id
 
 ```java
-CompletableFuture<ResponseTransaction> cCAVSPreviousTransactionAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccavsPreviousTransactionAsync(
     final V1TransactionsCcAvsOnlyPrevTrxnRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -9573,11 +9533,11 @@ CompletableFuture<ResponseTransaction> cCAVSPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlyPrevTrxnRequest`](../../doc/models/v1-transactions-cc-avs-only-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -9590,13 +9550,11 @@ V1TransactionsCcAvsOnlyPrevTrxnRequest body = new V1TransactionsCcAvsOnlyPrevTrx
     .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
     .customerId("customerid")
     .description("some description")
-    .iiasInd(IiasIndEnum.ENUM_1)
     .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .installment(true)
     .installmentNumber(1)
     .installmentCount(1)
-    .recurringFlag(RecurringFlagEnum.YES)
     .installmentCounter(1)
     .installmentTotal(1)
     .subscription(false)
@@ -9631,7 +9589,6 @@ V1TransactionsCcAvsOnlyPrevTrxnRequest body = new V1TransactionsCcAvsOnlyPrevTrx
     .autoDeclineCvvOverride(false)
     .autoDeclineStreetOverride(false)
     .autoDeclineZipOverride(false)
-    .ebtType(EbtTypeEnum.FOOD_STAMP)
     .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
     .secureProtocolVersion(2)
     .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -9641,7 +9598,6 @@ V1TransactionsCcAvsOnlyPrevTrxnRequest body = new V1TransactionsCcAvsOnlyPrevTrx
     .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
     .clerkId("1234")
     .voucherNumber("1234")
-    .initiationType(InitiationTypeEnum.M103)
     .billPayment(true)
     .delayCharge(true)
     .deferredAuth(true)
@@ -9651,15 +9607,15 @@ V1TransactionsCcAvsOnlyPrevTrxnRequest body = new V1TransactionsCcAvsOnlyPrevTrx
     .accountHolderName("smith")
     .build();
 
-transactionsCreditCardController.cCAVSPreviousTransactionAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccavsPreviousTransactionAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -10723,18 +10679,18 @@ transactionsCreditCardController.cCAVSPreviousTransactionAsync(body, null).thenA
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Swiped
+# CCAVS-Swiped
 
 Create a new swiped Credit Card AVS only transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCAVSSwipedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccavsSwipedAsync(
     final V1TransactionsCcAvsOnlySwipedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -10742,11 +10698,11 @@ CompletableFuture<ResponseTransaction> cCAVSSwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlySwipedRequest`](../../doc/models/v1-transactions-cc-avs-only-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -10761,13 +10717,11 @@ V1TransactionsCcAvsOnlySwipedRequest body = new V1TransactionsCcAvsOnlySwipedReq
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -10802,7 +10756,6 @@ V1TransactionsCcAvsOnlySwipedRequest body = new V1TransactionsCcAvsOnlySwipedReq
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -10812,25 +10765,23 @@ V1TransactionsCcAvsOnlySwipedRequest body = new V1TransactionsCcAvsOnlySwipedReq
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
-.entryModeId(EntryModeIdEnum.K)
 .accountHolderName("smith")
 .build();
 
-transactionsCreditCardController.cCAVSSwipedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccavsSwipedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -11894,16 +11845,16 @@ transactionsCreditCardController.cCAVSSwipedAsync(body, null).thenAccept(result 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Terminal
+# CCAVS-Terminal
 
 Create a new terminal Credit Card AVS only transaction
 
 ```java
-CompletableFuture<ResponseTransactionProcessing> cCAVSTerminalAsync(
+CompletableFuture<ApiResponse<ResponseTransactionProcessing>> ccavsTerminalAsync(
     final V1TransactionsCcAvsOnlyTerminalRequest body)
 ```
 
@@ -11915,7 +11866,7 @@ CompletableFuture<ResponseTransactionProcessing> cCAVSTerminalAsync(
 
 ## Response Type
 
-[`ResponseTransactionProcessing`](../../doc/models/response-transaction-processing.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransactionProcessing`](../../doc/models/response-transaction-processing.md).
 
 ## Example Usage
 
@@ -11931,13 +11882,11 @@ V1TransactionsCcAvsOnlyTerminalRequest body = new V1TransactionsCcAvsOnlyTermina
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -11970,7 +11919,6 @@ V1TransactionsCcAvsOnlyTerminalRequest body = new V1TransactionsCcAvsOnlyTermina
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -11980,24 +11928,22 @@ V1TransactionsCcAvsOnlyTerminalRequest body = new V1TransactionsCcAvsOnlyTermina
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
-.eFormat(EFormatEnum.MAGNESAFE)
 .build();
 
-transactionsCreditCardController.cCAVSTerminalAsync(body).thenAccept(result -> {
+transactionsCreditCardController.ccavsTerminalAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -12028,18 +11974,18 @@ transactionsCreditCardController.cCAVSTerminalAsync(body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Ticket
+# CCAVS-Ticket
 
 Create a new ticket Credit Card AVS only transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCAVSTicketAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccavsTicketAsync(
     final V1TransactionsCcAvsOnlyTicketRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -12047,11 +11993,11 @@ CompletableFuture<ResponseTransaction> cCAVSTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlyTicketRequest`](../../doc/models/v1-transactions-cc-avs-only-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -12066,13 +12012,11 @@ V1TransactionsCcAvsOnlyTicketRequest body = new V1TransactionsCcAvsOnlyTicketReq
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -12107,7 +12051,6 @@ V1TransactionsCcAvsOnlyTicketRequest body = new V1TransactionsCcAvsOnlyTicketReq
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -12117,7 +12060,6 @@ V1TransactionsCcAvsOnlyTicketRequest body = new V1TransactionsCcAvsOnlyTicketReq
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -12126,15 +12068,15 @@ V1TransactionsCcAvsOnlyTicketRequest body = new V1TransactionsCcAvsOnlyTicketReq
 .accountHolderName("smith")
 .build();
 
-transactionsCreditCardController.cCAVSTicketAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccavsTicketAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -13198,18 +13140,18 @@ transactionsCreditCardController.cCAVSTicketAsync(body, null).thenAccept(result 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Tokenized
+# CCAVS-Tokenized
 
 Create a new tokenized Credit Card AVS only transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCAVSTokenizedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccavsTokenizedAsync(
     final V1TransactionsCcAvsOnlyTokenRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -13217,11 +13159,11 @@ CompletableFuture<ResponseTransaction> cCAVSTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlyTokenRequest`](../../doc/models/v1-transactions-cc-avs-only-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -13234,13 +13176,11 @@ V1TransactionsCcAvsOnlyTokenRequest body = new V1TransactionsCcAvsOnlyTokenReque
     .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
     .customerId("customerid")
     .description("some description")
-    .iiasInd(IiasIndEnum.ENUM_1)
     .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .installment(true)
     .installmentNumber(1)
     .installmentCount(1)
-    .recurringFlag(RecurringFlagEnum.YES)
     .installmentCounter(1)
     .installmentTotal(1)
     .subscription(false)
@@ -13275,7 +13215,6 @@ V1TransactionsCcAvsOnlyTokenRequest body = new V1TransactionsCcAvsOnlyTokenReque
     .autoDeclineCvvOverride(false)
     .autoDeclineStreetOverride(false)
     .autoDeclineZipOverride(false)
-    .ebtType(EbtTypeEnum.FOOD_STAMP)
     .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
     .secureProtocolVersion(2)
     .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -13285,7 +13224,6 @@ V1TransactionsCcAvsOnlyTokenRequest body = new V1TransactionsCcAvsOnlyTokenReque
     .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
     .clerkId("1234")
     .voucherNumber("1234")
-    .initiationType(InitiationTypeEnum.M103)
     .billPayment(true)
     .delayCharge(true)
     .deferredAuth(true)
@@ -13295,15 +13233,15 @@ V1TransactionsCcAvsOnlyTokenRequest body = new V1TransactionsCcAvsOnlyTokenReque
     .tokenId("11e95f8ec39de8fbdb0a4f1a")
     .build();
 
-transactionsCreditCardController.cCAVSTokenizedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccavsTokenizedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -14367,18 +14305,18 @@ transactionsCreditCardController.cCAVSTokenizedAsync(body, null).thenAccept(resu
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Wallet
+# CCAVS-Wallet
 
 Create a new Wallet Credit Card AVS only transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCAVSWalletAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccavsWalletAsync(
     final V1TransactionsCcAvsOnlyWalletRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -14386,18 +14324,18 @@ CompletableFuture<ResponseTransaction> cCAVSWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlyWalletRequest`](../../doc/models/v1-transactions-cc-avs-only-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
 ```java
 V1TransactionsCcAvsOnlyWalletRequest body = new V1TransactionsCcAvsOnlyWalletRequest.Builder(
     "wallet_data2",
-    WalletProviderEnum.GOOGLEPAY
+    WalletProvider.GOOGLEPAY
 )
 .checkinDate("2021-12-01")
 .checkoutDate("2021-12-01")
@@ -14406,13 +14344,11 @@ V1TransactionsCcAvsOnlyWalletRequest body = new V1TransactionsCcAvsOnlyWalletReq
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -14447,7 +14383,6 @@ V1TransactionsCcAvsOnlyWalletRequest body = new V1TransactionsCcAvsOnlyWalletReq
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -14457,7 +14392,6 @@ V1TransactionsCcAvsOnlyWalletRequest body = new V1TransactionsCcAvsOnlyWalletReq
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -14467,15 +14401,15 @@ V1TransactionsCcAvsOnlyWalletRequest body = new V1TransactionsCcAvsOnlyWalletReq
 .walletKeyId("11ee2bd392f32cb8aefd5bb5")
 .build();
 
-transactionsCreditCardController.cCAVSWalletAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccavsWalletAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -15539,7 +15473,7 @@ transactionsCreditCardController.cCAVSWalletAsync(body, null).thenAccept(result 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -15548,9 +15482,9 @@ transactionsCreditCardController.cCAVSWalletAsync(body, null).thenAccept(result 
 Create a new keyed Credit Card balance inquiry transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCBalanceInquiryAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccBalanceInquiryAsync(
     final V1TransactionsCcBalanceInquiryKeyedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -15558,11 +15492,11 @@ CompletableFuture<ResponseTransaction> cCBalanceInquiryAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquiryKeyedRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -15578,13 +15512,11 @@ V1TransactionsCcBalanceInquiryKeyedRequest body = new V1TransactionsCcBalanceInq
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -15619,7 +15551,6 @@ V1TransactionsCcBalanceInquiryKeyedRequest body = new V1TransactionsCcBalanceInq
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -15629,28 +15560,26 @@ V1TransactionsCcBalanceInquiryKeyedRequest body = new V1TransactionsCcBalanceInq
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
 .accountHolderName("smith")
-.entryModeId(EntryModeIdEnum.K)
 .trackData("T051904524T 741025349520O 8520748520963")
 .pin("1234")
 .ksn("1234")
 .build();
 
-transactionsCreditCardController.cCBalanceInquiryAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccBalanceInquiryAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -16714,18 +16643,18 @@ transactionsCreditCardController.cCBalanceInquiryAsync(body, null).thenAccept(re
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Previous Transaction
+# CC Balance Inquiry-Previous Transaction
 
 Create a new Credit Card balance inquiry transaction using previous transaction id
 
 ```java
-CompletableFuture<ResponseTransaction> cCBalanceInquiryPreviousTransactionAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccBalanceInquiryPreviousTransactionAsync(
     final V1TransactionsCcBalanceInquiryPrevTrxnRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -16733,11 +16662,11 @@ CompletableFuture<ResponseTransaction> cCBalanceInquiryPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquiryPrevTrxnRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -16750,13 +16679,11 @@ V1TransactionsCcBalanceInquiryPrevTrxnRequest body = new V1TransactionsCcBalance
     .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
     .customerId("customerid")
     .description("some description")
-    .iiasInd(IiasIndEnum.ENUM_1)
     .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .installment(true)
     .installmentNumber(1)
     .installmentCount(1)
-    .recurringFlag(RecurringFlagEnum.YES)
     .installmentCounter(1)
     .installmentTotal(1)
     .subscription(false)
@@ -16791,7 +16718,6 @@ V1TransactionsCcBalanceInquiryPrevTrxnRequest body = new V1TransactionsCcBalance
     .autoDeclineCvvOverride(false)
     .autoDeclineStreetOverride(false)
     .autoDeclineZipOverride(false)
-    .ebtType(EbtTypeEnum.FOOD_STAMP)
     .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
     .secureProtocolVersion(2)
     .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -16801,7 +16727,6 @@ V1TransactionsCcBalanceInquiryPrevTrxnRequest body = new V1TransactionsCcBalance
     .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
     .clerkId("1234")
     .voucherNumber("1234")
-    .initiationType(InitiationTypeEnum.M103)
     .billPayment(true)
     .delayCharge(true)
     .deferredAuth(true)
@@ -16811,15 +16736,15 @@ V1TransactionsCcBalanceInquiryPrevTrxnRequest body = new V1TransactionsCcBalance
     .accountHolderName("smith")
     .build();
 
-transactionsCreditCardController.cCBalanceInquiryPreviousTransactionAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccBalanceInquiryPreviousTransactionAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -17883,18 +17808,18 @@ transactionsCreditCardController.cCBalanceInquiryPreviousTransactionAsync(body, 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Swiped
+# CC Balance Inquiry-Swiped
 
 Create a new swiped Credit Card balance inquiry transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCBalanceInquirySwipedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccBalanceInquirySwipedAsync(
     final V1TransactionsCcBalanceInquirySwipedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -17902,11 +17827,11 @@ CompletableFuture<ResponseTransaction> cCBalanceInquirySwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquirySwipedRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -17921,13 +17846,11 @@ V1TransactionsCcBalanceInquirySwipedRequest body = new V1TransactionsCcBalanceIn
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -17962,7 +17885,6 @@ V1TransactionsCcBalanceInquirySwipedRequest body = new V1TransactionsCcBalanceIn
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -17972,25 +17894,23 @@ V1TransactionsCcBalanceInquirySwipedRequest body = new V1TransactionsCcBalanceIn
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
-.entryModeId(EntryModeIdEnum.K)
 .accountHolderName("smith")
 .build();
 
-transactionsCreditCardController.cCBalanceInquirySwipedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccBalanceInquirySwipedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -19054,16 +18974,16 @@ transactionsCreditCardController.cCBalanceInquirySwipedAsync(body, null).thenAcc
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Terminal
+# CC Balance Inquiry-Terminal
 
 Create a new terminal Credit Card balance inquiry transaction
 
 ```java
-CompletableFuture<ResponseTransactionProcessing> cCBalanceInquiryTerminalAsync(
+CompletableFuture<ApiResponse<ResponseTransactionProcessing>> ccBalanceInquiryTerminalAsync(
     final V1TransactionsCcBalanceInquiryTerminalRequest body)
 ```
 
@@ -19075,7 +18995,7 @@ CompletableFuture<ResponseTransactionProcessing> cCBalanceInquiryTerminalAsync(
 
 ## Response Type
 
-[`ResponseTransactionProcessing`](../../doc/models/response-transaction-processing.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransactionProcessing`](../../doc/models/response-transaction-processing.md).
 
 ## Example Usage
 
@@ -19091,13 +19011,11 @@ V1TransactionsCcBalanceInquiryTerminalRequest body = new V1TransactionsCcBalance
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -19130,7 +19048,6 @@ V1TransactionsCcBalanceInquiryTerminalRequest body = new V1TransactionsCcBalance
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -19140,24 +19057,22 @@ V1TransactionsCcBalanceInquiryTerminalRequest body = new V1TransactionsCcBalance
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
-.eFormat(EFormatEnum.MAGNESAFE)
 .build();
 
-transactionsCreditCardController.cCBalanceInquiryTerminalAsync(body).thenAccept(result -> {
+transactionsCreditCardController.ccBalanceInquiryTerminalAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -19188,18 +19103,18 @@ transactionsCreditCardController.cCBalanceInquiryTerminalAsync(body).thenAccept(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Ticket
+# CC Balance Inquiry-Ticket
 
 Create a new Ticket Credit Card balance inquiry transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCBalanceInquiryTicketAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccBalanceInquiryTicketAsync(
     final V1TransactionsCcBalanceInquiryTicketRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -19207,11 +19122,11 @@ CompletableFuture<ResponseTransaction> cCBalanceInquiryTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquiryTicketRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -19226,13 +19141,11 @@ V1TransactionsCcBalanceInquiryTicketRequest body = new V1TransactionsCcBalanceIn
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -19267,7 +19180,6 @@ V1TransactionsCcBalanceInquiryTicketRequest body = new V1TransactionsCcBalanceIn
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -19277,7 +19189,6 @@ V1TransactionsCcBalanceInquiryTicketRequest body = new V1TransactionsCcBalanceIn
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -19286,15 +19197,15 @@ V1TransactionsCcBalanceInquiryTicketRequest body = new V1TransactionsCcBalanceIn
 .accountHolderName("smith")
 .build();
 
-transactionsCreditCardController.cCBalanceInquiryTicketAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccBalanceInquiryTicketAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -20358,18 +20269,18 @@ transactionsCreditCardController.cCBalanceInquiryTicketAsync(body, null).thenAcc
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Tokenized
+# CC Balance Inquiry-Tokenized
 
 Create a new tokenized Credit Card balance inquiry transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCBalanceInquiryTokenizedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccBalanceInquiryTokenizedAsync(
     final V1TransactionsCcBalanceInquiryTokenRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -20377,11 +20288,11 @@ CompletableFuture<ResponseTransaction> cCBalanceInquiryTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquiryTokenRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -20394,13 +20305,11 @@ V1TransactionsCcBalanceInquiryTokenRequest body = new V1TransactionsCcBalanceInq
     .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
     .customerId("customerid")
     .description("some description")
-    .iiasInd(IiasIndEnum.ENUM_1)
     .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .installment(true)
     .installmentNumber(1)
     .installmentCount(1)
-    .recurringFlag(RecurringFlagEnum.YES)
     .installmentCounter(1)
     .installmentTotal(1)
     .subscription(false)
@@ -20435,7 +20344,6 @@ V1TransactionsCcBalanceInquiryTokenRequest body = new V1TransactionsCcBalanceInq
     .autoDeclineCvvOverride(false)
     .autoDeclineStreetOverride(false)
     .autoDeclineZipOverride(false)
-    .ebtType(EbtTypeEnum.FOOD_STAMP)
     .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
     .secureProtocolVersion(2)
     .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -20445,7 +20353,6 @@ V1TransactionsCcBalanceInquiryTokenRequest body = new V1TransactionsCcBalanceInq
     .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
     .clerkId("1234")
     .voucherNumber("1234")
-    .initiationType(InitiationTypeEnum.M103)
     .billPayment(true)
     .delayCharge(true)
     .deferredAuth(true)
@@ -20455,15 +20362,15 @@ V1TransactionsCcBalanceInquiryTokenRequest body = new V1TransactionsCcBalanceInq
     .tokenId("11e95f8ec39de8fbdb0a4f1a")
     .build();
 
-transactionsCreditCardController.cCBalanceInquiryTokenizedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccBalanceInquiryTokenizedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -21527,18 +21434,18 @@ transactionsCreditCardController.cCBalanceInquiryTokenizedAsync(body, null).then
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Wallet
+# CC Balance Inquiry-Wallet
 
 Create a new Wallet Credit Card balance inquiry transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCBalanceInquiryWalletAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccBalanceInquiryWalletAsync(
     final V1TransactionsCcBalanceInquiryWalletRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -21546,18 +21453,18 @@ CompletableFuture<ResponseTransaction> cCBalanceInquiryWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquiryWalletRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
 ```java
 V1TransactionsCcBalanceInquiryWalletRequest body = new V1TransactionsCcBalanceInquiryWalletRequest.Builder(
     "wallet_data2",
-    WalletProviderEnum.GOOGLEPAY
+    WalletProvider.GOOGLEPAY
 )
 .checkinDate("2021-12-01")
 .checkoutDate("2021-12-01")
@@ -21566,13 +21473,11 @@ V1TransactionsCcBalanceInquiryWalletRequest body = new V1TransactionsCcBalanceIn
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -21607,7 +21512,6 @@ V1TransactionsCcBalanceInquiryWalletRequest body = new V1TransactionsCcBalanceIn
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -21617,7 +21521,6 @@ V1TransactionsCcBalanceInquiryWalletRequest body = new V1TransactionsCcBalanceIn
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -21627,15 +21530,15 @@ V1TransactionsCcBalanceInquiryWalletRequest body = new V1TransactionsCcBalanceIn
 .walletKeyId("11ee2bd392f32cb8aefd5bb5")
 .build();
 
-transactionsCreditCardController.cCBalanceInquiryWalletAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccBalanceInquiryWalletAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -22699,7 +22602,7 @@ transactionsCreditCardController.cCBalanceInquiryWalletAsync(body, null).thenAcc
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -22708,9 +22611,9 @@ transactionsCreditCardController.cCBalanceInquiryWalletAsync(body, null).thenAcc
 Create a new keyed Credit Card force transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCForceAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccForceAsync(
     final V1TransactionsCcForceKeyedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -22718,11 +22621,11 @@ CompletableFuture<ResponseTransaction> cCForceAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForceKeyedRequest`](../../doc/models/v1-transactions-cc-force-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -22739,13 +22642,11 @@ V1TransactionsCcForceKeyedRequest body = new V1TransactionsCcForceKeyedRequest.B
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -22780,7 +22681,6 @@ V1TransactionsCcForceKeyedRequest body = new V1TransactionsCcForceKeyedRequest.B
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -22790,29 +22690,27 @@ V1TransactionsCcForceKeyedRequest body = new V1TransactionsCcForceKeyedRequest.B
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
 .accountHolderName("smith")
-.entryModeId(EntryModeIdEnum.K)
 .trackData("T051904524T 741025349520O 8520748520963")
 .pin("1234")
 .ksn("1234")
 .transId("1212MCC123456")
 .build();
 
-transactionsCreditCardController.cCForceAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccForceAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -23876,18 +23774,18 @@ transactionsCreditCardController.cCForceAsync(body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Force - Previous Transaction
+# CC Force-Previous Transaction
 
 Create a new Credit Card force transaction using previous transaction id
 
 ```java
-CompletableFuture<ResponseTransaction> cCForcePreviousTransactionAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccForcePreviousTransactionAsync(
     final V1TransactionsCcForcePrevTrxnRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -23895,11 +23793,11 @@ CompletableFuture<ResponseTransaction> cCForcePreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForcePrevTrxnRequest`](../../doc/models/v1-transactions-cc-force-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -23914,13 +23812,11 @@ V1TransactionsCcForcePrevTrxnRequest body = new V1TransactionsCcForcePrevTrxnReq
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -23955,7 +23851,6 @@ V1TransactionsCcForcePrevTrxnRequest body = new V1TransactionsCcForcePrevTrxnReq
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -23965,7 +23860,6 @@ V1TransactionsCcForcePrevTrxnRequest body = new V1TransactionsCcForcePrevTrxnReq
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -23976,15 +23870,15 @@ V1TransactionsCcForcePrevTrxnRequest body = new V1TransactionsCcForcePrevTrxnReq
 .transId("1212MCC123456")
 .build();
 
-transactionsCreditCardController.cCForcePreviousTransactionAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccForcePreviousTransactionAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -25048,18 +24942,18 @@ transactionsCreditCardController.cCForcePreviousTransactionAsync(body, null).the
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Force - Swiped
+# CC Force-Swiped
 
 Create a new swiped Credit Card force transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCForceSwipedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccForceSwipedAsync(
     final V1TransactionsCcForceSwipedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -25067,11 +24961,11 @@ CompletableFuture<ResponseTransaction> cCForceSwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForceSwipedRequest`](../../doc/models/v1-transactions-cc-force-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -25087,13 +24981,11 @@ V1TransactionsCcForceSwipedRequest body = new V1TransactionsCcForceSwipedRequest
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -25128,7 +25020,6 @@ V1TransactionsCcForceSwipedRequest body = new V1TransactionsCcForceSwipedRequest
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -25138,25 +25029,23 @@ V1TransactionsCcForceSwipedRequest body = new V1TransactionsCcForceSwipedRequest
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
-.entryModeId(EntryModeIdEnum.K)
 .accountHolderName("smith")
 .build();
 
-transactionsCreditCardController.cCForceSwipedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccForceSwipedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -26220,18 +26109,18 @@ transactionsCreditCardController.cCForceSwipedAsync(body, null).thenAccept(resul
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Force - Ticket
+# CC Force-Ticket
 
 Create a new ticket Credit Card force transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCForceTicketAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccForceTicketAsync(
     final V1TransactionsCcForceTicketRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -26239,11 +26128,11 @@ CompletableFuture<ResponseTransaction> cCForceTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForceTicketRequest`](../../doc/models/v1-transactions-cc-force-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -26259,13 +26148,11 @@ V1TransactionsCcForceTicketRequest body = new V1TransactionsCcForceTicketRequest
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -26300,7 +26187,6 @@ V1TransactionsCcForceTicketRequest body = new V1TransactionsCcForceTicketRequest
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -26310,7 +26196,6 @@ V1TransactionsCcForceTicketRequest body = new V1TransactionsCcForceTicketRequest
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -26320,15 +26205,15 @@ V1TransactionsCcForceTicketRequest body = new V1TransactionsCcForceTicketRequest
 .transId("1212MCC123456")
 .build();
 
-transactionsCreditCardController.cCForceTicketAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccForceTicketAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -27392,18 +27277,18 @@ transactionsCreditCardController.cCForceTicketAsync(body, null).thenAccept(resul
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Force - Tokenized
+# CC Force-Tokenized
 
 Create a new tokenized Credit Card force transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCForceTokenizedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccForceTokenizedAsync(
     final V1TransactionsCcForceTokenRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -27411,11 +27296,11 @@ CompletableFuture<ResponseTransaction> cCForceTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForceTokenRequest`](../../doc/models/v1-transactions-cc-force-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -27430,13 +27315,11 @@ V1TransactionsCcForceTokenRequest body = new V1TransactionsCcForceTokenRequest.B
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -27471,7 +27354,6 @@ V1TransactionsCcForceTokenRequest body = new V1TransactionsCcForceTokenRequest.B
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -27481,7 +27363,6 @@ V1TransactionsCcForceTokenRequest body = new V1TransactionsCcForceTokenRequest.B
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -27492,15 +27373,15 @@ V1TransactionsCcForceTokenRequest body = new V1TransactionsCcForceTokenRequest.B
 .transId("1212MCC123456")
 .build();
 
-transactionsCreditCardController.cCForceTokenizedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccForceTokenizedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -28564,18 +28445,18 @@ transactionsCreditCardController.cCForceTokenizedAsync(body, null).thenAccept(re
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Force - Wallet
+# CC Force-Wallet
 
 Create a new Wallet Credit Card force transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCForceWalletAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccForceWalletAsync(
     final V1TransactionsCcForceWalletRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -28583,18 +28464,18 @@ CompletableFuture<ResponseTransaction> cCForceWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForceWalletRequest`](../../doc/models/v1-transactions-cc-force-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
 ```java
 V1TransactionsCcForceWalletRequest body = new V1TransactionsCcForceWalletRequest.Builder(
     "wallet_data2",
-    WalletProviderEnum.GOOGLEPAY,
+    WalletProvider.GOOGLEPAY,
     "abc123"
 )
 .checkinDate("2021-12-01")
@@ -28604,13 +28485,11 @@ V1TransactionsCcForceWalletRequest body = new V1TransactionsCcForceWalletRequest
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -28645,7 +28524,6 @@ V1TransactionsCcForceWalletRequest body = new V1TransactionsCcForceWalletRequest
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -28655,7 +28533,6 @@ V1TransactionsCcForceWalletRequest body = new V1TransactionsCcForceWalletRequest
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -28666,15 +28543,15 @@ V1TransactionsCcForceWalletRequest body = new V1TransactionsCcForceWalletRequest
 .transId("1212MCC123456")
 .build();
 
-transactionsCreditCardController.cCForceWalletAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccForceWalletAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -29738,7 +29615,7 @@ transactionsCreditCardController.cCForceWalletAsync(body, null).thenAccept(resul
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -29747,9 +29624,9 @@ transactionsCreditCardController.cCForceWalletAsync(body, null).thenAccept(resul
 Create a new keyed Credit Card refund transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCRefundAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccRefundAsync(
     final V1TransactionsCcRefundKeyedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -29757,11 +29634,11 @@ CompletableFuture<ResponseTransaction> cCRefundAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundKeyedRequest`](../../doc/models/v1-transactions-cc-refund-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -29776,13 +29653,11 @@ V1TransactionsCcRefundKeyedRequest body = new V1TransactionsCcRefundKeyedRequest
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -29816,7 +29691,6 @@ V1TransactionsCcRefundKeyedRequest body = new V1TransactionsCcRefundKeyedRequest
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -29826,29 +29700,27 @@ V1TransactionsCcRefundKeyedRequest body = new V1TransactionsCcRefundKeyedRequest
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
 .accountHolderName("smith")
-.entryModeId(EntryModeIdEnum.K)
 .trackData("T051904524T 741025349520O 8520748520963")
 .pin("1234")
 .ksn("1234")
 .previousTransactionId("11e95f8ec39de8fbdb0a4f1a")
 .build();
 
-transactionsCreditCardController.cCRefundAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccRefundAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -30912,18 +30784,18 @@ transactionsCreditCardController.cCRefundAsync(body, null).thenAccept(result -> 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Previous Transaction
+# CC Refund-Previous Transaction
 
 Create a new Credit Card refund transaction using previous transaction id
 
 ```java
-CompletableFuture<ResponseTransaction> cCRefundPreviousTransactionAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccRefundPreviousTransactionAsync(
     final V1TransactionsCcRefundPrevTrxnRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -30931,11 +30803,11 @@ CompletableFuture<ResponseTransaction> cCRefundPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundPrevTrxnRequest`](../../doc/models/v1-transactions-cc-refund-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -30948,13 +30820,11 @@ V1TransactionsCcRefundPrevTrxnRequest body = new V1TransactionsCcRefundPrevTrxnR
     .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
     .customerId("customerid")
     .description("some description")
-    .iiasInd(IiasIndEnum.ENUM_1)
     .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .installment(true)
     .installmentNumber(1)
     .installmentCount(1)
-    .recurringFlag(RecurringFlagEnum.YES)
     .installmentCounter(1)
     .installmentTotal(1)
     .subscription(false)
@@ -30989,7 +30859,6 @@ V1TransactionsCcRefundPrevTrxnRequest body = new V1TransactionsCcRefundPrevTrxnR
     .autoDeclineCvvOverride(false)
     .autoDeclineStreetOverride(false)
     .autoDeclineZipOverride(false)
-    .ebtType(EbtTypeEnum.FOOD_STAMP)
     .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
     .secureProtocolVersion(2)
     .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -30999,7 +30868,6 @@ V1TransactionsCcRefundPrevTrxnRequest body = new V1TransactionsCcRefundPrevTrxnR
     .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
     .clerkId("1234")
     .voucherNumber("1234")
-    .initiationType(InitiationTypeEnum.M103)
     .billPayment(true)
     .delayCharge(true)
     .deferredAuth(true)
@@ -31009,15 +30877,15 @@ V1TransactionsCcRefundPrevTrxnRequest body = new V1TransactionsCcRefundPrevTrxnR
     .accountHolderName("smith")
     .build();
 
-transactionsCreditCardController.cCRefundPreviousTransactionAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccRefundPreviousTransactionAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -32081,18 +31949,18 @@ transactionsCreditCardController.cCRefundPreviousTransactionAsync(body, null).th
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Swiped
+# CC Refund-Swiped
 
 Create a new swiped Credit Card refund transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCRefundSwipedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccRefundSwipedAsync(
     final V1TransactionsCcRefundSwipedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -32100,11 +31968,11 @@ CompletableFuture<ResponseTransaction> cCRefundSwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundSwipedRequest`](../../doc/models/v1-transactions-cc-refund-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -32120,13 +31988,11 @@ V1TransactionsCcRefundSwipedRequest body = new V1TransactionsCcRefundSwipedReque
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -32160,7 +32026,6 @@ V1TransactionsCcRefundSwipedRequest body = new V1TransactionsCcRefundSwipedReque
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -32170,25 +32035,23 @@ V1TransactionsCcRefundSwipedRequest body = new V1TransactionsCcRefundSwipedReque
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
-.entryModeId(EntryModeIdEnum.K)
 .accountHolderName("smith")
 .build();
 
-transactionsCreditCardController.cCRefundSwipedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccRefundSwipedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -33252,18 +33115,18 @@ transactionsCreditCardController.cCRefundSwipedAsync(body, null).thenAccept(resu
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Tap to Pay
+# CC Refund-Tap to Pay
 
 Create a new Tap To Pay Credit Card refund transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCRefundTapToPayAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccRefundTapToPayAsync(
     final V1TransactionsCcRefundTaptopayRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -33271,11 +33134,11 @@ CompletableFuture<ResponseTransaction> cCRefundTapToPayAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundTaptopayRequest`](../../doc/models/v1-transactions-cc-refund-taptopay-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -33291,13 +33154,11 @@ V1TransactionsCcRefundTaptopayRequest body = new V1TransactionsCcRefundTaptopayR
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -33332,13 +33193,11 @@ V1TransactionsCcRefundTaptopayRequest body = new V1TransactionsCcRefundTaptopayR
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
 .secureDirectoryServerTransactionId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .terminalSerialNumber("1234567890")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -33347,15 +33206,15 @@ V1TransactionsCcRefundTaptopayRequest body = new V1TransactionsCcRefundTaptopayR
 .previousTransactionId("11e95f8ec39de8fbdb0a4f1a")
 .build();
 
-transactionsCreditCardController.cCRefundTapToPayAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccRefundTapToPayAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -34419,16 +34278,16 @@ transactionsCreditCardController.cCRefundTapToPayAsync(body, null).thenAccept(re
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Terminal
+# CC Refund-Terminal
 
 Create a new terminal Credit Card refund transaction
 
 ```java
-CompletableFuture<ResponseTransactionProcessing> cCRefundTerminalAsync(
+CompletableFuture<ApiResponse<ResponseTransactionProcessing>> ccRefundTerminalAsync(
     final V1TransactionsCcRefundTerminalRequest body)
 ```
 
@@ -34440,7 +34299,7 @@ CompletableFuture<ResponseTransactionProcessing> cCRefundTerminalAsync(
 
 ## Response Type
 
-[`ResponseTransactionProcessing`](../../doc/models/response-transaction-processing.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransactionProcessing`](../../doc/models/response-transaction-processing.md).
 
 ## Example Usage
 
@@ -34457,13 +34316,11 @@ V1TransactionsCcRefundTerminalRequest body = new V1TransactionsCcRefundTerminalR
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -34495,7 +34352,6 @@ V1TransactionsCcRefundTerminalRequest body = new V1TransactionsCcRefundTerminalR
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -34505,24 +34361,22 @@ V1TransactionsCcRefundTerminalRequest body = new V1TransactionsCcRefundTerminalR
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
-.eFormat(EFormatEnum.MAGNESAFE)
 .build();
 
-transactionsCreditCardController.cCRefundTerminalAsync(body).thenAccept(result -> {
+transactionsCreditCardController.ccRefundTerminalAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -34553,18 +34407,18 @@ transactionsCreditCardController.cCRefundTerminalAsync(body).thenAccept(result -
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Ticket
+# CC Refund-Ticket
 
 Create a new ticket Credit Card refund transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCRefundTicketAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccRefundTicketAsync(
     final V1TransactionsCcRefundTicketRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -34572,11 +34426,11 @@ CompletableFuture<ResponseTransaction> cCRefundTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundTicketRequest`](../../doc/models/v1-transactions-cc-refund-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -34592,13 +34446,11 @@ V1TransactionsCcRefundTicketRequest body = new V1TransactionsCcRefundTicketReque
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -34632,7 +34484,6 @@ V1TransactionsCcRefundTicketRequest body = new V1TransactionsCcRefundTicketReque
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -34642,7 +34493,6 @@ V1TransactionsCcRefundTicketRequest body = new V1TransactionsCcRefundTicketReque
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -34651,15 +34501,15 @@ V1TransactionsCcRefundTicketRequest body = new V1TransactionsCcRefundTicketReque
 .accountHolderName("smith")
 .build();
 
-transactionsCreditCardController.cCRefundTicketAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccRefundTicketAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -35723,18 +35573,18 @@ transactionsCreditCardController.cCRefundTicketAsync(body, null).thenAccept(resu
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Tokenized
+# CC Refund-Tokenized
 
 Create a new tokenized Credit Card refund transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCRefundTokenizedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccRefundTokenizedAsync(
     final V1TransactionsCcRefundTokenRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -35742,11 +35592,11 @@ CompletableFuture<ResponseTransaction> cCRefundTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundTokenRequest`](../../doc/models/v1-transactions-cc-refund-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -35761,13 +35611,11 @@ V1TransactionsCcRefundTokenRequest body = new V1TransactionsCcRefundTokenRequest
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -35801,7 +35649,6 @@ V1TransactionsCcRefundTokenRequest body = new V1TransactionsCcRefundTokenRequest
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -35811,7 +35658,6 @@ V1TransactionsCcRefundTokenRequest body = new V1TransactionsCcRefundTokenRequest
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -35821,15 +35667,15 @@ V1TransactionsCcRefundTokenRequest body = new V1TransactionsCcRefundTokenRequest
 .tokenId("11e95f8ec39de8fbdb0a4f1a")
 .build();
 
-transactionsCreditCardController.cCRefundTokenizedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccRefundTokenizedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -36893,18 +36739,18 @@ transactionsCreditCardController.cCRefundTokenizedAsync(body, null).thenAccept(r
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Wallet
+# CC Refund-Wallet
 
 Create a new Wallet Credit Card refund transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCRefundWalletAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccRefundWalletAsync(
     final V1TransactionsCcRefundWalletRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -36912,11 +36758,11 @@ CompletableFuture<ResponseTransaction> cCRefundWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundWalletRequest`](../../doc/models/v1-transactions-cc-refund-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -36924,7 +36770,7 @@ CompletableFuture<ResponseTransaction> cCRefundWalletAsync(
 V1TransactionsCcRefundWalletRequest body = new V1TransactionsCcRefundWalletRequest.Builder(
     1,
     "wallet_data2",
-    WalletProviderEnum.GOOGLEPAY
+    WalletProvider.GOOGLEPAY
 )
 .checkinDate("2021-12-01")
 .checkoutDate("2021-12-01")
@@ -36933,13 +36779,11 @@ V1TransactionsCcRefundWalletRequest body = new V1TransactionsCcRefundWalletReque
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -36973,7 +36817,6 @@ V1TransactionsCcRefundWalletRequest body = new V1TransactionsCcRefundWalletReque
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -36983,7 +36826,6 @@ V1TransactionsCcRefundWalletRequest body = new V1TransactionsCcRefundWalletReque
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -36993,15 +36835,15 @@ V1TransactionsCcRefundWalletRequest body = new V1TransactionsCcRefundWalletReque
 .walletKeyId("11ee2bd392f32cb8aefd5bb5")
 .build();
 
-transactionsCreditCardController.cCRefundWalletAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccRefundWalletAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -38065,7 +37907,7 @@ transactionsCreditCardController.cCRefundWalletAsync(body, null).thenAccept(resu
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -38074,9 +37916,9 @@ transactionsCreditCardController.cCRefundWalletAsync(body, null).thenAccept(resu
 Create a new keyed Credit Card sale transaction with a non hosted card form. This is an in PCI Scope endpoint and requires PCI compliance verification.
 
 ```java
-CompletableFuture<ResponseTransaction> cCSaleAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccSaleAsync(
     final V1TransactionsCcSaleKeyedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -38084,11 +37926,11 @@ CompletableFuture<ResponseTransaction> cCSaleAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleKeyedRequest`](../../doc/models/v1-transactions-cc-sale-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -38105,13 +37947,11 @@ V1TransactionsCcSaleKeyedRequest body = new V1TransactionsCcSaleKeyedRequest.Bui
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -38145,7 +37985,6 @@ V1TransactionsCcSaleKeyedRequest body = new V1TransactionsCcSaleKeyedRequest.Bui
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -38155,28 +37994,26 @@ V1TransactionsCcSaleKeyedRequest body = new V1TransactionsCcSaleKeyedRequest.Bui
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
 .accountHolderName("smith")
-.entryModeId(EntryModeIdEnum.K)
 .trackData("T051904524T 741025349520O 8520748520963")
 .pin("1234")
 .ksn("1234")
 .build();
 
-transactionsCreditCardController.cCSaleAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccSaleAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -39240,18 +39077,18 @@ transactionsCreditCardController.cCSaleAsync(body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Previous Transaction
+# CC Sale-Previous Transaction
 
 Create a new Credit Card sale transaction using previous transaction id
 
 ```java
-CompletableFuture<ResponseTransaction> cCSalePreviousTransactionAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccSalePreviousTransactionAsync(
     final V1TransactionsCcSalePrevTrxnRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -39259,11 +39096,11 @@ CompletableFuture<ResponseTransaction> cCSalePreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSalePrevTrxnRequest`](../../doc/models/v1-transactions-cc-sale-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -39276,13 +39113,11 @@ V1TransactionsCcSalePrevTrxnRequest body = new V1TransactionsCcSalePrevTrxnReque
     .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
     .customerId("customerid")
     .description("some description")
-    .iiasInd(IiasIndEnum.ENUM_1)
     .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
     .installment(true)
     .installmentNumber(1)
     .installmentCount(1)
-    .recurringFlag(RecurringFlagEnum.YES)
     .installmentCounter(1)
     .installmentTotal(1)
     .subscription(false)
@@ -39317,7 +39152,6 @@ V1TransactionsCcSalePrevTrxnRequest body = new V1TransactionsCcSalePrevTrxnReque
     .autoDeclineCvvOverride(false)
     .autoDeclineStreetOverride(false)
     .autoDeclineZipOverride(false)
-    .ebtType(EbtTypeEnum.FOOD_STAMP)
     .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
     .secureProtocolVersion(2)
     .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -39327,7 +39161,6 @@ V1TransactionsCcSalePrevTrxnRequest body = new V1TransactionsCcSalePrevTrxnReque
     .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
     .clerkId("1234")
     .voucherNumber("1234")
-    .initiationType(InitiationTypeEnum.M103)
     .billPayment(true)
     .delayCharge(true)
     .deferredAuth(true)
@@ -39337,15 +39170,15 @@ V1TransactionsCcSalePrevTrxnRequest body = new V1TransactionsCcSalePrevTrxnReque
     .accountHolderName("smith")
     .build();
 
-transactionsCreditCardController.cCSalePreviousTransactionAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccSalePreviousTransactionAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -40409,18 +40242,18 @@ transactionsCreditCardController.cCSalePreviousTransactionAsync(body, null).then
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Swiped
+# CC Sale-Swiped
 
 Create a new swiped Credit Card sale transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCSaleSwipedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccSaleSwipedAsync(
     final V1TransactionsCcSaleSwipedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -40428,11 +40261,11 @@ CompletableFuture<ResponseTransaction> cCSaleSwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleSwipedRequest`](../../doc/models/v1-transactions-cc-sale-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -40448,13 +40281,11 @@ V1TransactionsCcSaleSwipedRequest body = new V1TransactionsCcSaleSwipedRequest.B
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -40488,7 +40319,6 @@ V1TransactionsCcSaleSwipedRequest body = new V1TransactionsCcSaleSwipedRequest.B
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -40498,25 +40328,23 @@ V1TransactionsCcSaleSwipedRequest body = new V1TransactionsCcSaleSwipedRequest.B
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
-.entryModeId(EntryModeIdEnum.K)
 .accountHolderName("smith")
 .build();
 
-transactionsCreditCardController.cCSaleSwipedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccSaleSwipedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -41580,18 +41408,18 @@ transactionsCreditCardController.cCSaleSwipedAsync(body, null).thenAccept(result
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Tap to Pay
+# CC Sale-Tap to Pay
 
 Create a new Tap To Pay Credit card sale transaction. Only supported on native iOS integrations.
 
 ```java
-CompletableFuture<ResponseTransaction> cCSaleTapToPayAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccSaleTapToPayAsync(
     final V1TransactionsCcSaleTaptopayRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -41599,11 +41427,11 @@ CompletableFuture<ResponseTransaction> cCSaleTapToPayAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleTaptopayRequest`](../../doc/models/v1-transactions-cc-sale-taptopay-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -41619,13 +41447,11 @@ V1TransactionsCcSaleTaptopayRequest body = new V1TransactionsCcSaleTaptopayReque
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -41660,13 +41486,11 @@ V1TransactionsCcSaleTaptopayRequest body = new V1TransactionsCcSaleTaptopayReque
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
 .secureDirectoryServerTransactionId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .terminalSerialNumber("1234567890")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -41674,15 +41498,15 @@ V1TransactionsCcSaleTaptopayRequest body = new V1TransactionsCcSaleTaptopayReque
 .ebtCashEligibleAmount(0)
 .build();
 
-transactionsCreditCardController.cCSaleTapToPayAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccSaleTapToPayAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -42746,16 +42570,16 @@ transactionsCreditCardController.cCSaleTapToPayAsync(body, null).thenAccept(resu
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Terminal
+# CC Sale-Terminal
 
 Create a new Credit Card Sale for card present EMV transactions using any of the Certified terminals.
 
 ```java
-CompletableFuture<ResponseTransactionProcessing> cCSaleTerminalAsync(
+CompletableFuture<ApiResponse<ResponseTransactionProcessing>> ccSaleTerminalAsync(
     final V1TransactionsCcSaleTerminalRequest body)
 ```
 
@@ -42767,7 +42591,7 @@ CompletableFuture<ResponseTransactionProcessing> cCSaleTerminalAsync(
 
 ## Response Type
 
-[`ResponseTransactionProcessing`](../../doc/models/response-transaction-processing.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransactionProcessing`](../../doc/models/response-transaction-processing.md).
 
 ## Example Usage
 
@@ -42784,13 +42608,11 @@ V1TransactionsCcSaleTerminalRequest body = new V1TransactionsCcSaleTerminalReque
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -42822,7 +42644,6 @@ V1TransactionsCcSaleTerminalRequest body = new V1TransactionsCcSaleTerminalReque
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -42832,24 +42653,22 @@ V1TransactionsCcSaleTerminalRequest body = new V1TransactionsCcSaleTerminalReque
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
-.eFormat(EFormatEnum.MAGNESAFE)
 .build();
 
-transactionsCreditCardController.cCSaleTerminalAsync(body).thenAccept(result -> {
+transactionsCreditCardController.ccSaleTerminalAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -42880,18 +42699,18 @@ transactionsCreditCardController.cCSaleTerminalAsync(body).thenAccept(result -> 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Ticket
+# CC Sale-Ticket
 
 Create a new Credit Card Sale using the Ticket_id obtained from the Elements form submission done event.
 
 ```java
-CompletableFuture<ResponseTransaction> cCSaleTicketAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccSaleTicketAsync(
     final V1TransactionsCcSaleTicketRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -42899,11 +42718,11 @@ CompletableFuture<ResponseTransaction> cCSaleTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleTicketRequest`](../../doc/models/v1-transactions-cc-sale-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -42919,13 +42738,11 @@ V1TransactionsCcSaleTicketRequest body = new V1TransactionsCcSaleTicketRequest.B
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -42959,7 +42776,6 @@ V1TransactionsCcSaleTicketRequest body = new V1TransactionsCcSaleTicketRequest.B
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -42969,7 +42785,6 @@ V1TransactionsCcSaleTicketRequest body = new V1TransactionsCcSaleTicketRequest.B
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -42978,15 +42793,15 @@ V1TransactionsCcSaleTicketRequest body = new V1TransactionsCcSaleTicketRequest.B
 .accountHolderName("smith")
 .build();
 
-transactionsCreditCardController.cCSaleTicketAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccSaleTicketAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -44050,18 +43865,18 @@ transactionsCreditCardController.cCSaleTicketAsync(body, null).thenAccept(result
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Tokenized
+# CC Sale-Tokenized
 
 Create a new Credit Card Sale with a previously created token_id.
 
 ```java
-CompletableFuture<ResponseTransaction> cCSaleTokenizedAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccSaleTokenizedAsync(
     final V1TransactionsCcSaleTokenRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -44069,11 +43884,11 @@ CompletableFuture<ResponseTransaction> cCSaleTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleTokenRequest`](../../doc/models/v1-transactions-cc-sale-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -44088,13 +43903,11 @@ V1TransactionsCcSaleTokenRequest body = new V1TransactionsCcSaleTokenRequest.Bui
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -44128,7 +43941,6 @@ V1TransactionsCcSaleTokenRequest body = new V1TransactionsCcSaleTokenRequest.Bui
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -44138,7 +43950,6 @@ V1TransactionsCcSaleTokenRequest body = new V1TransactionsCcSaleTokenRequest.Bui
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -44148,15 +43959,15 @@ V1TransactionsCcSaleTokenRequest body = new V1TransactionsCcSaleTokenRequest.Bui
 .tokenId("11e95f8ec39de8fbdb0a4f1a")
 .build();
 
-transactionsCreditCardController.cCSaleTokenizedAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccSaleTokenizedAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -45220,18 +45031,18 @@ transactionsCreditCardController.cCSaleTokenizedAsync(body, null).thenAccept(res
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Wallet
+# CC Sale-Wallet
 
 Create a new Wallet Credit Card sale transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cCSaleWalletAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ccSaleWalletAsync(
     final V1TransactionsCcSaleWalletRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -45239,11 +45050,11 @@ CompletableFuture<ResponseTransaction> cCSaleWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleWalletRequest`](../../doc/models/v1-transactions-cc-sale-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -45251,7 +45062,7 @@ CompletableFuture<ResponseTransaction> cCSaleWalletAsync(
 V1TransactionsCcSaleWalletRequest body = new V1TransactionsCcSaleWalletRequest.Builder(
     1,
     "wallet_data2",
-    WalletProviderEnum.GOOGLEPAY
+    WalletProvider.GOOGLEPAY
 )
 .checkinDate("2021-12-01")
 .checkoutDate("2021-12-01")
@@ -45260,13 +45071,11 @@ V1TransactionsCcSaleWalletRequest body = new V1TransactionsCcSaleWalletRequest.B
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -45300,7 +45109,6 @@ V1TransactionsCcSaleWalletRequest body = new V1TransactionsCcSaleWalletRequest.B
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -45310,7 +45118,6 @@ V1TransactionsCcSaleWalletRequest body = new V1TransactionsCcSaleWalletRequest.B
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
@@ -45320,15 +45127,15 @@ V1TransactionsCcSaleWalletRequest body = new V1TransactionsCcSaleWalletRequest.B
 .walletKeyId("11ee2bd392f32cb8aefd5bb5")
 .build();
 
-transactionsCreditCardController.cCSaleWalletAsync(body, null).thenAccept(result -> {
+transactionsCreditCardController.ccSaleWalletAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -46392,6 +46199,6 @@ transactionsCreditCardController.cCSaleWalletAsync(body, null).thenAccept(result
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

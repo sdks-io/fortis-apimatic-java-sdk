@@ -3,6 +3,8 @@
 
 Hosted Payment Page Information on `expand`
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `HostedPaymentPage`
@@ -21,7 +23,7 @@ Hosted Payment Page Information on `expand`
 | `MaxPaymentAmount` | `Long` | Optional | Max Payment Amount<br><br>**Default**: `9999999999L`<br><br>**Constraints**: `<= 9999999999` | Long getMaxPaymentAmount() | setMaxPaymentAmount(Long maxPaymentAmount) |
 | `RedirectUrlOnApprove` | `String` | Optional | Redirect Url On Approval | String getRedirectUrlOnApprove() | setRedirectUrlOnApprove(String redirectUrlOnApprove) |
 | `RedirectUrlOnDecline` | `String` | Optional | Redirect Url On Decline | String getRedirectUrlOnDecline() | setRedirectUrlOnDecline(String redirectUrlOnDecline) |
-| `FieldConfiguration` | [`FieldConfiguration`](../../doc/models/field-configuration.md) | Optional | field_configuration | FieldConfiguration getFieldConfiguration() | setFieldConfiguration(FieldConfiguration fieldConfiguration) |
+| `FieldConfiguration` | [`FieldConfiguration2`](../../doc/models/field-configuration-2.md) | Optional | - | FieldConfiguration2 getFieldConfiguration() | setFieldConfiguration(FieldConfiguration2 fieldConfiguration) |
 | `EncryptionKey` | `String` | Optional | Encryption Key<br><br>**Constraints**: *Minimum Length*: `32`, *Maximum Length*: `32` | String getEncryptionKey() | setEncryptionKey(String encryptionKey) |
 | `StylesheetUrl` | `String` | Optional | Stylesheet Url | String getStylesheetUrl() | setStylesheetUrl(String stylesheetUrl) |
 | `ParentSendMessage` | `Boolean` | Optional | Parent Send Message | Boolean getParentSendMessage() | setParentSendMessage(Boolean parentSendMessage) |
@@ -31,6 +33,7 @@ Hosted Payment Page Information on `expand`
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
 | `CreatedUserId` | `String` | Optional | System generated id for user who created record<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
 | `ModifiedUserId` | `String` | Optional | System generated id for user who created record<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getModifiedUserId() | setModifiedUserId(String modifiedUserId) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -50,7 +53,11 @@ Hosted Payment Page Information on `expand`
   "modified_ts": 1422040992,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "location_api_id": "location_api_id2"
+  "location_api_id": "location_api_id2",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

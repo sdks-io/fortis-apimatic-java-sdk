@@ -1,6 +1,8 @@
 
 # V1 Paylinks Request
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `V1PaylinksRequest`
@@ -21,17 +23,18 @@
 | `ExpireDate` | `String` | Optional | Expire Date of Paylink. Optional<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` | String getExpireDate() | setExpireDate(String expireDate) |
 | `DisplayProductTransactionReceiptDetails` | `Boolean` | Optional | Display Product Transaction Receipt Details. Show the receipt details after the successful payment | Boolean getDisplayProductTransactionReceiptDetails() | setDisplayProductTransactionReceiptDetails(Boolean displayProductTransactionReceiptDetails) |
 | `DisplayBillingFields` | `Boolean` | Optional | Display Billing Fields to show the billing field inputs in the paylink form | Boolean getDisplayBillingFields() | setDisplayBillingFields(Boolean displayBillingFields) |
-| `DeliveryMethod` | [`DeliveryMethodEnum`](../../doc/models/delivery-method-enum.md) | Optional | Delivery Method<br><br>> 0 - Do not send, use the expand parameter of payment_url in the create paylink request to obtain the payment_url to embed into your messaging system.<br>> <br>> 1 - Email. Will send an email to the provided address in the email field.<br>> <br>> 2 - SMS. Text message the Paylink. Check with sales rep for cost.<br>> <br>> 3 - Both | DeliveryMethodEnum getDeliveryMethod() | setDeliveryMethod(DeliveryMethodEnum deliveryMethod) |
+| `DeliveryMethod` | `Object` | Optional | - | Object getDeliveryMethod() | setDeliveryMethod(Object deliveryMethod) |
 | `CellPhone` | `String` | Optional | Required if delivery_method is set to 2[SMS], 3[Both email and sms], this will be the recipient of the SMS<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `10`, *Pattern*: `^\d{1,10}$` | String getCellPhone() | setCellPhone(String cellPhone) |
 | `Description` | `String` | Optional | Add a Description for reporting purposes<br><br>**Constraints**: *Maximum Length*: `64` | String getDescription() | setDescription(String description) |
 | `StoreToken` | `Boolean` | Optional | Store Token to create a token_id(account_vault_id) to be used for future payment types(CC Sale Tokenized, ACH Debit Tokenized) | Boolean getStoreToken() | setStoreToken(Boolean storeToken) |
 | `StoreTokenTitle` | `String` | Optional | Store Token Title can be used to set the name of the token, sucha John Smith<br><br>**Constraints**: *Maximum Length*: `16` | String getStoreTokenTitle() | setStoreTokenTitle(String storeTokenTitle) |
-| `PaylinkAction` | [`PaylinkActionEnum`](../../doc/models/paylink-action-enum.md) | Optional | the action that will be used by the form when making the payment possible values: sale, auth-only | PaylinkActionEnum getPaylinkAction() | setPaylinkAction(PaylinkActionEnum paylinkAction) |
+| `PaylinkAction` | `Object` | Optional | - | Object getPaylinkAction() | setPaylinkAction(Object paylinkAction) |
 | `BankFundedOnlyOverride` | `Boolean` | Optional | Bank Funded Only Override | Boolean getBankFundedOnlyOverride() | setBankFundedOnlyOverride(Boolean bankFundedOnlyOverride) |
 | `Tags` | `List<String>` | Optional | Used to apply tags to a paylink. | List<String> getTags() | setTags(List<String> tags) |
 | `RedirectUrlDelay` | `Double` | Optional | Redirect URL Delay in seconds<br><br>**Default**: `15d`<br><br>**Constraints**: `<= 15` | Double getRedirectUrlDelay() | setRedirectUrlDelay(Double redirectUrlDelay) |
 | `RedirectUrlOnApprove` | `String` | Optional | Redirect URL On Approved transactions | String getRedirectUrlOnApprove() | setRedirectUrlOnApprove(String redirectUrlOnApprove) |
 | `RedirectUrlOnDecline` | `String` | Optional | Redirect URL On Declined transactions | String getRedirectUrlOnDecline() | setRedirectUrlOnDecline(String redirectUrlOnDecline) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -46,14 +49,17 @@
   "expire_date": "2021-12-01",
   "display_product_transaction_receipt_details": true,
   "display_billing_fields": true,
-  "delivery_method": 0,
   "cell_phone": "3339998822",
   "description": "Description",
   "store_token": false,
   "store_token_title": "John Account",
   "bank_funded_only_override": false,
   "redirect_url_delay": 15,
-  "location_api_id": "location_api_id4"
+  "location_api_id": "location_api_id4",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

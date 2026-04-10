@@ -21,7 +21,7 @@ ElementsController elementsController = client.getElementsController();
 Elements uses a `TicketIntention` object to represent your intent to obtain credit card information from a customer with the intent to tokenize the card or charge the card. Ticket Intention is great with online store checkouts.
 
 ```java
-CompletableFuture<ResponseTicketIntention> ticketIntentionAsync(
+CompletableFuture<ApiResponse<ResponseTicketIntention>> ticketIntentionAsync(
     final V1ElementsTicketIntentionRequest body)
 ```
 
@@ -33,7 +33,7 @@ CompletableFuture<ResponseTicketIntention> ticketIntentionAsync(
 
 ## Response Type
 
-[`ResponseTicketIntention`](../../doc/models/response-ticket-intention.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTicketIntention`](../../doc/models/response-ticket-intention.md).
 
 ## Example Usage
 
@@ -51,9 +51,9 @@ elementsController.ticketIntentionAsync(body).thenAccept(result -> {
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -84,7 +84,7 @@ elementsController.ticketIntentionAsync(body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -93,7 +93,7 @@ elementsController.ticketIntentionAsync(body).thenAccept(result -> {
 Elements uses a `TransactionIntention` object to represent your intent to collect payment from a customer, tracking charge attempts and payment state changes throughout the process.
 
 ```java
-CompletableFuture<ResponseTransactionIntention> transactionIntentionAsync(
+CompletableFuture<ApiResponse<ResponseTransactionIntention>> transactionIntentionAsync(
     final V1ElementsTransactionIntentionRequest body)
 ```
 
@@ -105,18 +105,16 @@ CompletableFuture<ResponseTransactionIntention> transactionIntentionAsync(
 
 ## Response Type
 
-[`ResponseTransactionIntention`](../../doc/models/response-transaction-intention.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransactionIntention`](../../doc/models/response-transaction-intention.md).
 
 ## Example Usage
 
 ```java
 V1ElementsTransactionIntentionRequest body = new V1ElementsTransactionIntentionRequest.Builder()
-    .action(ActionEnum.SALE)
     .digitalWalletsOnly(false)
     .amount(1099)
     .locationId("11e95f8ec39de8fbdb0a4f1a")
     .contactId("11e95f8ec39de8fbdb0a4f1a")
-    .achSecCode(AchSecCodeEnum.WEB)
     .build();
 
 elementsController.transactionIntentionAsync(body).thenAccept(result -> {
@@ -125,9 +123,9 @@ elementsController.transactionIntentionAsync(body).thenAccept(result -> {
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -166,6 +164,6 @@ elementsController.transactionIntentionAsync(body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

@@ -12,17 +12,17 @@ TicketsController ticketsController = client.getTicketsController();
 
 ## Methods
 
-* [Create a Ticket Record](../../doc/controllers/tickets.md#create-a-ticket-record)
-* [List All Tickets Related](../../doc/controllers/tickets.md#list-all-tickets-related)
-* [View Single Ticket Record](../../doc/controllers/tickets.md#view-single-ticket-record)
+* [Createa Ticketrecord](../../doc/controllers/tickets.md#createa-ticketrecord)
+* [Listallticketsrelated](../../doc/controllers/tickets.md#listallticketsrelated)
+* [Viewsingleticketrecord](../../doc/controllers/tickets.md#viewsingleticketrecord)
 
 
-# Create a Ticket Record
+# Createa Ticketrecord
 
 ```java
-CompletableFuture<ResponseTicket> createATicketRecordAsync(
+CompletableFuture<ApiResponse<ResponseTicket>> createaTicketrecordAsync(
     final V1TicketsRequest body,
-    final List<Expand44Enum> expand)
+    final List<Expand44> expand)
 ```
 
 ## Parameters
@@ -30,11 +30,11 @@ CompletableFuture<ResponseTicket> createATicketRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TicketsRequest`](../../doc/models/v1-tickets-request.md) | Body, Required | - |
-| `expand` | [`List<Expand44Enum>`](../../doc/models/expand-44-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand44>`](../../doc/models/expand-44.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTicket`](../../doc/models/response-ticket.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTicket`](../../doc/models/response-ticket.md).
 
 ## Example Usage
 
@@ -47,15 +47,15 @@ V1TicketsRequest body = new V1TicketsRequest.Builder(
 .contactId("11e95f8ec39de8fbdb0a4f1a")
 .build();
 
-ticketsController.createATicketRecordAsync(body, null).thenAccept(result -> {
+ticketsController.createaTicketrecordAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -94,43 +94,43 @@ ticketsController.createATicketRecordAsync(body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# List All Tickets Related
+# Listallticketsrelated
 
 ```java
-CompletableFuture<ResponseTicketsCollection> listAllTicketsRelatedAsync(
-    final Page page,
+CompletableFuture<ApiResponse<ResponseTicketsCollection>> listallticketsrelatedAsync(
+    final Page1 page,
     final List<Order21> order,
     final List<FilterBy> filterBy,
-    final List<Expand44Enum> expand,
-    final Format1Enum format,
+    final List<Expand44> expand,
+    final Format1 format,
     final String typeahead,
-    final List<Field51Enum> fields)
+    final List<Field51> fields)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand44Enum>`](../../doc/models/expand-44-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand44>`](../../doc/models/expand-44.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `String` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field51Enum>`](../../doc/models/field-51-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field51>`](../../doc/models/field-51.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`ResponseTicketsCollection`](../../doc/models/response-tickets-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTicketsCollection`](../../doc/models/response-tickets-collection.md).
 
 ## Example Usage
 
 ```java
-Page page = new Page.Builder()
+Page1 page = new Page1.Builder()
     .number(1)
     .size(50)
     .build();
@@ -138,7 +138,7 @@ Page page = new Page.Builder()
 List<Order21> order = Arrays.asList(
     new Order21.Builder(
         "first_name",
-        OperatorEnum.ASC
+        Operator.ASC
     )
     .build()
 );
@@ -147,7 +147,7 @@ List<FilterBy> filterBy = Arrays.asList(
     new FilterBy.Builder(
         "first_name",
         FilterByOperator.fromOperator1(
-            Operator1Enum.ENUM_1
+            Operator1.ENUM_1
         ),
         FilterByValue.fromFilterByValueCase1(
             FilterByValueCase1.fromString(
@@ -158,15 +158,15 @@ List<FilterBy> filterBy = Arrays.asList(
     .build()
 );
 
-ticketsController.listAllTicketsRelatedAsync(page, order, filterBy, null, null, null, null).thenAccept(result -> {
+ticketsController.listallticketsrelatedAsync(page, order, filterBy, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -227,16 +227,16 @@ ticketsController.listAllTicketsRelatedAsync(page, order, filterBy, null, null, 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Ticket Record
+# Viewsingleticketrecord
 
 ```java
-CompletableFuture<ResponseTicket> viewSingleTicketRecordAsync(
+CompletableFuture<ApiResponse<ResponseTicket>> viewsingleticketrecordAsync(
     final String ticketId,
-    final List<Expand44Enum> expand,
-    final List<Field51Enum> fields)
+    final List<Expand44> expand,
+    final List<Field51> fields)
 ```
 
 ## Parameters
@@ -244,26 +244,26 @@ CompletableFuture<ResponseTicket> viewSingleTicketRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ticketId` | `String` | Template, Required | A unique, system-generated identifier for the Ticket.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand44Enum>`](../../doc/models/expand-44-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field51Enum>`](../../doc/models/field-51-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand44>`](../../doc/models/expand-44.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field51>`](../../doc/models/field-51.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`ResponseTicket`](../../doc/models/response-ticket.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTicket`](../../doc/models/response-ticket.md).
 
 ## Example Usage
 
 ```java
 String ticketId = "11e95f8ec39de8fbdb0a4f1a";
-ticketsController.viewSingleTicketRecordAsync(ticketId, null, null).thenAccept(result -> {
+ticketsController.viewsingleticketrecordAsync(ticketId, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -299,5 +299,5 @@ ticketsController.viewSingleTicketRecordAsync(ticketId, null, null).thenAccept(r
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

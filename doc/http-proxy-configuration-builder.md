@@ -24,10 +24,10 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 ## Usage Example
 
 ```java
-import tech.fortis.sandbox.api.FortisAPIClient;
+import tech.fortis.sandbox.api.FortisApiClient;
 import tech.fortis.sandbox.api.http.client.HttpProxyConfiguration;
 
-FortisAPIClient client = new FortisAPIClient.Builder()
+FortisApiClient client = new FortisApiClient.Builder()
   .httpClientConfig(configBuilder -> configBuilder
       .proxyConfig(new HttpProxyConfiguration.Builder("http://localhost",
           8080).auth("username", "password")))

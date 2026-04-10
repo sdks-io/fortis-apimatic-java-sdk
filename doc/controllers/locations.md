@@ -11,54 +11,53 @@ LocationsController locationsController = client.getLocationsController();
 ## Methods
 
 * [Locations Search](../../doc/controllers/locations.md#locations-search)
-* [List All Locations](../../doc/controllers/locations.md#list-all-locations)
+* [Listalllocations](../../doc/controllers/locations.md#listalllocations)
 * [Locations Detail](../../doc/controllers/locations.md#locations-detail)
-* [View Single Location Record](../../doc/controllers/locations.md#view-single-location-record)
+* [Viewsinglelocationrecord](../../doc/controllers/locations.md#viewsinglelocationrecord)
 * [Location Detail](../../doc/controllers/locations.md#location-detail)
 
 
 # Locations Search
 
 ```java
-CompletableFuture<ResponseLocationSearchsCollection> locationsSearchAsync(
-    final Page page,
+CompletableFuture<ApiResponse<ResponseLocationSearchsCollection>> locationsSearchAsync(
+    final Page1 page,
     final String keyword,
-    final List<Expand10Enum> expand,
-    final RelationshipEnum relationship)
+    final List<Expand10> expand,
+    final Relationship relationship)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `keyword` | `String` | Query, Optional | You can use any value to search on specific fields of this endpoint results. You can not specify the fields that are used. |
-| `expand` | [`List<Expand10Enum>`](../../doc/models/expand-10-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `relationship` | [`RelationshipEnum`](../../doc/models/relationship-enum.md) | Query, Optional | Used to filter the type of locations that will be returned |
+| `expand` | [`List<Expand10>`](../../doc/models/expand-10.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `relationship` | [`Relationship`](../../doc/models/relationship.md) | Query, Optional | Used to filter the type of locations that will be returned |
 
 ## Response Type
 
-[`ResponseLocationSearchsCollection`](../../doc/models/response-location-searchs-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseLocationSearchsCollection`](../../doc/models/response-location-searchs-collection.md).
 
 ## Example Usage
 
 ```java
-Page page = new Page.Builder()
+Page1 page = new Page1.Builder()
     .number(1)
     .size(50)
     .build();
 
-RelationshipEnum relationship = RelationshipEnum.CHILD;
 
-locationsController.locationsSearchAsync(page, null, null, relationship).thenAccept(result -> {
+locationsController.locationsSearchAsync(page, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -426,42 +425,42 @@ locationsController.locationsSearchAsync(page, null, null, relationship).thenAcc
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# List All Locations
+# Listalllocations
 
 ```java
-CompletableFuture<ResponseLocationsCollection> listAllLocationsAsync(
-    final Page page,
+CompletableFuture<ApiResponse<ResponseLocationsCollection>> listalllocationsAsync(
+    final Page1 page,
     final List<Order21> order,
     final List<FilterBy> filterBy,
-    final List<Expand11Enum> expand,
-    final Format1Enum format,
+    final List<Expand11> expand,
+    final Format1 format,
     final String typeahead,
-    final List<Field33Enum> fields)
+    final List<Field33> fields)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand11Enum>`](../../doc/models/expand-11-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand11>`](../../doc/models/expand-11.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `String` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field33Enum>`](../../doc/models/field-33-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field33>`](../../doc/models/field-33.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`ResponseLocationsCollection`](../../doc/models/response-locations-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseLocationsCollection`](../../doc/models/response-locations-collection.md).
 
 ## Example Usage
 
 ```java
-Page page = new Page.Builder()
+Page1 page = new Page1.Builder()
     .number(1)
     .size(50)
     .build();
@@ -469,7 +468,7 @@ Page page = new Page.Builder()
 List<Order21> order = Arrays.asList(
     new Order21.Builder(
         "first_name",
-        OperatorEnum.ASC
+        Operator.ASC
     )
     .build()
 );
@@ -478,7 +477,7 @@ List<FilterBy> filterBy = Arrays.asList(
     new FilterBy.Builder(
         "first_name",
         FilterByOperator.fromOperator1(
-            Operator1Enum.ENUM_1
+            Operator1.ENUM_1
         ),
         FilterByValue.fromFilterByValueCase1(
             FilterByValueCase1.fromString(
@@ -489,15 +488,15 @@ List<FilterBy> filterBy = Arrays.asList(
     .build()
 );
 
-locationsController.listAllLocationsAsync(page, order, filterBy, null, null, null, null).thenAccept(result -> {
+locationsController.listalllocationsAsync(page, order, filterBy, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -1116,20 +1115,20 @@ locationsController.listAllLocationsAsync(page, order, filterBy, null, null, nul
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
 # Locations Detail
 
 ```java
-CompletableFuture<ResponseLocationInfosCollection> locationsDetailAsync(
-    final Page page,
+CompletableFuture<ApiResponse<ResponseLocationInfosCollection>> locationsDetailAsync(
+    final Page1 page,
     final List<Order21> order,
     final List<FilterBy> filterBy,
-    final List<Expand11Enum> expand,
-    final Format1Enum format,
+    final List<Expand11> expand,
+    final Format1 format,
     final String typeahead,
-    final List<Field34Enum> fields,
+    final List<Field34> fields,
     final Object productTransactionActive,
     final Object productFileActive,
     final Object productInvoiceActive,
@@ -1141,13 +1140,13 @@ CompletableFuture<ResponseLocationInfosCollection> locationsDetailAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand11Enum>`](../../doc/models/expand-11-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand11>`](../../doc/models/expand-11.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `String` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field34Enum>`](../../doc/models/field-34-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field34>`](../../doc/models/field-34.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 | `productTransactionActive` | `Object` | Query, Optional | Product Transaction Active |
 | `productFileActive` | `Object` | Query, Optional | Product File Active |
 | `productInvoiceActive` | `Object` | Query, Optional | Product Invoice Active |
@@ -1156,12 +1155,12 @@ CompletableFuture<ResponseLocationInfosCollection> locationsDetailAsync(
 
 ## Response Type
 
-[`ResponseLocationInfosCollection`](../../doc/models/response-location-infos-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseLocationInfosCollection`](../../doc/models/response-location-infos-collection.md).
 
 ## Example Usage
 
 ```java
-Page page = new Page.Builder()
+Page1 page = new Page1.Builder()
     .number(1)
     .size(50)
     .build();
@@ -1169,7 +1168,7 @@ Page page = new Page.Builder()
 List<Order21> order = Arrays.asList(
     new Order21.Builder(
         "first_name",
-        OperatorEnum.ASC
+        Operator.ASC
     )
     .build()
 );
@@ -1178,7 +1177,7 @@ List<FilterBy> filterBy = Arrays.asList(
     new FilterBy.Builder(
         "first_name",
         FilterByOperator.fromOperator1(
-            Operator1Enum.ENUM_1
+            Operator1.ENUM_1
         ),
         FilterByValue.fromFilterByValueCase1(
             FilterByValueCase1.fromString(
@@ -1196,9 +1195,9 @@ locationsController.locationsDetailAsync(page, order, filterBy, null, null, null
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -1566,16 +1565,16 @@ locationsController.locationsDetailAsync(page, order, filterBy, null, null, null
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Location Record
+# Viewsinglelocationrecord
 
 ```java
-CompletableFuture<ResponseLocation> viewSingleLocationRecordAsync(
+CompletableFuture<ApiResponse<ResponseLocation>> viewsinglelocationrecordAsync(
     final String locationId,
-    final List<Expand11Enum> expand,
-    final List<Field35Enum> fields)
+    final List<Expand11> expand,
+    final List<Field35> fields)
 ```
 
 ## Parameters
@@ -1583,26 +1582,26 @@ CompletableFuture<ResponseLocation> viewSingleLocationRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `locationId` | `String` | Template, Required | Location ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand11Enum>`](../../doc/models/expand-11-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field35Enum>`](../../doc/models/field-35-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand11>`](../../doc/models/expand-11.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field35>`](../../doc/models/field-35.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`ResponseLocation`](../../doc/models/response-location.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseLocation`](../../doc/models/response-location.md).
 
 ## Example Usage
 
 ```java
 String locationId = "11e95f8ec39de8fbdb0a4f1a";
-locationsController.viewSingleLocationRecordAsync(locationId, null, null).thenAccept(result -> {
+locationsController.viewsinglelocationrecordAsync(locationId, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -2196,16 +2195,16 @@ locationsController.viewSingleLocationRecordAsync(locationId, null, null).thenAc
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
 # Location Detail
 
 ```java
-CompletableFuture<ResponseLocationInfo> locationDetailAsync(
+CompletableFuture<ApiResponse<ResponseLocationInfo>> locationDetailAsync(
     final String locationId,
-    final List<Expand11Enum> expand,
-    final List<Field36Enum> fields,
+    final List<Expand11> expand,
+    final List<Field36> fields,
     final Object productTransactionActive,
     final Object productFileActive,
     final Object productInvoiceActive,
@@ -2218,8 +2217,8 @@ CompletableFuture<ResponseLocationInfo> locationDetailAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `locationId` | `String` | Template, Required | Location ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand11Enum>`](../../doc/models/expand-11-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field36Enum>`](../../doc/models/field-36-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand11>`](../../doc/models/expand-11.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field36>`](../../doc/models/field-36.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 | `productTransactionActive` | `Object` | Query, Optional | Product Transaction Active |
 | `productFileActive` | `Object` | Query, Optional | Product File Active |
 | `productInvoiceActive` | `Object` | Query, Optional | Product Invoice Active |
@@ -2228,7 +2227,7 @@ CompletableFuture<ResponseLocationInfo> locationDetailAsync(
 
 ## Response Type
 
-[`ResponseLocationInfo`](../../doc/models/response-location-info.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseLocationInfo`](../../doc/models/response-location-info.md).
 
 ## Example Usage
 
@@ -2241,9 +2240,9 @@ locationsController.locationDetailAsync(locationId, null, null, null, null, null
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -2586,5 +2585,5 @@ locationsController.locationDetailAsync(locationId, null, null, null, null, null
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

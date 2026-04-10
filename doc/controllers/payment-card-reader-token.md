@@ -14,7 +14,7 @@ PaymentCardReaderTokenController paymentCardReaderTokenController = client.getPa
 For initializing iPhone card readers for Apple Tap to Pay transactions
 
 ```java
-CompletableFuture<ResponsePaymentCardReaderToken> paymentCardReaderTokenRequestAsync(
+CompletableFuture<ApiResponse<ResponsePaymentCardReaderToken>> paymentCardReaderTokenRequestAsync(
     final String productTransactionId)
 ```
 
@@ -26,7 +26,7 @@ CompletableFuture<ResponsePaymentCardReaderToken> paymentCardReaderTokenRequestA
 
 ## Response Type
 
-[`ResponsePaymentCardReaderToken`](../../doc/models/response-payment-card-reader-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponsePaymentCardReaderToken`](../../doc/models/response-payment-card-reader-token.md).
 
 ## Example Usage
 
@@ -39,9 +39,9 @@ paymentCardReaderTokenController.paymentCardReaderTokenRequestAsync(productTrans
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -64,5 +64,5 @@ paymentCardReaderTokenController.paymentCardReaderTokenRequestAsync(productTrans
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

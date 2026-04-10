@@ -14,7 +14,7 @@ ApplePayValidateMerchantController applePayValidateMerchantController = client.g
 Apple Pay Validate Merchant
 
 ```java
-CompletableFuture<ResponseApplePayValidateMerchant> applePayValidateMerchantAsync(
+CompletableFuture<ApiResponse<ResponseApplePayValidateMerchant>> applePayValidateMerchantAsync(
     final V1WalletProviderApplePayValidateMerchantRequest body)
 ```
 
@@ -26,7 +26,7 @@ CompletableFuture<ResponseApplePayValidateMerchant> applePayValidateMerchantAsyn
 
 ## Response Type
 
-[`ResponseApplePayValidateMerchant`](../../doc/models/response-apple-pay-validate-merchant.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseApplePayValidateMerchant`](../../doc/models/response-apple-pay-validate-merchant.md).
 
 ## Example Usage
 
@@ -45,9 +45,9 @@ applePayValidateMerchantController.applePayValidateMerchantAsync(body).thenAccep
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -75,6 +75,6 @@ applePayValidateMerchantController.applePayValidateMerchantAsync(body).thenAccep
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

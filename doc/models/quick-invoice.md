@@ -3,6 +3,8 @@
 
 Quick Invoice Information on `expand`
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `QuickInvoice`
@@ -33,8 +35,8 @@ Quick Invoice Information on `expand`
 | `ItemFooter` | `String` | Optional | Item footer<br><br>**Constraints**: *Maximum Length*: `250` | String getItemFooter() | setItemFooter(String itemFooter) |
 | `AmountDue` | `Double` | Optional | Amount Due | Double getAmountDue() | setAmountDue(Double amountDue) |
 | `NotificationEmail` | `String` | Optional | Notification email<br><br>**Constraints**: *Maximum Length*: `640` | String getNotificationEmail() | setNotificationEmail(String notificationEmail) |
-| `StatusId` | [`StatusIdEnum`](../../doc/models/status-id-enum.md) | Optional | (DEPRECATED) Status Id | StatusIdEnum getStatusId() | setStatusId(StatusIdEnum statusId) |
-| `StatusCode` | [`StatusCode14Enum`](../../doc/models/status-code-14-enum.md) | Optional | Status Code | StatusCode14Enum getStatusCode() | setStatusCode(StatusCode14Enum statusCode) |
+| `StatusId` | `Object` | Optional | - | Object getStatusId() | setStatusId(Object statusId) |
+| `StatusCode` | `Object` | Optional | - | Object getStatusCode() | setStatusCode(Object statusCode) |
 | `Note` | `String` | Optional | Note<br><br>**Constraints**: *Maximum Length*: `200` | String getNote() | setNote(String note) |
 | `NotificationDaysBeforeDueDate` | `Integer` | Optional | Notification days before due date<br><br>**Constraints**: `>= 0`, `<= 99` | Integer getNotificationDaysBeforeDueDate() | setNotificationDaysBeforeDueDate(Integer notificationDaysBeforeDueDate) |
 | `NotificationDaysAfterDueDate` | `Integer` | Optional | Notification days after due date<br><br>**Constraints**: `>= 0`, `<= 99` | Integer getNotificationDaysAfterDueDate() | setNotificationDaysAfterDueDate(Integer notificationDaysAfterDueDate) |
@@ -58,6 +60,7 @@ Quick Invoice Information on `expand`
 | `Active` | `Boolean` | Optional | Active status | Boolean getActive() | setActive(Boolean active) |
 | `PaymentStatusId` | `Integer` | Optional | Payment Status Id<br><br>**Constraints**: `>= 1`, `<= 3` | Integer getPaymentStatusId() | setPaymentStatusId(Integer paymentStatusId) |
 | `IsActive` | `Boolean` | Optional | Register is active | Boolean getIsActive() | setIsActive(Boolean isActive) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -84,8 +87,6 @@ Quick Invoice Information on `expand`
   "item_footer": "Thank you",
   "amount_due": 245.36,
   "notification_email": "email@domain.com",
-  "status_id": 1,
-  "status_code": 1,
   "note": "some note",
   "notification_days_before_due_date": 3,
   "notification_days_after_due_date": 7,
@@ -106,7 +107,11 @@ Quick Invoice Information on `expand`
   "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "active": true,
   "payment_status_id": 1,
-  "is_active": true
+  "is_active": true,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

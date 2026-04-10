@@ -11,21 +11,21 @@ MerchantDepositsController merchantDepositsController = client.getMerchantDeposi
 ## Methods
 
 * [View Single Merchant Deposit](../../doc/controllers/merchant-deposits.md#view-single-merchant-deposit)
-* [List All Merchant Deposits](../../doc/controllers/merchant-deposits.md#list-all-merchant-deposits)
+* [Listall Merchant Deposits](../../doc/controllers/merchant-deposits.md#listall-merchant-deposits)
 
 
 # View Single Merchant Deposit
 
 ```java
-CompletableFuture<ResponseMerchantDeposit> viewSingleMerchantDepositAsync(
+CompletableFuture<ApiResponse<ResponseMerchantDeposit>> viewSingleMerchantDepositAsync(
     final String depositId,
-    final Page page,
+    final Page1 page,
     final List<Order21> order,
     final List<FilterBy> filterBy,
-    final List<Expand15Enum> expand,
-    final Format1Enum format,
+    final List<Expand15> expand,
+    final Format1 format,
     final String typeahead,
-    final List<Field37Enum> fields,
+    final List<Field37> fields,
     final ViewSingleMerchantDepositKeyword keyword)
 ```
 
@@ -34,24 +34,24 @@ CompletableFuture<ResponseMerchantDeposit> viewSingleMerchantDepositAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `depositId` | `String` | Template, Required | Deposit Id |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand15Enum>`](../../doc/models/expand-15-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand15>`](../../doc/models/expand-15.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `String` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field37Enum>`](../../doc/models/field-37-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field37>`](../../doc/models/field-37.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 | `keyword` | [`ViewSingleMerchantDepositKeyword`](../../doc/models/containers/view-single-merchant-deposit-keyword.md) | Query, Optional | This is a container for any-of cases. |
 
 ## Response Type
 
-[`ResponseMerchantDeposit`](../../doc/models/response-merchant-deposit.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseMerchantDeposit`](../../doc/models/response-merchant-deposit.md).
 
 ## Example Usage
 
 ```java
 String depositId = "deposit_id0";
-Page page = new Page.Builder()
+Page1 page = new Page1.Builder()
     .number(1)
     .size(50)
     .build();
@@ -59,7 +59,7 @@ Page page = new Page.Builder()
 List<Order21> order = Arrays.asList(
     new Order21.Builder(
         "first_name",
-        OperatorEnum.ASC
+        Operator.ASC
     )
     .build()
 );
@@ -68,7 +68,7 @@ List<FilterBy> filterBy = Arrays.asList(
     new FilterBy.Builder(
         "first_name",
         FilterByOperator.fromOperator1(
-            Operator1Enum.ENUM_1
+            Operator1.ENUM_1
         ),
         FilterByValue.fromFilterByValueCase1(
             FilterByValueCase1.fromString(
@@ -86,9 +86,9 @@ merchantDepositsController.viewSingleMerchantDepositAsync(depositId, page, order
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -136,44 +136,44 @@ merchantDepositsController.viewSingleMerchantDepositAsync(depositId, page, order
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# List All Merchant Deposits
+# Listall Merchant Deposits
 
 ```java
-CompletableFuture<ResponseMerchantDepositsCollection> listAllMerchantDepositsAsync(
-    final Page page,
+CompletableFuture<ApiResponse<ResponseMerchantDepositsCollection>> listallMerchantDepositsAsync(
+    final Page1 page,
     final List<Order21> order,
     final List<FilterBy> filterBy,
-    final List<Expand15Enum> expand,
-    final Format1Enum format,
+    final List<Expand15> expand,
+    final Format1 format,
     final String typeahead,
-    final List<Field38Enum> fields,
-    final ListAllMerchantDepositsKeyword keyword)
+    final List<Field38> fields,
+    final ListallMerchantDepositsKeyword keyword)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand15Enum>`](../../doc/models/expand-15-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand15>`](../../doc/models/expand-15.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `String` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field38Enum>`](../../doc/models/field-38-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
-| `keyword` | [`ListAllMerchantDepositsKeyword`](../../doc/models/containers/list-all-merchant-deposits-keyword.md) | Query, Optional | This is a container for any-of cases. |
+| `fields` | [`List<Field38>`](../../doc/models/field-38.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `keyword` | [`ListallMerchantDepositsKeyword`](../../doc/models/containers/listall-merchant-deposits-keyword.md) | Query, Optional | This is a container for any-of cases. |
 
 ## Response Type
 
-[`ResponseMerchantDepositsCollection`](../../doc/models/response-merchant-deposits-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseMerchantDepositsCollection`](../../doc/models/response-merchant-deposits-collection.md).
 
 ## Example Usage
 
 ```java
-Page page = new Page.Builder()
+Page1 page = new Page1.Builder()
     .number(1)
     .size(50)
     .build();
@@ -181,7 +181,7 @@ Page page = new Page.Builder()
 List<Order21> order = Arrays.asList(
     new Order21.Builder(
         "first_name",
-        OperatorEnum.ASC
+        Operator.ASC
     )
     .build()
 );
@@ -190,7 +190,7 @@ List<FilterBy> filterBy = Arrays.asList(
     new FilterBy.Builder(
         "first_name",
         FilterByOperator.fromOperator1(
-            Operator1Enum.ENUM_1
+            Operator1.ENUM_1
         ),
         FilterByValue.fromFilterByValueCase1(
             FilterByValueCase1.fromString(
@@ -202,15 +202,15 @@ List<FilterBy> filterBy = Arrays.asList(
 );
 
 
-merchantDepositsController.listAllMerchantDepositsAsync(page, order, filterBy, null, null, null, null, null).thenAccept(result -> {
+merchantDepositsController.listallMerchantDepositsAsync(page, order, filterBy, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -283,5 +283,5 @@ merchantDepositsController.listAllMerchantDepositsAsync(page, order, filterBy, n
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

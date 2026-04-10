@@ -3,6 +3,8 @@
 
 Product Token array
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ProductToken`
@@ -21,6 +23,7 @@ Product Token array
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
 | `ModifiedUserId` | `String` | Optional | Last User ID that updated the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getModifiedUserId() | setModifiedUserId(String modifiedUserId) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -35,7 +38,11 @@ Product Token array
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "location_api_id": "location_api_id4",
-  "multi_use_tickets": false
+  "multi_use_tickets": false,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

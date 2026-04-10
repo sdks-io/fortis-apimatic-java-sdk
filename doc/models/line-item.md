@@ -1,6 +1,8 @@
 
 # Line Item
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `LineItem`
@@ -10,7 +12,7 @@
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `AlternateTaxId` | `String` | Optional | Tax identification number of the merchant that reported the alternate tax amount.<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `15` | String getAlternateTaxId() | setAlternateTaxId(String alternateTaxId) |
-| `DebitCredit` | [`DebitCreditEnum`](../../doc/models/debit-credit-enum.md) | Optional | Indicator used to reflect debit (D) or credit (C) transaction. Allowed values: “D”, “C”. | DebitCreditEnum getDebitCredit() | setDebitCredit(DebitCreditEnum debitCredit) |
+| `DebitCredit` | `Object` | Optional | - | Object getDebitCredit() | setDebitCredit(Object debitCredit) |
 | `Description` | `String` | Optional | Description of the item.<br><br>**Constraints**: *Maximum Length*: `26` | String getDescription() | setDescription(String description) |
 | `DiscountAmount` | `Integer` | Optional | Total discount amount applied against the line item total ,Can accept Two (2) decimal places.<br><br>**Constraints**: `<= 99999999999900` | Integer getDiscountAmount() | setDiscountAmount(Integer discountAmount) |
 | `DiscountRate` | `Integer` | Optional | Discount rate for the line item ,Can accept Two (2) decimal places.<br><br>**Constraints**: `<= 9999900` | Integer getDiscountRate() | setDiscountRate(Integer discountRate) |
@@ -24,13 +26,13 @@
 | `UnitCost` | `Integer` | Optional | Unit cost of the item ,Can accept Four (4) decimal places.<br><br>**Constraints**: `<= 99999999999900` | Integer getUnitCost() | setUnitCost(Integer unitCost) |
 | `CommodityCode` | `String` | Optional | An international description code of the individual good or service being supplied.<br><br>**Constraints**: *Maximum Length*: `12` | String getCommodityCode() | setCommodityCode(String commodityCode) |
 | `OtherTaxAmount` | `Integer` | Optional | Used if city or multiple county taxes need to be broken out separately ,Can accept Two (2) decimal places.<br><br>**Constraints**: `<= 99999999999900` | Integer getOtherTaxAmount() | setOtherTaxAmount(Integer otherTaxAmount) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
 ```json
 {
   "alternate_tax_id": "1234",
-  "debit_credit": "C",
   "description": "cool drink",
   "discount_amount": 10,
   "discount_rate": 11,
@@ -43,7 +45,15 @@
   "unit_code": "gll",
   "unit_cost": 10,
   "commodity_code": "cc123456",
-  "other_tax_amount": 0
+  "other_tax_amount": 0,
+  "debit_credit": {
+    "key1": "val1",
+    "key2": "val2"
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

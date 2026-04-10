@@ -10,16 +10,16 @@ Level3DataController level3DataController = client.getLevel3DataController();
 
 ## Methods
 
-* [Create a New Level 3 Entry for a Master Card](../../doc/controllers/level-3-data.md#create-a-new-level-3-entry-for-a-master-card)
-* [Create a New Level 3 Entry for a Visa](../../doc/controllers/level-3-data.md#create-a-new-level-3-entry-for-a-visa)
-* [Delete a Single Level 3 Record](../../doc/controllers/level-3-data.md#delete-a-single-level-3-record)
-* [View Single Level 3 Record](../../doc/controllers/level-3-data.md#view-single-level-3-record)
+* [Createanew Level 3 Entryfora Master Card](../../doc/controllers/level-3-data.md#createanew-level-3-entryfora-master-card)
+* [Createanew Level 3 Entryfora Visa](../../doc/controllers/level-3-data.md#createanew-level-3-entryfora-visa)
+* [Deleteasinglelevel 3 Record](../../doc/controllers/level-3-data.md#deleteasinglelevel-3-record)
+* [Viewsinglelevel 3 Record](../../doc/controllers/level-3-data.md#viewsinglelevel-3-record)
 
 
-# Create a New Level 3 Entry for a Master Card
+# Createanew Level 3 Entryfora Master Card
 
 ```java
-CompletableFuture<ResponseTransactionLevel3Master> createANewLevel3EntryForAMasterCardAsync(
+CompletableFuture<ApiResponse<ResponseTransactionLevel3Master>> createanewLevel3EntryforaMasterCardAsync(
     final String transactionId,
     final V1TransactionsLevel3MasterCardRequest body)
 ```
@@ -33,14 +33,14 @@ CompletableFuture<ResponseTransactionLevel3Master> createANewLevel3EntryForAMast
 
 ## Response Type
 
-[`ResponseTransactionLevel3Master`](../../doc/models/response-transaction-level-3-master.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransactionLevel3Master`](../../doc/models/response-transaction-level-3-master.md).
 
 ## Example Usage
 
 ```java
 String transactionId = "11e95f8ec39de8fbdb0a4f1a";
 V1TransactionsLevel3MasterCardRequest body = new V1TransactionsLevel3MasterCardRequest.Builder(
-    new Level3Data5.Builder(
+    new Level3Data3.Builder(
         Arrays.asList(
             new LineItem19.Builder(
                 "cool drink",
@@ -49,7 +49,6 @@ V1TransactionsLevel3MasterCardRequest body = new V1TransactionsLevel3MasterCardR
                 10
             )
             .alternateTaxId("1234")
-            .debitCredit(DebitCreditEnum.C)
             .discountAmount(10)
             .discountRate(11)
             .quantity(5)
@@ -68,20 +67,19 @@ V1TransactionsLevel3MasterCardRequest body = new V1TransactionsLevel3MasterCardR
     .shipfromZipCode("AZ12345")
     .shiptoZipCode("MI48335")
     .taxAmount(0)
-    .taxExempt(TaxExemptEnum.ENUM_0)
     .build()
 )
 .build();
 
-level3DataController.createANewLevel3EntryForAMasterCardAsync(transactionId, body).thenAccept(result -> {
+level3DataController.createanewLevel3EntryforaMasterCardAsync(transactionId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -146,14 +144,14 @@ level3DataController.createANewLevel3EntryForAMasterCardAsync(transactionId, bod
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Level 3 Entry for a Visa
+# Createanew Level 3 Entryfora Visa
 
 ```java
-CompletableFuture<ResponseTransactionLevel3Visa> createANewLevel3EntryForAVisaAsync(
+CompletableFuture<ApiResponse<ResponseTransactionLevel3Visa>> createanewLevel3EntryforaVisaAsync(
     final String transactionId,
     final V1TransactionsLevel3VisaRequest body)
 ```
@@ -167,14 +165,14 @@ CompletableFuture<ResponseTransactionLevel3Visa> createANewLevel3EntryForAVisaAs
 
 ## Response Type
 
-[`ResponseTransactionLevel3Visa`](../../doc/models/response-transaction-level-3-visa.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransactionLevel3Visa`](../../doc/models/response-transaction-level-3-visa.md).
 
 ## Example Usage
 
 ```java
 String transactionId = "11e95f8ec39de8fbdb0a4f1a";
 V1TransactionsLevel3VisaRequest body = new V1TransactionsLevel3VisaRequest.Builder(
-    new Level3Data6.Builder(
+    new Level3Data4.Builder(
         Arrays.asList(
             new LineItem20.Builder(
                 "cool drink",
@@ -199,7 +197,6 @@ V1TransactionsLevel3VisaRequest body = new V1TransactionsLevel3VisaRequest.Build
     .shipfromZipCode("AZ1234")
     .shiptoZipCode("FL1234")
     .taxAmount(10)
-    .taxExempt(TaxExemptEnum.ENUM_0)
     .customerVatRegistration("12345678")
     .merchantVatRegistration("123456")
     .orderDate("171006")
@@ -210,15 +207,15 @@ V1TransactionsLevel3VisaRequest body = new V1TransactionsLevel3VisaRequest.Build
 )
 .build();
 
-level3DataController.createANewLevel3EntryForAVisaAsync(transactionId, body).thenAccept(result -> {
+level3DataController.createanewLevel3EntryforaVisaAsync(transactionId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -283,14 +280,14 @@ level3DataController.createANewLevel3EntryForAVisaAsync(transactionId, body).the
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Delete a Single Level 3 Record
+# Deleteasinglelevel 3 Record
 
 ```java
-CompletableFuture<ResponseTransactionLevel3> deleteASingleLevel3RecordAsync(
+CompletableFuture<ApiResponse<ResponseTransactionLevel3>> deleteasinglelevel3RecordAsync(
     final String transactionId,
     final String level3Id)
 ```
@@ -304,7 +301,7 @@ CompletableFuture<ResponseTransactionLevel3> deleteASingleLevel3RecordAsync(
 
 ## Response Type
 
-[`ResponseTransactionLevel3`](../../doc/models/response-transaction-level-3.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransactionLevel3`](../../doc/models/response-transaction-level-3.md).
 
 ## Example Usage
 
@@ -312,15 +309,15 @@ CompletableFuture<ResponseTransactionLevel3> deleteASingleLevel3RecordAsync(
 String transactionId = "11e95f8ec39de8fbdb0a4f1a";
 String level3Id = "11e95f8ec39de8fbdb0a4f1a";
 
-level3DataController.deleteASingleLevel3RecordAsync(transactionId, level3Id).thenAccept(result -> {
+level3DataController.deleteasinglelevel3RecordAsync(transactionId, level3Id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -382,13 +379,13 @@ level3DataController.deleteASingleLevel3RecordAsync(transactionId, level3Id).the
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Level 3 Record
+# Viewsinglelevel 3 Record
 
 ```java
-CompletableFuture<ResponseTransactionLevel3> viewSingleLevel3RecordAsync(
+CompletableFuture<ApiResponse<ResponseTransactionLevel3>> viewsinglelevel3RecordAsync(
     final String transactionId,
     final String level3Id)
 ```
@@ -402,7 +399,7 @@ CompletableFuture<ResponseTransactionLevel3> viewSingleLevel3RecordAsync(
 
 ## Response Type
 
-[`ResponseTransactionLevel3`](../../doc/models/response-transaction-level-3.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransactionLevel3`](../../doc/models/response-transaction-level-3.md).
 
 ## Example Usage
 
@@ -410,15 +407,15 @@ CompletableFuture<ResponseTransactionLevel3> viewSingleLevel3RecordAsync(
 String transactionId = "11e95f8ec39de8fbdb0a4f1a";
 String level3Id = "11e95f8ec39de8fbdb0a4f1a";
 
-level3DataController.viewSingleLevel3RecordAsync(transactionId, level3Id).thenAccept(result -> {
+level3DataController.viewsinglelevel3RecordAsync(transactionId, level3Id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -480,5 +477,5 @@ level3DataController.viewSingleLevel3RecordAsync(transactionId, level3Id).thenAc
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

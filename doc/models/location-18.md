@@ -1,6 +1,8 @@
 
 # Location 18
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Location18`
@@ -13,7 +15,7 @@
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
 | `AccountNumber` | `String` | Optional | Account number<br><br>**Constraints**: *Maximum Length*: `32`, *Pattern*: `^[a-zA-Z0-9\-_]+$` | String getAccountNumber() | setAccountNumber(String accountNumber) |
-| `Address` | [`Address1`](../../doc/models/address-1.md) | Optional | Address | Address1 getAddress() | setAddress(Address1 address) |
+| `Address` | [`Address6`](../../doc/models/address-6.md) | Optional | - | Address6 getAddress() | setAddress(Address6 address) |
 | `BrandingDomainId` | `String` | Optional | GUID for Branding Domain<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getBrandingDomainId() | setBrandingDomainId(String brandingDomainId) |
 | `ContactEmailTrxReceiptDefault` | `Boolean` | Optional | If true, will email contact receipt for any transaction | Boolean getContactEmailTrxReceiptDefault() | setContactEmailTrxReceiptDefault(Boolean contactEmailTrxReceiptDefault) |
 | `DefaultAch` | `String` | Optional | GUID for Location's default ACH Product Transaction<br><br>**Constraints**: *Minimum Length*: `24`, *Maximum Length*: `36` | String getDefaultAch() | setDefaultAch(String defaultAch) |
@@ -33,10 +35,11 @@
 | `ShowContactNotes` | `Boolean` | Optional | If set to true will show 'Notes' tab on Contact | Boolean getShowContactNotes() | setShowContactNotes(Boolean showContactNotes) |
 | `ShowContactFiles` | `Boolean` | Optional | If set to true will show 'Files' tab on Contact | Boolean getShowContactFiles() | setShowContactFiles(Boolean showContactFiles) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
-| `LocationType` | [`LocationTypeEnum`](../../doc/models/location-type-enum.md) | Optional | Location Type | LocationTypeEnum getLocationType() | setLocationType(LocationTypeEnum locationType) |
+| `LocationType` | `Object` | Optional | - | Object getLocationType() | setLocationType(Object locationType) |
 | `ParentName` | `String` | Optional | Name of the parent location | String getParentName() | setParentName(String parentName) |
 | `TicketHashKey` | `String` | Optional | Ticket Hash Key<br><br>**Constraints**: *Maximum Length*: `36` | String getTicketHashKey() | setTicketHashKey(String ticketHashKey) |
 | `AdditionalAccess` | [`AdditionalAccess`](../../doc/models/additional-access.md) | Optional | - | AdditionalAccess getAdditionalAccess() | setAdditionalAccess(AdditionalAccess additionalAccess) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -65,14 +68,24 @@
   "show_contact_notes": true,
   "show_contact_files": true,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "location_type": "merchant",
   "ticket_hash_key": "A5F443CADF4AE34BBCAADF4",
   "address": {
     "city": "city6",
     "state": "state2",
     "postal_code": "postal_code8",
-    "country": "US",
-    "street": "street6"
+    "country": {
+      "key1": "val1",
+      "key2": "val2"
+    },
+    "street": "street6",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

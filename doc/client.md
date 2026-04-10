@@ -5,8 +5,9 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| environment | [`Environment`](../README.md#environments) | The API environment. <br> **Default: `Environment.SANDBOX`** |
+| environment | [`Environment`](../README.md#environments) | The API environment. <br> **Default: `Environment.PRODUCTION`** |
 | httpClientConfig | [`Consumer<HttpClientConfiguration.Builder>`](../doc/http-client-configuration-builder.md) | Set up Http Client Configuration instance. |
+| loggingConfig | [`Consumer<ApiLoggingConfiguration.Builder>`](../doc/api-logging-configuration-builder.md) | Set up Logging Configuration instance. |
 | userIdCredentials | [`UserIdCredentials`](auth/custom-header-signature.md) | The Credentials Setter for Custom Header Signature |
 | userApiKeyCredentials | [`UserApiKeyCredentials`](auth/custom-header-signature-1.md) | The Credentials Setter for Custom Header Signature |
 | developerIdCredentials | [`DeveloperIdCredentials`](auth/custom-header-signature-2.md) | The Credentials Setter for Custom Header Signature |
@@ -15,17 +16,23 @@ The following parameters are configurable for the API Client:
 The API client can be initialized as follows:
 
 ```java
+import org.slf4j.event.Level;
 import tech.fortis.sandbox.api.Environment;
-import tech.fortis.sandbox.api.FortisAPIClient;
+import tech.fortis.sandbox.api.FortisApiClient;
 import tech.fortis.sandbox.api.authentication.AccessTokenModel;
 import tech.fortis.sandbox.api.authentication.DeveloperIdModel;
 import tech.fortis.sandbox.api.authentication.UserApiKeyModel;
 import tech.fortis.sandbox.api.authentication.UserIdModel;
 import tech.fortis.sandbox.api.exceptions.ApiException;
+import tech.fortis.sandbox.api.http.response.ApiResponse;
 
 public class Program {
     public static void main(String[] args) {
-        FortisAPIClient client = new FortisAPIClient.Builder()
+        FortisApiClient client = new FortisApiClient.Builder()
+            .loggingConfig(builder -> builder
+                    .level(Level.DEBUG)
+                    .requestConfig(logConfigBuilder -> logConfigBuilder.body(true))
+                    .responseConfig(logConfigBuilder -> logConfigBuilder.headers(true)))
             .httpClientConfig(configBuilder -> configBuilder
                     .timeout(0))
             .userIdCredentials(new UserIdModel.Builder(
@@ -44,7 +51,7 @@ public class Program {
                     "access-token"
                 )
                 .build())
-            .environment(Environment.SANDBOX)
+            .environment(Environment.PRODUCTION)
             .build();
 
     }
@@ -67,8 +74,8 @@ The gateway for the SDK. This class acts as a factory for the Controllers and al
 | `getElementsController()` | Provides access to Elements controller. | `ElementsController` |
 | `getFullBoardingController()` | Provides access to FullBoarding controller. | `FullBoardingController` |
 | `getLocationsController()` | Provides access to Locations controller. | `LocationsController` |
-| `getM3DSAuthenticationController()` | Provides access to M3DSAuthentication controller. | `M3DSAuthenticationController` |
-| `getM3DSTransactionsController()` | Provides access to M3DSTransactions controller. | `M3DSTransactionsController` |
+| `getM3DsAuthenticationController()` | Provides access to M3DsAuthentication controller. | `M3DsAuthenticationController` |
+| `getM3DsTransactionsController()` | Provides access to M3DsTransactions controller. | `M3DsTransactionsController` |
 | `getMerchantDepositsController()` | Provides access to MerchantDeposits controller. | `MerchantDepositsController` |
 | `getOnBoardingController()` | Provides access to OnBoarding controller. | `OnBoardingController` |
 | `getPaylinksController()` | Provides access to Paylinks controller. | `PaylinksController` |
@@ -80,11 +87,11 @@ The gateway for the SDK. This class acts as a factory for the Controllers and al
 | `getTerminalsController()` | Provides access to Terminals controller. | `TerminalsController` |
 | `getTicketsController()` | Provides access to Tickets controller. | `TicketsController` |
 | `getTokensController()` | Provides access to Tokens controller. | `TokensController` |
-| `getTransactionACHRetriesController()` | Provides access to TransactionACHRetries controller. | `TransactionACHRetriesController` |
-| `getTransactionsACHController()` | Provides access to TransactionsACH controller. | `TransactionsACHController` |
+| `getTransactionAchRetriesController()` | Provides access to TransactionAchRetries controller. | `TransactionAchRetriesController` |
+| `getTransactionsAchController()` | Provides access to TransactionsAch controller. | `TransactionsAchController` |
 | `getTransactionsCashController()` | Provides access to TransactionsCash controller. | `TransactionsCashController` |
 | `getTransactionsCreditCardController()` | Provides access to TransactionsCreditCard controller. | `TransactionsCreditCardController` |
-| `getTransactionsEBTCardController()` | Provides access to TransactionsEBTCard controller. | `TransactionsEBTCardController` |
+| `getTransactionsEbtCardController()` | Provides access to TransactionsEbtCard controller. | `TransactionsEbtCardController` |
 | `getTransactionsReadController()` | Provides access to TransactionsRead controller. | `TransactionsReadController` |
 | `getLevel3DataController()` | Provides access to Level3Data controller. | `Level3DataController` |
 | `getTransactionsUpdatesController()` | Provides access to TransactionsUpdates controller. | `TransactionsUpdatesController` |
@@ -102,6 +109,7 @@ The gateway for the SDK. This class acts as a factory for the Controllers and al
 | `getEnvironment()` | Current API environment. | `Environment` |
 | `getHttpClient()` | The HTTP Client instance to use for making HTTP requests. | `HttpClient` |
 | `getHttpClientConfig()` | Http Client Configuration instance. | [`ReadonlyHttpClientConfiguration`](../doc/http-client-configuration.md) |
+| `getLoggingConfig()` | Logging Configuration instance. | [`ReadonlyLoggingConfiguration`](../doc/api-logging-configuration.md) |
 | `getUserIdCredentials()` | The credentials to use with UserId. | [`UserIdCredentials`](auth/custom-header-signature.md) |
 | `getUserApiKeyCredentials()` | The credentials to use with UserApiKey. | [`UserApiKeyCredentials`](auth/custom-header-signature-1.md) |
 | `getDeveloperIdCredentials()` | The credentials to use with DeveloperId. | [`DeveloperIdCredentials`](auth/custom-header-signature-2.md) |

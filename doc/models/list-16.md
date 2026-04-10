@@ -1,6 +1,8 @@
 
 # List 16
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `List16`
@@ -18,11 +20,11 @@
 | `TokenC1` | `String` | Optional | Custom field 1 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` | String getTokenC1() | setTokenC1(String tokenC1) |
 | `TokenC2` | `String` | Optional | Custom field 2 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` | String getTokenC2() | setTokenC2(String tokenC2) |
 | `TokenC3` | `String` | Optional | Custom field 3 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` | String getTokenC3() | setTokenC3(String tokenC3) |
-| `AchSecCode` | [`AchSecCode3Enum`](../../doc/models/ach-sec-code-3-enum.md) | Optional | SEC code for the account | AchSecCode3Enum getAchSecCode() | setAchSecCode(AchSecCode3Enum achSecCode) |
-| `BillingAddress` | [`BillingAddress`](../../doc/models/billing-address.md) | Optional | Billing Address Object | BillingAddress getBillingAddress() | setBillingAddress(BillingAddress billingAddress) |
+| `AchSecCode` | `Object` | Optional | - | Object getAchSecCode() | setAchSecCode(Object achSecCode) |
+| `BillingAddress` | [`BillingAddress7`](../../doc/models/billing-address-7.md) | Optional | - | BillingAddress7 getBillingAddress() | setBillingAddress(BillingAddress7 billingAddress) |
 | `ContactId` | `String` | Optional | Used to associate the Token with a Contact.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getContactId() | setContactId(String contactId) |
 | `CustomerId` | `String` | Optional | Used to store a customer identification number.<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `50` | String getCustomerId() | setCustomerId(String customerId) |
-| `IdentityVerification` | [`IdentityVerification2`](../../doc/models/identity-verification-2.md) | Optional | Identity verification | IdentityVerification2 getIdentityVerification() | setIdentityVerification(IdentityVerification2 identityVerification) |
+| `IdentityVerification` | [`IdentityVerification5`](../../doc/models/identity-verification-5.md) | Optional | - | IdentityVerification5 getIdentityVerification() | setIdentityVerification(IdentityVerification5 identityVerification) |
 | `LocationId` | `String` | Optional | A valid Location Id associated with the Contact for this Token<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getLocationId() | setLocationId(String locationId) |
 | `PreviousAccountVaultApiId` | `String` | Optional | Can be used to pull payment info from a previous token api id.<br><br>**Constraints**: *Maximum Length*: `64` | String getPreviousAccountVaultApiId() | setPreviousAccountVaultApiId(String previousAccountVaultApiId) |
 | `PreviousTokenApiId` | `String` | Optional | Can be used to pull payment info from a previous token api id.<br><br>**Constraints**: *Maximum Length*: `64` | String getPreviousTokenApiId() | setPreviousTokenApiId(String previousTokenApiId) |
@@ -44,7 +46,7 @@
 | `Id` | `String` | Optional | A unique, system-generated identifier for the Token.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getId() | setId(String id) |
 | `AccountType` | `String` | Optional | Account type<br><br>> For ACH, must be provided as either 'checking' or 'savings'. For CC, field is read only. System will identify card_type and generate a value for this field automatically. i.e. visa, mc, disc, amex, jcb, diners.<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `32` | String getAccountType() | setAccountType(String accountType) |
 | `Active` | `Boolean` | Optional | Register is Active | Boolean getActive() | setActive(Boolean active) |
-| `CauSummaryStatusId` | [`CauSummaryStatusIdEnum`](../../doc/models/cau-summary-status-id-enum.md) | Optional | CAU Summary Status ID. | CauSummaryStatusIdEnum getCauSummaryStatusId() | setCauSummaryStatusId(CauSummaryStatusIdEnum cauSummaryStatusId) |
+| `CauSummaryStatusId` | [`CauSummaryStatusId`](../../doc/models/cau-summary-status-id.md) | Optional | - | CauSummaryStatusId getCauSummaryStatusId() | setCauSummaryStatusId(CauSummaryStatusId cauSummaryStatusId) |
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
 | `ESerialNumber` | `String` | Optional | E Serial Number<br><br>**Constraints**: *Maximum Length*: `36`, *Pattern*: `^[a-zA-Z0-9]*$` | String getESerialNumber() | setESerialNumber(String eSerialNumber) |
 | `ETrackData` | `String` | Optional | E Track Data | String getETrackData() | setETrackData(String eTrackData) |
@@ -56,23 +58,24 @@
 | `HasRecurring` | `Boolean` | Optional | True indicates that this token is tied to a Recurring Payment | Boolean getHasRecurring() | setHasRecurring(Boolean hasRecurring) |
 | `LastFour` | `String` | Optional | The last four numbers of an account number.  System will generate a value for this field automatically.<br><br>**Constraints**: *Maximum Length*: `4` | String getLastFour() | setLastFour(String lastFour) |
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
-| `PaymentMethod` | [`PaymentMethod16Enum`](../../doc/models/payment-method-16-enum.md) | Optional | Must be provided as either 'cc' or 'ach'. | PaymentMethod16Enum getPaymentMethod() | setPaymentMethod(PaymentMethod16Enum paymentMethod) |
+| `PaymentMethod` | [`PaymentMethod16`](../../doc/models/payment-method-16.md) | Optional | - | PaymentMethod16 getPaymentMethod() | setPaymentMethod(PaymentMethod16 paymentMethod) |
 | `Ticket` | `String` | Optional | A valid ticket that was created to store the token.<br><br>**Constraints**: *Maximum Length*: `36` | String getTicket() | setTicket(String ticket) |
 | `TrackData` | `String` | Optional | Track Data from a magnetic card swipe.<br><br>**Constraints**: *Maximum Length*: `256` | String getTrackData() | setTrackData(String trackData) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
 | `CauLastUpdatedTs` | `Integer` | Optional | CAU Last Updated Timestamp | Integer getCauLastUpdatedTs() | setCauLastUpdatedTs(Integer cauLastUpdatedTs) |
 | `CardBin` | `String` | Optional | Card bin | String getCardBin() | setCardBin(String cardBin) |
 | `RoutingNumber` | `String` | Optional | Required for ACH. The Routing Number for the bank account being used. | String getRoutingNumber() | setRoutingNumber(String routingNumber) |
-| `Location` | [`Location`](../../doc/models/location.md) | Optional | Location Information on `expand` | Location getLocation() | setLocation(Location location) |
-| `Contact` | [`Contact1`](../../doc/models/contact-1.md) | Optional | Contact Information on `expand` | Contact1 getContact() | setContact(Contact1 contact) |
+| `Location` | [`Location18`](../../doc/models/location-18.md) | Optional | - | Location18 getLocation() | setLocation(Location18 location) |
+| `Contact` | [`Contact3`](../../doc/models/contact-3.md) | Optional | - | Contact3 getContact() | setContact(Contact3 contact) |
 | `Transactions` | [`List<Transaction>`](../../doc/models/transaction.md) | Optional | Transaction Information on `expand` | List<Transaction> getTransactions() | setTransactions(List<Transaction> transactions) |
 | `ActiveRecurrings` | [`List<ActiveRecurring>`](../../doc/models/active-recurring.md) | Optional | ActiveRecurring Information on `expand` | List<ActiveRecurring> getActiveRecurrings() | setActiveRecurrings(List<ActiveRecurring> activeRecurrings) |
 | `IsDeletable` | `Boolean` | Optional | Is Deletable Information on `expand` | Boolean getIsDeletable() | setIsDeletable(Boolean isDeletable) |
-| `Signature` | [`Signature`](../../doc/models/signature.md) | Optional | Signature Information on `expand` | Signature getSignature() | setSignature(Signature signature) |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` | CreatedUser getCreatedUser() | setCreatedUser(CreatedUser createdUser) |
+| `Signature` | [`Signature1`](../../doc/models/signature-1.md) | Optional | - | Signature1 getSignature() | setSignature(Signature1 signature) |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - | User9 getCreatedUser() | setCreatedUser(User9 createdUser) |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` | List<Changelog> getChangelogs() | setChangelogs(List<Changelog> changelogs) |
 | `AccountVaultCauLogs` | [`List<AccountVaultCauLog>`](../../doc/models/account-vault-cau-log.md) | Optional | Token Cau Log Information on `expand` | List<AccountVaultCauLog> getAccountVaultCauLogs() | setAccountVaultCauLogs(List<AccountVaultCauLog> accountVaultCauLogs) |
 | `AccountVaultCauProductTransactions` | [`List<AccountVaultCauProductTransaction>`](../../doc/models/account-vault-cau-product-transaction.md) | Optional | Token Cau Product Transaction Information on `expand` | List<AccountVaultCauProductTransaction> getAccountVaultCauProductTransactions() | setAccountVaultCauProductTransactions(List<AccountVaultCauProductTransaction> accountVaultCauProductTransactions) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -87,7 +90,6 @@
   "token_c1": "token custom 1",
   "token_c2": "token custom 2",
   "token_c3": "token custom 3",
-  "ach_sec_code": "WEB",
   "contact_id": "11e95f8ec39de8fbdb0a4f1a",
   "customer_id": "123456",
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
@@ -109,7 +111,6 @@
   "id": "11e95f8ec39de8fbdb0a4f1a",
   "account_type": "checking",
   "active": true,
-  "cau_summary_status_id": 1,
   "created_ts": 1422040992,
   "e_serial_number": "1234567890",
   "exp_date": "0722",
@@ -117,11 +118,14 @@
   "has_recurring": false,
   "last_four": "3657",
   "modified_ts": 1422040992,
-  "payment_method": "cc",
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "cau_last_updated_ts": 1422040992,
   "routing_number": "051904524",
-  "is_deletable": true
+  "is_deletable": true,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

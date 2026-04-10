@@ -19,7 +19,7 @@ TransactionsCashController transactionsCashController = client.getTransactionsCa
 Create a new cash refund transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cashRefundAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> cashRefundAsync(
     final V1TransactionsCashRefundRequest body)
 ```
 
@@ -31,7 +31,7 @@ CompletableFuture<ResponseTransaction> cashRefundAsync(
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -46,13 +46,11 @@ V1TransactionsCashRefundRequest body = new V1TransactionsCashRefundRequest.Build
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -86,7 +84,6 @@ V1TransactionsCashRefundRequest body = new V1TransactionsCashRefundRequest.Build
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .previousTransactionId("11e95f8ec39de8fbdb0a4f1a")
 .accountHolderName("smith")
 .build();
@@ -97,9 +94,9 @@ transactionsCashController.cashRefundAsync(body).thenAccept(result -> {
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -1163,7 +1160,7 @@ transactionsCashController.cashRefundAsync(body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -1172,7 +1169,7 @@ transactionsCashController.cashRefundAsync(body).thenAccept(result -> {
 Create a new cash sale transaction
 
 ```java
-CompletableFuture<ResponseTransaction> cashSaleAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> cashSaleAsync(
     final V1TransactionsCashSaleRequest body)
 ```
 
@@ -1184,7 +1181,7 @@ CompletableFuture<ResponseTransaction> cashSaleAsync(
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -1199,13 +1196,11 @@ V1TransactionsCashSaleRequest body = new V1TransactionsCashSaleRequest.Builder(
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -1239,7 +1234,6 @@ V1TransactionsCashSaleRequest body = new V1TransactionsCashSaleRequest.Builder(
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .accountHolderName("smith")
 .build();
 
@@ -1249,9 +1243,9 @@ transactionsCashController.cashSaleAsync(body).thenAccept(result -> {
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -2315,6 +2309,6 @@ transactionsCashController.cashSaleAsync(body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

@@ -14,26 +14,26 @@ TokensController tokensController = client.getTokensController();
 
 ## Methods
 
-* [Create a New ACH Token](../../doc/controllers/tokens.md#create-a-new-ach-token)
-* [Create a New Credit Card Token](../../doc/controllers/tokens.md#create-a-new-credit-card-token)
-* [Create a New Previous Transaction Token](../../doc/controllers/tokens.md#create-a-new-previous-transaction-token)
-* [Create a New Terminal Token with Async Method](../../doc/controllers/tokens.md#create-a-new-terminal-token-with-async-method)
-* [Create a New Terminal Token](../../doc/controllers/tokens.md#create-a-new-terminal-token)
-* [Create a New Ticket Token](../../doc/controllers/tokens.md#create-a-new-ticket-token)
-* [Create a New Wallet Token](../../doc/controllers/tokens.md#create-a-new-wallet-token)
-* [Delete a Single Token Record](../../doc/controllers/tokens.md#delete-a-single-token-record)
-* [View Single Token Record](../../doc/controllers/tokens.md#view-single-token-record)
-* [List All Tokens Related](../../doc/controllers/tokens.md#list-all-tokens-related)
+* [Createanew ACH Token](../../doc/controllers/tokens.md#createanew-ach-token)
+* [Createanew Credit Card Token](../../doc/controllers/tokens.md#createanew-credit-card-token)
+* [Createanew Previous Transaction Token](../../doc/controllers/tokens.md#createanew-previous-transaction-token)
+* [Createanew Terminal Tokenwith Asyncmethod](../../doc/controllers/tokens.md#createanew-terminal-tokenwith-asyncmethod)
+* [Createanew Terminal Token](../../doc/controllers/tokens.md#createanew-terminal-token)
+* [Createanew Ticket Token](../../doc/controllers/tokens.md#createanew-ticket-token)
+* [Createanew Wallet Token](../../doc/controllers/tokens.md#createanew-wallet-token)
+* [Deleteasingletokenrecord](../../doc/controllers/tokens.md#deleteasingletokenrecord)
+* [Viewsingletokenrecord](../../doc/controllers/tokens.md#viewsingletokenrecord)
+* [Listalltokensrelated](../../doc/controllers/tokens.md#listalltokensrelated)
 * [Update ACH Token](../../doc/controllers/tokens.md#update-ach-token)
 * [Update CC Token](../../doc/controllers/tokens.md#update-cc-token)
 
 
-# Create a New ACH Token
+# Createanew ACH Token
 
 ```java
-CompletableFuture<ResponseToken> createANewACHTokenAsync(
+CompletableFuture<ApiResponse<ResponseToken>> createanewAchTokenAsync(
     final V1TokensAchRequest body,
-    final List<Expand47Enum> expand)
+    final List<Expand47> expand)
 ```
 
 ## Parameters
@@ -41,11 +41,11 @@ CompletableFuture<ResponseToken> createANewACHTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensAchRequest`](../../doc/models/v1-tokens-ach-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseToken`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseToken`](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -63,7 +63,6 @@ V1TokensAchRequest body = new V1TokensAchRequest.Builder(
 .tokenC1("token custom 1")
 .tokenC2("token custom 2")
 .tokenC3("token custom 3")
-.achSecCode(AchSecCode3Enum.WEB)
 .contactId("11e95f8ec39de8fbdb0a4f1a")
 .customerId("123456")
 .previousAccountVaultApiId("previousaccountvault123456")
@@ -80,20 +79,19 @@ V1TokensAchRequest body = new V1TokensAchRequest.Builder(
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .acsTransactionId("13c701a3-5a88-4c45-89e9-ef65e50a8bf9")
-.accountType(AccountType13Enum.SAVINGS)
 .isCompany(false)
 .routingNumber("100020200")
 .build();
 
-tokensController.createANewACHTokenAsync(body, null).thenAccept(result -> {
+tokensController.createanewAchTokenAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -570,16 +568,16 @@ tokensController.createANewACHTokenAsync(body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Credit Card Token
+# Createanew Credit Card Token
 
 ```java
-CompletableFuture<ResponseToken> createANewCreditCardTokenAsync(
+CompletableFuture<ApiResponse<ResponseToken>> createanewCreditCardTokenAsync(
     final V1TokensCcRequest body,
-    final List<Expand47Enum> expand)
+    final List<Expand47> expand)
 ```
 
 ## Parameters
@@ -587,11 +585,11 @@ CompletableFuture<ResponseToken> createANewCreditCardTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensCcRequest`](../../doc/models/v1-tokens-cc-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseToken`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseToken`](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -609,7 +607,6 @@ V1TokensCcRequest body = new V1TokensCcRequest.Builder(
 .tokenC1("token custom 1")
 .tokenC2("token custom 2")
 .tokenC3("token custom 3")
-.achSecCode(AchSecCode3Enum.WEB)
 .contactId("11e95f8ec39de8fbdb0a4f1a")
 .customerId("123456")
 .previousAccountVaultApiId("previousaccountvault123456")
@@ -636,15 +633,15 @@ V1TokensCcRequest body = new V1TokensCcRequest.Builder(
 .ticket("12345678")
 .build();
 
-tokensController.createANewCreditCardTokenAsync(body, null).thenAccept(result -> {
+tokensController.createanewCreditCardTokenAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -1121,16 +1118,16 @@ tokensController.createANewCreditCardTokenAsync(body, null).thenAccept(result ->
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Previous Transaction Token
+# Createanew Previous Transaction Token
 
 ```java
-CompletableFuture<ResponseToken> createANewPreviousTransactionTokenAsync(
+CompletableFuture<ApiResponse<ResponseToken>> createanewPreviousTransactionTokenAsync(
     final V1TokensPreviousTransactionRequest body,
-    final List<Expand47Enum> expand)
+    final List<Expand47> expand)
 ```
 
 ## Parameters
@@ -1138,11 +1135,11 @@ CompletableFuture<ResponseToken> createANewPreviousTransactionTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensPreviousTransactionRequest`](../../doc/models/v1-tokens-previous-transaction-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseToken`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseToken`](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -1160,7 +1157,6 @@ V1TokensPreviousTransactionRequest body = new V1TokensPreviousTransactionRequest
 .tokenC1("token custom 1")
 .tokenC2("token custom 2")
 .tokenC3("token custom 3")
-.achSecCode(AchSecCode3Enum.WEB)
 .contactId("11e95f8ec39de8fbdb0a4f1a")
 .customerId("123456")
 .previousAccountVaultApiId("previousaccountvault123456")
@@ -1179,15 +1175,15 @@ V1TokensPreviousTransactionRequest body = new V1TokensPreviousTransactionRequest
 .acsTransactionId("13c701a3-5a88-4c45-89e9-ef65e50a8bf9")
 .build();
 
-tokensController.createANewPreviousTransactionTokenAsync(body, null).thenAccept(result -> {
+tokensController.createanewPreviousTransactionTokenAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -1664,14 +1660,14 @@ tokensController.createANewPreviousTransactionTokenAsync(body, null).thenAccept(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Terminal Token with Async Method
+# Createanew Terminal Tokenwith Asyncmethod
 
 ```java
-CompletableFuture<ResponseToken> createANewTerminalTokenWithAsyncMethodAsync(
+CompletableFuture<ApiResponse<ResponseToken>> createanewTerminalTokenwithAsyncmethodAsync(
     final V1TokensTerminalAsyncRequest body)
 ```
 
@@ -1683,7 +1679,7 @@ CompletableFuture<ResponseToken> createANewTerminalTokenWithAsyncMethodAsync(
 
 ## Response Type
 
-[`ResponseToken`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseToken`](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -1702,7 +1698,6 @@ V1TokensTerminalAsyncRequest body = new V1TokensTerminalAsyncRequest.Builder(
 .tokenC1("token custom 1")
 .tokenC2("token custom 2")
 .tokenC3("token custom 3")
-.achSecCode(AchSecCode3Enum.WEB)
 .contactId("11e95f8ec39de8fbdb0a4f1a")
 .customerId("123456")
 .previousAccountVaultApiId("previousaccountvault123456")
@@ -1722,15 +1717,15 @@ V1TokensTerminalAsyncRequest body = new V1TokensTerminalAsyncRequest.Builder(
 .acsTransactionId("13c701a3-5a88-4c45-89e9-ef65e50a8bf9")
 .build();
 
-tokensController.createANewTerminalTokenWithAsyncMethodAsync(body).thenAccept(result -> {
+tokensController.createanewTerminalTokenwithAsyncmethodAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -1761,16 +1756,16 @@ tokensController.createANewTerminalTokenWithAsyncMethodAsync(body).thenAccept(re
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Terminal Token
+# Createanew Terminal Token
 
 ```java
-CompletableFuture<ResponseToken> createANewTerminalTokenAsync(
+CompletableFuture<ApiResponse<ResponseToken>> createanewTerminalTokenAsync(
     final V1TokensTerminalRequest body,
-    final List<Expand47Enum> expand)
+    final List<Expand47> expand)
 ```
 
 ## Parameters
@@ -1778,11 +1773,11 @@ CompletableFuture<ResponseToken> createANewTerminalTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensTerminalRequest`](../../doc/models/v1-tokens-terminal-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseToken`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseToken`](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -1801,7 +1796,6 @@ V1TokensTerminalRequest body = new V1TokensTerminalRequest.Builder(
 .tokenC1("token custom 1")
 .tokenC2("token custom 2")
 .tokenC3("token custom 3")
-.achSecCode(AchSecCode3Enum.WEB)
 .contactId("11e95f8ec39de8fbdb0a4f1a")
 .customerId("123456")
 .previousAccountVaultApiId("previousaccountvault123456")
@@ -1821,15 +1815,15 @@ V1TokensTerminalRequest body = new V1TokensTerminalRequest.Builder(
 .acsTransactionId("13c701a3-5a88-4c45-89e9-ef65e50a8bf9")
 .build();
 
-tokensController.createANewTerminalTokenAsync(body, null).thenAccept(result -> {
+tokensController.createanewTerminalTokenAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -2306,16 +2300,16 @@ tokensController.createANewTerminalTokenAsync(body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Ticket Token
+# Createanew Ticket Token
 
 ```java
-CompletableFuture<ResponseToken> createANewTicketTokenAsync(
+CompletableFuture<ApiResponse<ResponseToken>> createanewTicketTokenAsync(
     final V1TokensTicketRequest body,
-    final List<Expand47Enum> expand)
+    final List<Expand47> expand)
 ```
 
 ## Parameters
@@ -2323,11 +2317,11 @@ CompletableFuture<ResponseToken> createANewTicketTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensTicketRequest`](../../doc/models/v1-tokens-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseToken`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseToken`](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -2345,7 +2339,6 @@ V1TokensTicketRequest body = new V1TokensTicketRequest.Builder(
 .tokenC1("token custom 1")
 .tokenC2("token custom 2")
 .tokenC3("token custom 3")
-.achSecCode(AchSecCode3Enum.WEB)
 .contactId("11e95f8ec39de8fbdb0a4f1a")
 .customerId("123456")
 .previousAccountVaultApiId("previousaccountvault123456")
@@ -2365,15 +2358,15 @@ V1TokensTicketRequest body = new V1TokensTicketRequest.Builder(
 .acsTransactionId("13c701a3-5a88-4c45-89e9-ef65e50a8bf9")
 .build();
 
-tokensController.createANewTicketTokenAsync(body, null).thenAccept(result -> {
+tokensController.createanewTicketTokenAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -2850,16 +2843,16 @@ tokensController.createANewTicketTokenAsync(body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Wallet Token
+# Createanew Wallet Token
 
 ```java
-CompletableFuture<ResponseToken> createANewWalletTokenAsync(
+CompletableFuture<ApiResponse<ResponseToken>> createanewWalletTokenAsync(
     final V1TokensWalletRequest body,
-    final List<Expand47Enum> expand)
+    final List<Expand47> expand)
 ```
 
 ## Parameters
@@ -2867,11 +2860,11 @@ CompletableFuture<ResponseToken> createANewWalletTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensWalletRequest`](../../doc/models/v1-tokens-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseToken`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseToken`](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -2879,7 +2872,7 @@ CompletableFuture<ResponseToken> createANewWalletTokenAsync(
 V1TokensWalletRequest body = new V1TokensWalletRequest.Builder(
     "11e95f8ec39de8fbdb0a4f1a",
     "wallet_data2",
-    WalletProviderEnum.GOOGLEPAY
+    WalletProvider.GOOGLEPAY
 )
 .accountHolderName("John Smith")
 .accountVaultApiId("accountvaultabcd")
@@ -2890,7 +2883,6 @@ V1TokensWalletRequest body = new V1TokensWalletRequest.Builder(
 .tokenC1("token custom 1")
 .tokenC2("token custom 2")
 .tokenC3("token custom 3")
-.achSecCode(AchSecCode3Enum.WEB)
 .contactId("11e95f8ec39de8fbdb0a4f1a")
 .customerId("123456")
 .previousAccountVaultApiId("previousaccountvault123456")
@@ -2911,15 +2903,15 @@ V1TokensWalletRequest body = new V1TokensWalletRequest.Builder(
 .walletKeyId("11ee2bd392f32cb8aefd5bb5")
 .build();
 
-tokensController.createANewWalletTokenAsync(body, null).thenAccept(result -> {
+tokensController.createanewWalletTokenAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -3396,14 +3388,14 @@ tokensController.createANewWalletTokenAsync(body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Delete a Single Token Record
+# Deleteasingletokenrecord
 
 ```java
-CompletableFuture<ResponseToken> deleteASingleTokenRecordAsync(
+CompletableFuture<ApiResponse<ResponseToken>> deleteasingletokenrecordAsync(
     final String tokenId)
 ```
 
@@ -3415,22 +3407,22 @@ CompletableFuture<ResponseToken> deleteASingleTokenRecordAsync(
 
 ## Response Type
 
-[`ResponseToken`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseToken`](../../doc/models/response-token.md).
 
 ## Example Usage
 
 ```java
 String tokenId = "11e95f8ec39de8fbdb0a4f1a";
 
-tokensController.deleteASingleTokenRecordAsync(tokenId).thenAccept(result -> {
+tokensController.deleteasingletokenrecordAsync(tokenId).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -3904,16 +3896,16 @@ tokensController.deleteASingleTokenRecordAsync(tokenId).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Token Record
+# Viewsingletokenrecord
 
 ```java
-CompletableFuture<ResponseToken> viewSingleTokenRecordAsync(
+CompletableFuture<ApiResponse<ResponseToken>> viewsingletokenrecordAsync(
     final String tokenId,
-    final List<Expand47Enum> expand,
-    final List<Field53Enum> fields)
+    final List<Expand47> expand,
+    final List<Field53> fields)
 ```
 
 ## Parameters
@@ -3921,26 +3913,26 @@ CompletableFuture<ResponseToken> viewSingleTokenRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `tokenId` | `String` | Template, Required | A unique, system-generated identifier for the Token.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field53Enum>`](../../doc/models/field-53-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field53>`](../../doc/models/field-53.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`ResponseToken`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseToken`](../../doc/models/response-token.md).
 
 ## Example Usage
 
 ```java
 String tokenId = "11e95f8ec39de8fbdb0a4f1a";
-tokensController.viewSingleTokenRecordAsync(tokenId, null, null).thenAccept(result -> {
+tokensController.viewsingletokenrecordAsync(tokenId, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -4414,42 +4406,42 @@ tokensController.viewSingleTokenRecordAsync(tokenId, null, null).thenAccept(resu
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# List All Tokens Related
+# Listalltokensrelated
 
 ```java
-CompletableFuture<ResponseTokensCollection> listAllTokensRelatedAsync(
-    final Page page,
+CompletableFuture<ApiResponse<ResponseTokensCollection>> listalltokensrelatedAsync(
+    final Page1 page,
     final List<Order21> order,
     final List<FilterBy> filterBy,
-    final List<Expand47Enum> expand,
-    final Format1Enum format,
+    final List<Expand47> expand,
+    final Format1 format,
     final String typeahead,
-    final List<Field53Enum> fields)
+    final List<Field53> fields)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `String` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field53Enum>`](../../doc/models/field-53-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field53>`](../../doc/models/field-53.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`ResponseTokensCollection`](../../doc/models/response-tokens-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTokensCollection`](../../doc/models/response-tokens-collection.md).
 
 ## Example Usage
 
 ```java
-Page page = new Page.Builder()
+Page1 page = new Page1.Builder()
     .number(1)
     .size(50)
     .build();
@@ -4457,7 +4449,7 @@ Page page = new Page.Builder()
 List<Order21> order = Arrays.asList(
     new Order21.Builder(
         "first_name",
-        OperatorEnum.ASC
+        Operator.ASC
     )
     .build()
 );
@@ -4466,7 +4458,7 @@ List<FilterBy> filterBy = Arrays.asList(
     new FilterBy.Builder(
         "first_name",
         FilterByOperator.fromOperator1(
-            Operator1Enum.ENUM_1
+            Operator1.ENUM_1
         ),
         FilterByValue.fromFilterByValueCase1(
             FilterByValueCase1.fromString(
@@ -4477,15 +4469,15 @@ List<FilterBy> filterBy = Arrays.asList(
     .build()
 );
 
-tokensController.listAllTokensRelatedAsync(page, order, filterBy, null, null, null, null).thenAccept(result -> {
+tokensController.listalltokensrelatedAsync(page, order, filterBy, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -4984,16 +4976,16 @@ tokensController.listAllTokensRelatedAsync(page, order, filterBy, null, null, nu
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
 # Update ACH Token
 
 ```java
-CompletableFuture<ResponseToken> updateACHTokenAsync(
+CompletableFuture<ApiResponse<ResponseToken>> updateAchTokenAsync(
     final String tokenId,
     final V1TokensAchRequest1 body,
-    final List<Expand47Enum> expand)
+    final List<Expand47> expand)
 ```
 
 ## Parameters
@@ -5002,11 +4994,11 @@ CompletableFuture<ResponseToken> updateACHTokenAsync(
 |  --- | --- | --- | --- |
 | `tokenId` | `String` | Template, Required | A unique, system-generated identifier for the Token.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TokensAchRequest1`](../../doc/models/v1-tokens-ach-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseToken`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseToken`](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -5022,7 +5014,6 @@ V1TokensAchRequest1 body = new V1TokensAchRequest1.Builder()
     .tokenC1("token custom 1")
     .tokenC2("token custom 2")
     .tokenC3("token custom 3")
-    .achSecCode(AchSecCode3Enum.WEB)
     .contactId("11e95f8ec39de8fbdb0a4f1a")
     .customerId("123456")
     .locationId("11e95f8ec39de8fbdb0a4f1a")
@@ -5041,18 +5032,17 @@ V1TokensAchRequest1 body = new V1TokensAchRequest1.Builder()
     .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
     .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
     .acsTransactionId("13c701a3-5a88-4c45-89e9-ef65e50a8bf9")
-    .accountType(AccountType13Enum.SAVINGS)
     .build();
 
-tokensController.updateACHTokenAsync(tokenId, body, null).thenAccept(result -> {
+tokensController.updateAchTokenAsync(tokenId, body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -5529,17 +5519,17 @@ tokensController.updateACHTokenAsync(tokenId, body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
 # Update CC Token
 
 ```java
-CompletableFuture<ResponseToken> updateCCTokenAsync(
+CompletableFuture<ApiResponse<ResponseToken>> updateCcTokenAsync(
     final String tokenId,
     final V1TokensCcRequest1 body,
-    final List<Expand47Enum> expand)
+    final List<Expand47> expand)
 ```
 
 ## Parameters
@@ -5548,11 +5538,11 @@ CompletableFuture<ResponseToken> updateCCTokenAsync(
 |  --- | --- | --- | --- |
 | `tokenId` | `String` | Template, Required | A unique, system-generated identifier for the Token.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TokensCcRequest1`](../../doc/models/v1-tokens-cc-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseToken`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseToken`](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -5568,7 +5558,6 @@ V1TokensCcRequest1 body = new V1TokensCcRequest1.Builder()
     .tokenC1("token custom 1")
     .tokenC2("token custom 2")
     .tokenC3("token custom 3")
-    .achSecCode(AchSecCode3Enum.WEB)
     .contactId("11e95f8ec39de8fbdb0a4f1a")
     .customerId("123456")
     .locationId("11e95f8ec39de8fbdb0a4f1a")
@@ -5590,15 +5579,15 @@ V1TokensCcRequest1 body = new V1TokensCcRequest1.Builder()
     .expDate("0929")
     .build();
 
-tokensController.updateCCTokenAsync(tokenId, body, null).thenAccept(result -> {
+tokensController.updateCcTokenAsync(tokenId, body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -6075,6 +6064,6 @@ tokensController.updateCCTokenAsync(tokenId, body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

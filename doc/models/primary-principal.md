@@ -3,6 +3,8 @@
 
 The Primary Principal.
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `PrimaryPrincipal`
@@ -24,6 +26,7 @@ The Primary Principal.
 | `Ssn` | `String` | Optional | Last four digits of the primary principal or Signer's social security number<br><br>**Constraints**: *Maximum Length*: `4` | String getSsn() | setSsn(String ssn) |
 | `OwnershipPercent` | `Integer` | Optional | Percentage of business owned by primary principal or signer<br><br>**Constraints**: `>= 0`, `<= 100` | Integer getOwnershipPercent() | setOwnershipPercent(Integer ownershipPercent) |
 | `PhoneNumber` | `String` | Optional | Signer's phone number<br><br>**Constraints**: *Maximum Length*: `20` | String getPhoneNumber() | setPhoneNumber(String phoneNumber) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -40,7 +43,11 @@ The Primary Principal.
   "state_province": "DE",
   "postal_code": "55022",
   "ownership_percent": 100,
-  "phone_number": "555-555-1234"
+  "phone_number": "555-555-1234",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

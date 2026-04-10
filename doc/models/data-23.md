@@ -1,6 +1,8 @@
 
 # Data 23
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Data23`
@@ -13,15 +15,15 @@
 | `DefaultProductTransactionId` | `String` | Optional | Product Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getDefaultProductTransactionId() | setDefaultProductTransactionId(String defaultProductTransactionId) |
 | `TerminalApplicationId` | `String` | Optional | Terminal Application ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getTerminalApplicationId() | setTerminalApplicationId(String terminalApplicationId) |
 | `TerminalCvmId` | `String` | Optional | Terminal CVM ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getTerminalCvmId() | setTerminalCvmId(String terminalCvmId) |
-| `TerminalManufacturerCode` | [`TerminalManufacturerCodeEnum`](../../doc/models/terminal-manufacturer-code-enum.md) | Optional | Terminal Manufacturer Code | TerminalManufacturerCodeEnum getTerminalManufacturerCode() | setTerminalManufacturerCode(TerminalManufacturerCodeEnum terminalManufacturerCode) |
+| `TerminalManufacturerCode` | [`TerminalManufacturerCode`](../../doc/models/terminal-manufacturer-code.md) | Optional | - | TerminalManufacturerCode getTerminalManufacturerCode() | setTerminalManufacturerCode(TerminalManufacturerCode terminalManufacturerCode) |
 | `Title` | `String` | Optional | Terminal Name<br><br>**Constraints**: *Maximum Length*: `64` | String getTitle() | setTitle(String title) |
 | `MacAddress` | `String` | Optional | Terminal MAC Address<br><br>**Constraints**: *Pattern*: `^([0-9a-fA-F]{2}[:-]?){5}([0-9a-fA-F]{2})$` | String getMacAddress() | setMacAddress(String macAddress) |
 | `LocalIpAddress` | `String` | Optional | Terminal Local IP Address | String getLocalIpAddress() | setLocalIpAddress(String localIpAddress) |
 | `Port` | `Integer` | Optional | Terminal Port<br><br>**Default**: `10009`<br><br>**Constraints**: `>= 0`, `<= 65535` | Integer getPort() | setPort(Integer port) |
 | `SerialNumber` | `String` | Optional | Terminal Serial Number<br><br>**Constraints**: *Maximum Length*: `24`, *Pattern*: `^[a-zA-Z0-9]*$` | String getSerialNumber() | setSerialNumber(String serialNumber) |
 | `TerminalNumber` | `String` | Optional | Terminal Number<br><br>**Constraints**: *Minimum Length*: `15`, *Maximum Length*: `15` | String getTerminalNumber() | setTerminalNumber(String terminalNumber) |
-| `TerminalTimeouts` | [`TerminalTimeouts`](../../doc/models/terminal-timeouts.md) | Optional | The following options outlines some configurable timeout values that can be used to customize the experience at the terminal for the cardholder.<br><br>> These timeouts are specific to Ingenico devices only.<br>> <br>> These timeouts are specific to Ingenico devices only. | TerminalTimeouts getTerminalTimeouts() | setTerminalTimeouts(TerminalTimeouts terminalTimeouts) |
-| `TipPercents` | [`TipPercents`](../../doc/models/tip-percents.md) | Optional | A JSON of tip percents the JSON MUST contain only these three fields: percent_1, percent_2, percent_3 | TipPercents getTipPercents() | setTipPercents(TipPercents tipPercents) |
+| `TerminalTimeouts` | [`TerminalTimeouts1`](../../doc/models/terminal-timeouts-1.md) | Optional | - | TerminalTimeouts1 getTerminalTimeouts() | setTerminalTimeouts(TerminalTimeouts1 terminalTimeouts) |
+| `TipPercents` | [`TipPercents1`](../../doc/models/tip-percents-1.md) | Optional | - | TipPercents1 getTipPercents() | setTipPercents(TipPercents1 tipPercents) |
 | `LocationApiId` | `String` | Optional | Location Api ID<br><br>**Constraints**: *Maximum Length*: `64` | String getLocationApiId() | setLocationApiId(String locationApiId) |
 | `TerminalApiId` | `String` | Optional | Terminal Api ID<br><br>**Constraints**: *Maximum Length*: `64` | String getTerminalApiId() | setTerminalApiId(String terminalApiId) |
 | `HeaderLine1` | `String` | Optional | Header Line 1<br><br>**Constraints**: *Maximum Length*: `32` | String getHeaderLine1() | setHeaderLine1(String headerLine1) |
@@ -46,7 +48,7 @@
 | `IsProvisioned` | `Boolean` | Optional | Is Provisioned | Boolean getIsProvisioned() | setIsProvisioned(Boolean isProvisioned) |
 | `TipEnable` | `Boolean` | Optional | Tip Enable | Boolean getTipEnable() | setTipEnable(Boolean tipEnable) |
 | `ValidatedDecryption` | `Boolean` | Optional | Validated Decryption | Boolean getValidatedDecryption() | setValidatedDecryption(Boolean validatedDecryption) |
-| `CommunicationType` | [`CommunicationTypeEnum`](../../doc/models/communication-type-enum.md) | Optional | Communication Type | CommunicationTypeEnum getCommunicationType() | setCommunicationType(CommunicationTypeEnum communicationType) |
+| `CommunicationType` | `Object` | Optional | - | Object getCommunicationType() | setCommunicationType(Object communicationType) |
 | `Active` | `Boolean` | Optional | Active | Boolean getActive() | setActive(Boolean active) |
 | `Id` | `String` | Optional | Terminal ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getId() | setId(String id) |
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
@@ -54,14 +56,15 @@
 | `LastRegistrationTs` | `Integer` | Optional | Modified Time Stamp | Integer getLastRegistrationTs() | setLastRegistrationTs(Integer lastRegistrationTs) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
 | `ModifiedUserId` | `String` | Optional | Last User ID that updated the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getModifiedUserId() | setModifiedUserId(String modifiedUserId) |
-| `Location` | [`Location`](../../doc/models/location.md) | Optional | Location Information on `expand` | Location getLocation() | setLocation(Location location) |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` | CreatedUser getCreatedUser() | setCreatedUser(CreatedUser createdUser) |
-| `TerminalApplication` | [`TerminalApplication`](../../doc/models/terminal-application.md) | Optional | Terminal Application Information on `expand` | TerminalApplication getTerminalApplication() | setTerminalApplication(TerminalApplication terminalApplication) |
+| `Location` | [`Location18`](../../doc/models/location-18.md) | Optional | - | Location18 getLocation() | setLocation(Location18 location) |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - | User9 getCreatedUser() | setCreatedUser(User9 createdUser) |
+| `TerminalApplication` | [`TerminalApplication1`](../../doc/models/terminal-application-1.md) | Optional | - | TerminalApplication1 getTerminalApplication() | setTerminalApplication(TerminalApplication1 terminalApplication) |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` | List<Changelog> getChangelogs() | setChangelogs(List<Changelog> changelogs) |
 | `TerminalRouters` | [`List<TerminalRouter>`](../../doc/models/terminal-router.md) | Optional | Terminal Router Information on `expand` | List<TerminalRouter> getTerminalRouters() | setTerminalRouters(List<TerminalRouter> terminalRouters) |
 | `HasTerminalRouters` | `Boolean` | Optional | Has Terminal Router Information on `expand` | Boolean getHasTerminalRouters() | setHasTerminalRouters(Boolean hasTerminalRouters) |
-| `TerminalCvm` | [`TerminalCvm`](../../doc/models/terminal-cvm.md) | Optional | Terminal Cvm Information on `expand` | TerminalCvm getTerminalCvm() | setTerminalCvm(TerminalCvm terminalCvm) |
-| `TerminalManufacturer` | [`TerminalManufacturer`](../../doc/models/terminal-manufacturer.md) | Optional | Terminal Manufacturer Information on `expand` | TerminalManufacturer getTerminalManufacturer() | setTerminalManufacturer(TerminalManufacturer terminalManufacturer) |
+| `TerminalCvm` | [`TerminalCvm1`](../../doc/models/terminal-cvm-1.md) | Optional | - | TerminalCvm1 getTerminalCvm() | setTerminalCvm(TerminalCvm1 terminalCvm) |
+| `TerminalManufacturer` | [`TerminalManufacturer1`](../../doc/models/terminal-manufacturer-1.md) | Optional | - | TerminalManufacturer1 getTerminalManufacturer() | setTerminalManufacturer(TerminalManufacturer1 terminalManufacturer) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -71,7 +74,6 @@
   "default_product_transaction_id": "11e95f8ec39de8fbdb0a4f1a",
   "terminal_application_id": "11e95f8ec39de8fbdb0a4f1a",
   "terminal_cvm_id": "11e95f8ec39de8fbdb0a4f1a",
-  "terminal_manufacturer_code": "1",
   "title": "My terminal",
   "mac_address": "3D:F2:C9:A6:B3:4F",
   "local_ip_address": "192.168.0.10",
@@ -100,7 +102,6 @@
   "is_provisioned": false,
   "tip_enable": false,
   "validated_decryption": false,
-  "communication_type": "http",
   "active": true,
   "id": "11e95f8ec39de8fbdb0a4f1a",
   "created_ts": 1422040992,
@@ -108,7 +109,12 @@
   "last_registration_ts": 1422040992,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "has_terminal_routers": true
+  "has_terminal_routers": true,
+  "terminal_manufacturer_code": "4",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

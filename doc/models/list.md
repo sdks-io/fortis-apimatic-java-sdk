@@ -1,6 +1,8 @@
 
 # List
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `List`
@@ -28,7 +30,8 @@
 | `TotalBlindRefundCount` | `Integer` | Optional | Total Blind Refund Count | Integer getTotalBlindRefundCount() | setTotalBlindRefundCount(Integer totalBlindRefundCount) |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` | List<Changelog> getChangelogs() | setChangelogs(List<Changelog> changelogs) |
 | `PostbackLogs` | [`List<PostbackLog>`](../../doc/models/postback-log.md) | Optional | Postback Log Information on `expand` | List<PostbackLog> getPostbackLogs() | setPostbackLogs(List<PostbackLog> postbackLogs) |
-| `ProductTransaction` | [`ProductTransaction`](../../doc/models/product-transaction.md) | Optional | Product Transaction Information on `expand` | ProductTransaction getProductTransaction() | setProductTransaction(ProductTransaction productTransaction) |
+| `ProductTransaction` | [`ProductTransaction1`](../../doc/models/product-transaction-1.md) | Optional | - | ProductTransaction1 getProductTransaction() | setProductTransaction(ProductTransaction1 productTransaction) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -50,7 +53,11 @@
   "total_void_amount": 2342,
   "total_void_count": 17,
   "total_blind_refund_amount": 2342,
-  "total_blind_refund_count": 16
+  "total_blind_refund_count": 16,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -1,6 +1,8 @@
 
 # Response Merchant Details
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ResponseMerchantDetails`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Type` | [`Type137Enum`](../../doc/models/type-137-enum.md) | Optional | Resource Type<br><br>**Default**: `Type137Enum.MERCHANTDETAILS` | Type137Enum getType() | setType(Type137Enum type) |
+| `Type` | [`Type137`](../../doc/models/type-137.md) | Optional | - | Type137 getType() | setType(Type137 type) |
 | `Data` | [`Data38`](../../doc/models/data-38.md) | Optional | - | Data38 getData() | setData(Data38 data) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -27,7 +30,15 @@
         "key1": "val1",
         "key2": "val2"
       }
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

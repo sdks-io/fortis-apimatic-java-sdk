@@ -1,6 +1,8 @@
 
 # Response Async Status
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ResponseAsyncStatus`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Type` | [`TypeEnum`](../../doc/models/type-enum.md) | Optional | Resource Type<br><br>**Default**: `TypeEnum.ASYNCSTATUS` | TypeEnum getType() | setType(TypeEnum type) |
+| `Type` | [`Type`](../../doc/models/type.md) | Optional | - | Type getType() | setType(Type type) |
 | `Data` | [`Data`](../../doc/models/data.md) | Optional | - | Data getData() | setData(Data data) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -22,7 +25,15 @@
     "type": "type0",
     "id": "id0",
     "progress": 100,
-    "error": "error4"
+    "error": "error4",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

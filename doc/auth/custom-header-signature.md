@@ -22,12 +22,12 @@ Documentation for accessing and setting credentials for user-id.
 You must provide credentials in the client as shown in the following code snippet.
 
 ```java
-import tech.fortis.sandbox.api.FortisAPIClient;
+import tech.fortis.sandbox.api.FortisApiClient;
 import tech.fortis.sandbox.api.authentication.UserIdModel;
 
 public class Program {
     public static void main(String[] args) {
-        FortisAPIClient client = new FortisAPIClient.Builder()
+        FortisApiClient client = new FortisApiClient.Builder()
             .userIdCredentials(new UserIdModel.Builder(
                     "user-id"
                 )

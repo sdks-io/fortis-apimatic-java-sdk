@@ -1,6 +1,8 @@
 
 # Line Item 20
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `LineItem20`
@@ -19,6 +21,7 @@
 | `TaxRate` | `Integer` | Optional | Tax rate used to calculate the sales tax amount, can accept 2 decimal places.<br><br>**Constraints**: `<= 999900` | Integer getTaxRate() | setTaxRate(Integer taxRate) |
 | `UnitCode` | `String` | Required | Units of measurement as used in international trade. (See Codes for Units of Measurement below for unit code abbreviations)<br><br>**Constraints**: *Maximum Length*: `3` | String getUnitCode() | setUnitCode(String unitCode) |
 | `UnitCost` | `int` | Required | Unit cost of the item ,Can accept Four (4) decimal places.<br><br>**Constraints**: `<= 99999999999900` | int getUnitCost() | setUnitCost(int unitCost) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -33,7 +36,11 @@
   "tax_amount": 4,
   "tax_rate": 0,
   "unit_code": "gll",
-  "unit_cost": 3
+  "unit_cost": 3,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

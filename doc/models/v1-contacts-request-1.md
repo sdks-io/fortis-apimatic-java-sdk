@@ -1,6 +1,8 @@
 
 # V1 Contacts Request 1
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `V1ContactsRequest1`
@@ -16,7 +18,7 @@
 | `LastName` | `String` | Optional | Last Name<br><br>**Constraints**: *Maximum Length*: `64` | String getLastName() | setLastName(String lastName) |
 | `CellPhone` | `String` | Optional | Cell phone of contact<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `10`, *Pattern*: `^\d{10}$` | String getCellPhone() | setCellPhone(String cellPhone) |
 | `Balance` | `Double` | Optional | Balance<br><br>**Constraints**: `>= -99999999.99`, `<= 99999999.99` | Double getBalance() | setBalance(Double balance) |
-| `Address` | [`Address`](../../doc/models/address.md) | Optional | Address of contact | Address getAddress() | setAddress(Address address) |
+| `Address` | [`Address4`](../../doc/models/address-4.md) | Optional | - | Address4 getAddress() | setAddress(Address4 address) |
 | `CompanyName` | `String` | Optional | Company Name<br><br>**Constraints**: *Maximum Length*: `64` | String getCompanyName() | setCompanyName(String companyName) |
 | `HeaderMessage` | `String` | Optional | Header Message<br><br>**Constraints**: *Maximum Length*: `250` | String getHeaderMessage() | setHeaderMessage(String headerMessage) |
 | `DateOfBirth` | `String` | Optional | Contacts DOB, Format: yyyy-MM-dd<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` | String getDateOfBirth() | setDateOfBirth(String dateOfBirth) |
@@ -28,13 +30,14 @@
 | `OfficePhoneCountryCode` | `String` | Optional | Office phone country code<br><br>**Constraints**: *Maximum Length*: `6`, *Pattern*: `^\+([\d]+)$` | String getOfficePhoneCountryCode() | setOfficePhoneCountryCode(String officePhoneCountryCode) |
 | `CellPhoneCountryCode` | `String` | Optional | Cell phone country code<br><br>**Constraints**: *Maximum Length*: `6`, *Pattern*: `^\+([\d]+)$` | String getCellPhoneCountryCode() | setCellPhoneCountryCode(String cellPhoneCountryCode) |
 | `HeaderMessageType` | `Integer` | Optional | Header Message Type<br><br>**Constraints**: `>= 0`, `<= 4` | Integer getHeaderMessageType() | setHeaderMessageType(Integer headerMessageType) |
-| `UpdateIfExists` | [`UpdateIfExistsEnum`](../../doc/models/update-if-exists-enum.md) | Optional | Update If Exists | UpdateIfExistsEnum getUpdateIfExists() | setUpdateIfExists(UpdateIfExistsEnum updateIfExists) |
+| `UpdateIfExists` | `Object` | Optional | - | Object getUpdateIfExists() | setUpdateIfExists(Object updateIfExists) |
 | `ContactC1` | `String` | Optional | Custom field 1 for api users to store custom data<br><br>**Constraints**: *Maximum Length*: `128` | String getContactC1() | setContactC1(String contactC1) |
 | `ContactC2` | `String` | Optional | Custom field 2 for api users to store custom data<br><br>**Constraints**: *Maximum Length*: `128` | String getContactC2() | setContactC2(String contactC2) |
 | `ContactC3` | `String` | Optional | Custom field 3 for api users to store custom data<br><br>**Constraints**: *Maximum Length*: `128` | String getContactC3() | setContactC3(String contactC3) |
 | `ParentId` | `String` | Optional | Parent Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getParentId() | setParentId(String parentId) |
 | `Email` | `String` | Optional | Email of contact<br><br>**Constraints**: *Maximum Length*: `64` | String getEmail() | setEmail(String email) |
 | `TokenImportId` | `String` | Optional | Token Import Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getTokenImportId() | setTokenImportId(String tokenImportId) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -58,13 +61,16 @@
   "office_phone_country_code": "+1",
   "cell_phone_country_code": "+1",
   "header_message_type": 0,
-  "update_if_exists": 1,
   "contact_c1": "any",
   "contact_c2": "anything",
   "contact_c3": "something",
   "parent_id": "11e95f8ec39de8fbdb0a4f1a",
   "email": "email@domain.com",
-  "token_import_id": "11e95f8ec39de8fbdb0a4f1a"
+  "token_import_id": "11e95f8ec39de8fbdb0a4f1a",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

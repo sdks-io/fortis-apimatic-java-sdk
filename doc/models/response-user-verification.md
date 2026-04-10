@@ -1,6 +1,8 @@
 
 # Response User Verification
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ResponseUserVerification`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Type` | [`Type123Enum`](../../doc/models/type-123-enum.md) | Optional | Resource Type<br><br>**Default**: `Type123Enum.USERVERIFICATION` | Type123Enum getType() | setType(Type123Enum type) |
+| `Type` | [`Type123`](../../doc/models/type-123.md) | Optional | - | Type123 getType() | setType(Type123 type) |
 | `Data` | [`Data32`](../../doc/models/data-32.md) | Optional | - | Data32 getData() | setData(Data32 data) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -21,7 +24,15 @@
     "id": "id0",
     "user_id": "user_id8",
     "hash": "hash6",
-    "created_ts": 114
+    "created_ts": 114,
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

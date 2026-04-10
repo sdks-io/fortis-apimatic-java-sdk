@@ -1,6 +1,8 @@
 
 # Data 34
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Data34`
@@ -28,20 +30,20 @@
 | `RequiresNewPassword` | `String` | Optional | Requires New Password<br><br>**Constraints**: *Maximum Length*: `1` | String getRequiresNewPassword() | setRequiresNewPassword(String requiresNewPassword) |
 | `TermsConditionCode` | `String` | Optional | Terms Condition (This field is required when updating your own password). | String getTermsConditionCode() | setTermsConditionCode(String termsConditionCode) |
 | `Tz` | `String` | Optional | Time zone<br><br>**Constraints**: *Maximum Length*: `30` | String getTz() | setTz(String tz) |
-| `UiPrefs` | [`UiPrefs`](../../doc/models/ui-prefs.md) | Optional | Ui Prefs | UiPrefs getUiPrefs() | setUiPrefs(UiPrefs uiPrefs) |
+| `UiPrefs` | [`UiPrefs1`](../../doc/models/ui-prefs-1.md) | Optional | - | UiPrefs1 getUiPrefs() | setUiPrefs(UiPrefs1 uiPrefs) |
 | `Username` | `String` | Optional | Username<br><br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `64` | String getUsername() | setUsername(String username) |
 | `UserApiKey` | `String` | Optional | User Api Key<br><br>**Constraints**: *Minimum Length*: `16`, *Maximum Length*: `64` | String getUserApiKey() | setUserApiKey(String userApiKey) |
 | `UserHashKey` | `String` | Optional | User Hash Key<br><br>**Constraints**: *Minimum Length*: `24`, *Maximum Length*: `36` | String getUserHashKey() | setUserHashKey(String userHashKey) |
-| `UserTypeCode` | [`UserTypeCodeEnum`](../../doc/models/user-type-code-enum.md) | Optional | User Type | UserTypeCodeEnum getUserTypeCode() | setUserTypeCode(UserTypeCodeEnum userTypeCode) |
+| `UserTypeCode` | [`UserTypeCode`](../../doc/models/user-type-code.md) | Optional | - | UserTypeCode getUserTypeCode() | setUserTypeCode(UserTypeCode userTypeCode) |
 | `Password` | `String` | Optional | Password<br><br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `128`, *Pattern*: ``^(?=.*[`!@#$%^&*()_+\-=\[\]{};':"\\\|,.<>\/?~])(?=.*[0-9])(?=.*[a-zA-Z]).*$`` | String getPassword() | setPassword(String password) |
 | `Zip` | `String` | Optional | Zip<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `10`, *Pattern*: `^[a-zA-Z0-9\-\s]+$` | String getZip() | setZip(String zip) |
 | `LocationId` | `String` | Optional | Location ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getLocationId() | setLocationId(String locationId) |
 | `ContactApiId` | `String` | Optional | ContactApi Id | String getContactApiId() | setContactApiId(String contactApiId) |
 | `PrimaryLocationApiId` | `String` | Optional | Primary LocationApi ID | String getPrimaryLocationApiId() | setPrimaryLocationApiId(String primaryLocationApiId) |
-| `StatusCode` | [`StatusCodeEnum`](../../doc/models/status-code-enum.md) | Optional | Status Code | StatusCodeEnum getStatusCode() | setStatusCode(StatusCodeEnum statusCode) |
+| `StatusCode` | `Object` | Optional | - | Object getStatusCode() | setStatusCode(Object statusCode) |
 | `ApiOnly` | `Boolean` | Optional | API Only | Boolean getApiOnly() | setApiOnly(Boolean apiOnly) |
 | `IsInvitation` | `Boolean` | Optional | Is Invitation | Boolean getIsInvitation() | setIsInvitation(Boolean isInvitation) |
-| `Address` | [`Address2`](../../doc/models/address-2.md) | Optional | Address | Address2 getAddress() | setAddress(Address2 address) |
+| `Address` | [`Address3`](../../doc/models/address-3.md) | Optional | - | Address3 getAddress() | setAddress(Address3 address) |
 | `Id` | `String` | Optional | User ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getId() | setId(String id) |
 | `Status` | `Boolean` | Optional | Status | Boolean getStatus() | setStatus(Boolean status) |
 | `LoginAttempts` | `Integer` | Optional | Login Attempts | Integer getLoginAttempts() | setLoginAttempts(Integer loginAttempts) |
@@ -57,20 +59,21 @@
 | `SftpAccess` | `Boolean` | Optional | SFTP Access | Boolean getSftpAccess() | setSftpAccess(Boolean sftpAccess) |
 | `LogApiResponseBodyTs` | `Integer` | Optional | Log Api Response Body | Integer getLogApiResponseBodyTs() | setLogApiResponseBodyTs(Integer logApiResponseBodyTs) |
 | `Locations` | [`List<Location18>`](../../doc/models/location-18.md) | Optional | Location Information on `expand` | List<Location18> getLocations() | setLocations(List<Location18> locations) |
-| `PrimaryLocation` | [`PrimaryLocation`](../../doc/models/primary-location.md) | Optional | Primary Location Information on `expand` | PrimaryLocation getPrimaryLocation() | setPrimaryLocation(PrimaryLocation primaryLocation) |
+| `PrimaryLocation` | [`AccountVaultCauProductTransaction`](../../doc/models/account-vault-cau-product-transaction.md) | Optional | - | AccountVaultCauProductTransaction getPrimaryLocation() | setPrimaryLocation(AccountVaultCauProductTransaction primaryLocation) |
 | `ReceivedEmails` | [`List<ReceivedEmail>`](../../doc/models/received-email.md) | Optional | Received Email Information on `expand` | List<ReceivedEmail> getReceivedEmails() | setReceivedEmails(List<ReceivedEmail> receivedEmails) |
-| `Contact` | [`Contact1`](../../doc/models/contact-1.md) | Optional | Contact Information on `expand` | Contact1 getContact() | setContact(Contact1 contact) |
+| `Contact` | [`Contact3`](../../doc/models/contact-3.md) | Optional | - | Contact3 getContact() | setContact(Contact3 contact) |
 | `IsDeletable` | `Boolean` | Optional | Is Deletable Information on `expand` | Boolean getIsDeletable() | setIsDeletable(Boolean isDeletable) |
 | `ActiveNotificationAlerts` | [`List<ActiveNotificationAlert>`](../../doc/models/active-notification-alert.md) | Optional | Active Notification Alert Information on `expand` | List<ActiveNotificationAlert> getActiveNotificationAlerts() | setActiveNotificationAlerts(List<ActiveNotificationAlert> activeNotificationAlerts) |
 | `LocationUsers` | [`List<LocationUser>`](../../doc/models/location-user.md) | Optional | Location User Information on `expand` | List<LocationUser> getLocationUsers() | setLocationUsers(List<LocationUser> locationUsers) |
 | `AuthRoles` | [`List<AuthRole>`](../../doc/models/auth-role.md) | Optional | Auth Role Information on `expand` | List<AuthRole> getAuthRoles() | setAuthRoles(List<AuthRole> authRoles) |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` | List<Changelog> getChangelogs() | setChangelogs(List<Changelog> changelogs) |
-| `Resources` | [`Resources`](../../doc/models/resources.md) | Optional | Resource Information on `expand` | Resources getResources() | setResources(Resources resources) |
-| `Domain` | [`Domain`](../../doc/models/domain.md) | Optional | Domain Information on `expand` | Domain getDomain() | setDomain(Domain domain) |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` | CreatedUser getCreatedUser() | setCreatedUser(CreatedUser createdUser) |
+| `Resources` | [`Resources1`](../../doc/models/resources-1.md) | Optional | - | Resources1 getResources() | setResources(Resources1 resources) |
+| `Domain` | [`Domain1`](../../doc/models/domain-1.md) | Optional | - | Domain1 getDomain() | setDomain(Domain1 domain) |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - | User9 getCreatedUser() | setCreatedUser(User9 createdUser) |
 | `LocationMarketplaces` | [`List<Locationmarketplace>`](../../doc/models/locationmarketplace.md) | Optional | Locationmarketplaces Information on `expand` | List<Locationmarketplace> getLocationMarketplaces() | setLocationMarketplaces(List<Locationmarketplace> locationMarketplaces) |
-| `EmailBlacklist` | [`EmailBlacklist`](../../doc/models/email-blacklist.md) | Optional | Email Blacklist Information on `expand` | EmailBlacklist getEmailBlacklist() | setEmailBlacklist(EmailBlacklist emailBlacklist) |
-| `Helppage` | [`Helppage2`](../../doc/models/helppage-2.md) | Optional | Helppage Information on `expand` | Helppage2 getHelppage() | setHelppage(Helppage2 helppage) |
+| `EmailBlacklist` | [`EmailBlacklist1`](../../doc/models/email-blacklist-1.md) | Optional | - | EmailBlacklist1 getEmailBlacklist() | setEmailBlacklist(EmailBlacklist1 emailBlacklist) |
+| `Helppage` | [`Helppage`](../../doc/models/helppage.md) | Optional | - | Helppage getHelppage() | setHelppage(Helppage helppage) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -96,10 +99,8 @@
   "tz": "America/New_York",
   "username": "{user_name}",
   "user_api_key": "234bas8dfn8238f923w2",
-  "user_type_code": 100,
   "zip": "48375",
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
-  "status_code": 1,
   "api_only": false,
   "is_invitation": false,
   "id": "11e95f8ec39de8fbdb0a4f1a",
@@ -113,7 +114,11 @@
   "terms_agree_ip": "192.168.0.10",
   "current_login": 1422040992,
   "log_api_response_body_ts": 1422040992,
-  "isDeletable": true
+  "isDeletable": true,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

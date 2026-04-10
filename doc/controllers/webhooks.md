@@ -10,21 +10,21 @@ WebhooksController webhooksController = client.getWebhooksController();
 
 ## Methods
 
-* [Create a New Transaction Batch Postback Config](../../doc/controllers/webhooks.md#create-a-new-transaction-batch-postback-config)
-* [Create a New Contact Postback Config](../../doc/controllers/webhooks.md#create-a-new-contact-postback-config)
-* [Create a New Transaction Postback Config](../../doc/controllers/webhooks.md#create-a-new-transaction-postback-config)
-* [Delete a Postback Config](../../doc/controllers/webhooks.md#delete-a-postback-config)
-* [Update Transaction Batch Postback Config](../../doc/controllers/webhooks.md#update-transaction-batch-postback-config)
-* [Update Contact Postback Config](../../doc/controllers/webhooks.md#update-contact-postback-config)
-* [Update Transaction Postback Config](../../doc/controllers/webhooks.md#update-transaction-postback-config)
+* [Createanewtransactionbatchpostbackconfig](../../doc/controllers/webhooks.md#createanewtransactionbatchpostbackconfig)
+* [Createanewcontactpostbackconfig](../../doc/controllers/webhooks.md#createanewcontactpostbackconfig)
+* [Createanewtransactionpostbackconfig](../../doc/controllers/webhooks.md#createanewtransactionpostbackconfig)
+* [Deleteapostbackconfig](../../doc/controllers/webhooks.md#deleteapostbackconfig)
+* [Updatetransactionbatchpostbackconfig](../../doc/controllers/webhooks.md#updatetransactionbatchpostbackconfig)
+* [Updatecontactpostbackconfig](../../doc/controllers/webhooks.md#updatecontactpostbackconfig)
+* [Updatetransactionpostbackconfig](../../doc/controllers/webhooks.md#updatetransactionpostbackconfig)
 
 
-# Create a New Transaction Batch Postback Config
+# Createanewtransactionbatchpostbackconfig
 
 ```java
-CompletableFuture<ResponseWebhook> createANewTransactionBatchPostbackConfigAsync(
+CompletableFuture<ApiResponse<ResponseWebhook>> createanewtransactionbatchpostbackconfigAsync(
     final V1WebhooksBatchRequest body,
-    final List<Expand123Enum> expand)
+    final List<Expand123> expand)
 ```
 
 ## Parameters
@@ -32,11 +32,11 @@ CompletableFuture<ResponseWebhook> createANewTransactionBatchPostbackConfigAsync
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1WebhooksBatchRequest`](../../doc/models/v1-webhooks-batch-request.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseWebhook`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseWebhook`](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -55,21 +55,19 @@ V1WebhooksBatchRequest body = new V1WebhooksBatchRequest.Builder(
 .basicAuthUsername("tester")
 .basicAuthPassword("Test@522")
 .expands("changelogs,tags")
-.format(FormatEnum.APIDEFAULT)
 .legacy(true)
 .postbackConfigId("11e95f8ec39de8fbdb0a4f1a")
-.resource(Resource12Enum.CONTACT)
 .build();
 
-webhooksController.createANewTransactionBatchPostbackConfigAsync(body, null).thenAccept(result -> {
+webhooksController.createanewtransactionbatchpostbackconfigAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -123,16 +121,16 @@ webhooksController.createANewTransactionBatchPostbackConfigAsync(body, null).the
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Contact Postback Config
+# Createanewcontactpostbackconfig
 
 ```java
-CompletableFuture<ResponseWebhook> createANewContactPostbackConfigAsync(
+CompletableFuture<ApiResponse<ResponseWebhook>> createanewcontactpostbackconfigAsync(
     final V1WebhooksContactRequest body,
-    final List<Expand123Enum> expand)
+    final List<Expand123> expand)
 ```
 
 ## Parameters
@@ -140,11 +138,11 @@ CompletableFuture<ResponseWebhook> createANewContactPostbackConfigAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1WebhooksContactRequest`](../../doc/models/v1-webhooks-contact-request.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseWebhook`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseWebhook`](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -162,22 +160,20 @@ V1WebhooksContactRequest body = new V1WebhooksContactRequest.Builder(
 .basicAuthUsername("tester")
 .basicAuthPassword("Test@522")
 .expands("changelogs,tags")
-.format(FormatEnum.APIDEFAULT)
 .legacy(true)
 .postbackConfigId("11e95f8ec39de8fbdb0a4f1a")
 .productTransactionId("11e95f8ec39de8fbdb0a4f1a")
-.resource(Resource12Enum.CONTACT)
 .build();
 
-webhooksController.createANewContactPostbackConfigAsync(body, null).thenAccept(result -> {
+webhooksController.createanewcontactpostbackconfigAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -231,16 +227,16 @@ webhooksController.createANewContactPostbackConfigAsync(body, null).thenAccept(r
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Transaction Postback Config
+# Createanewtransactionpostbackconfig
 
 ```java
-CompletableFuture<ResponseWebhook> createANewTransactionPostbackConfigAsync(
+CompletableFuture<ApiResponse<ResponseWebhook>> createanewtransactionpostbackconfigAsync(
     final V1WebhooksTransactionRequest body,
-    final List<Expand123Enum> expand)
+    final List<Expand123> expand)
 ```
 
 ## Parameters
@@ -248,11 +244,11 @@ CompletableFuture<ResponseWebhook> createANewTransactionPostbackConfigAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1WebhooksTransactionRequest`](../../doc/models/v1-webhooks-transaction-request.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseWebhook`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseWebhook`](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -271,21 +267,19 @@ V1WebhooksTransactionRequest body = new V1WebhooksTransactionRequest.Builder(
 .basicAuthUsername("tester")
 .basicAuthPassword("Test@522")
 .expands("changelogs,tags")
-.format(FormatEnum.APIDEFAULT)
 .legacy(true)
 .postbackConfigId("11e95f8ec39de8fbdb0a4f1a")
-.resource(Resource12Enum.CONTACT)
 .build();
 
-webhooksController.createANewTransactionPostbackConfigAsync(body, null).thenAccept(result -> {
+webhooksController.createanewtransactionpostbackconfigAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -339,14 +333,14 @@ webhooksController.createANewTransactionPostbackConfigAsync(body, null).thenAcce
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Delete a Postback Config
+# Deleteapostbackconfig
 
 ```java
-CompletableFuture<ResponseWebhook> deleteAPostbackConfigAsync(
+CompletableFuture<ApiResponse<ResponseWebhook>> deleteapostbackconfigAsync(
     final String webhookId)
 ```
 
@@ -358,22 +352,22 @@ CompletableFuture<ResponseWebhook> deleteAPostbackConfigAsync(
 
 ## Response Type
 
-[`ResponseWebhook`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseWebhook`](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
 ```java
 String webhookId = "11e95f8ec39de8fbdb0a4f1a";
 
-webhooksController.deleteAPostbackConfigAsync(webhookId).thenAccept(result -> {
+webhooksController.deleteapostbackconfigAsync(webhookId).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -424,16 +418,16 @@ webhooksController.deleteAPostbackConfigAsync(webhookId).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Update Transaction Batch Postback Config
+# Updatetransactionbatchpostbackconfig
 
 ```java
-CompletableFuture<ResponseWebhook> updateTransactionBatchPostbackConfigAsync(
+CompletableFuture<ApiResponse<ResponseWebhook>> updatetransactionbatchpostbackconfigAsync(
     final String webhookId,
     final V1WebhooksBatchRequest1 body,
-    final List<Expand123Enum> expand)
+    final List<Expand123> expand)
 ```
 
 ## Parameters
@@ -442,11 +436,11 @@ CompletableFuture<ResponseWebhook> updateTransactionBatchPostbackConfigAsync(
 |  --- | --- | --- | --- |
 | `webhookId` | `String` | Template, Required | Postback Config ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1WebhooksBatchRequest1`](../../doc/models/v1-webhooks-batch-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseWebhook`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseWebhook`](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -457,7 +451,6 @@ V1WebhooksBatchRequest1 body = new V1WebhooksBatchRequest1.Builder()
     .basicAuthUsername("tester")
     .basicAuthPassword("Test@522")
     .expands("changelogs,tags")
-    .format(FormatEnum.APIDEFAULT)
     .isActive(true)
     .locationId("11e95f8ec39de8fbdb0a4f1a")
     .onCreate(true)
@@ -466,20 +459,19 @@ V1WebhooksBatchRequest1 body = new V1WebhooksBatchRequest1.Builder()
     .legacy(true)
     .postbackConfigId("11e95f8ec39de8fbdb0a4f1a")
     .productTransactionId("11e95f8ec39de8fbdb0a4f1a")
-    .resource(Resource12Enum.CONTACT)
     .numberOfAttempts(1)
     .url("https://127.0.0.1/receiver")
     .build();
 
-webhooksController.updateTransactionBatchPostbackConfigAsync(webhookId, body, null).thenAccept(result -> {
+webhooksController.updatetransactionbatchpostbackconfigAsync(webhookId, body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -533,17 +525,17 @@ webhooksController.updateTransactionBatchPostbackConfigAsync(webhookId, body, nu
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Update Contact Postback Config
+# Updatecontactpostbackconfig
 
 ```java
-CompletableFuture<ResponseWebhook> updateContactPostbackConfigAsync(
+CompletableFuture<ApiResponse<ResponseWebhook>> updatecontactpostbackconfigAsync(
     final String webhookId,
     final V1WebhooksContactRequest1 body,
-    final List<Expand123Enum> expand)
+    final List<Expand123> expand)
 ```
 
 ## Parameters
@@ -552,11 +544,11 @@ CompletableFuture<ResponseWebhook> updateContactPostbackConfigAsync(
 |  --- | --- | --- | --- |
 | `webhookId` | `String` | Template, Required | Postback Config ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1WebhooksContactRequest1`](../../doc/models/v1-webhooks-contact-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseWebhook`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseWebhook`](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -567,7 +559,6 @@ V1WebhooksContactRequest1 body = new V1WebhooksContactRequest1.Builder()
     .basicAuthUsername("tester")
     .basicAuthPassword("Test@522")
     .expands("changelogs,tags")
-    .format(FormatEnum.APIDEFAULT)
     .isActive(true)
     .locationId("11e95f8ec39de8fbdb0a4f1a")
     .onCreate(true)
@@ -576,20 +567,19 @@ V1WebhooksContactRequest1 body = new V1WebhooksContactRequest1.Builder()
     .legacy(true)
     .postbackConfigId("11e95f8ec39de8fbdb0a4f1a")
     .productTransactionId("11e95f8ec39de8fbdb0a4f1a")
-    .resource(Resource12Enum.CONTACT)
     .numberOfAttempts(1)
     .url("https://127.0.0.1/receiver")
     .build();
 
-webhooksController.updateContactPostbackConfigAsync(webhookId, body, null).thenAccept(result -> {
+webhooksController.updatecontactpostbackconfigAsync(webhookId, body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -643,17 +633,17 @@ webhooksController.updateContactPostbackConfigAsync(webhookId, body, null).thenA
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Update Transaction Postback Config
+# Updatetransactionpostbackconfig
 
 ```java
-CompletableFuture<ResponseWebhook> updateTransactionPostbackConfigAsync(
+CompletableFuture<ApiResponse<ResponseWebhook>> updatetransactionpostbackconfigAsync(
     final String webhookId,
     final V1WebhooksTransactionRequest1 body,
-    final List<Expand123Enum> expand)
+    final List<Expand123> expand)
 ```
 
 ## Parameters
@@ -662,11 +652,11 @@ CompletableFuture<ResponseWebhook> updateTransactionPostbackConfigAsync(
 |  --- | --- | --- | --- |
 | `webhookId` | `String` | Template, Required | Postback Config ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1WebhooksTransactionRequest1`](../../doc/models/v1-webhooks-transaction-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseWebhook`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseWebhook`](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -677,7 +667,6 @@ V1WebhooksTransactionRequest1 body = new V1WebhooksTransactionRequest1.Builder()
     .basicAuthUsername("tester")
     .basicAuthPassword("Test@522")
     .expands("changelogs,tags")
-    .format(FormatEnum.APIDEFAULT)
     .isActive(true)
     .locationId("11e95f8ec39de8fbdb0a4f1a")
     .onCreate(true)
@@ -686,20 +675,19 @@ V1WebhooksTransactionRequest1 body = new V1WebhooksTransactionRequest1.Builder()
     .legacy(true)
     .postbackConfigId("11e95f8ec39de8fbdb0a4f1a")
     .productTransactionId("11e95f8ec39de8fbdb0a4f1a")
-    .resource(Resource12Enum.CONTACT)
     .numberOfAttempts(1)
     .url("https://127.0.0.1/receiver")
     .build();
 
-webhooksController.updateTransactionPostbackConfigAsync(webhookId, body, null).thenAccept(result -> {
+webhooksController.updatetransactionpostbackconfigAsync(webhookId, body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -753,6 +741,6 @@ webhooksController.updateTransactionPostbackConfigAsync(webhookId, body, null).t
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

@@ -10,23 +10,23 @@ UsersController usersController = client.getUsersController();
 
 ## Methods
 
-* [Create a New API Key](../../doc/controllers/users.md#create-a-new-api-key)
-* [Create a New User](../../doc/controllers/users.md#create-a-new-user)
-* [List All User](../../doc/controllers/users.md#list-all-user)
-* [Delete a User Record](../../doc/controllers/users.md#delete-a-user-record)
-* [View Single User Record](../../doc/controllers/users.md#view-single-user-record)
-* [Update a User Record](../../doc/controllers/users.md#update-a-user-record)
-* [View Self Record](../../doc/controllers/users.md#view-self-record)
-* [Remove Verification](../../doc/controllers/users.md#remove-verification)
-* [Send Verification](../../doc/controllers/users.md#send-verification)
+* [Createanew AP Ikey](../../doc/controllers/users.md#createanew-ap-ikey)
+* [Createanewuser](../../doc/controllers/users.md#createanewuser)
+* [Listall User](../../doc/controllers/users.md#listall-user)
+* [Deleteauserrecord](../../doc/controllers/users.md#deleteauserrecord)
+* [Viewsingleuserrecord](../../doc/controllers/users.md#viewsingleuserrecord)
+* [Updateauserrecord](../../doc/controllers/users.md#updateauserrecord)
+* [Viewselfrecord](../../doc/controllers/users.md#viewselfrecord)
+* [Removeverification](../../doc/controllers/users.md#removeverification)
+* [Sendverification](../../doc/controllers/users.md#sendverification)
 
 
-# Create a New API Key
+# Createanew AP Ikey
 
 ```java
-CompletableFuture<ResponseUserApiKey> createANewAPIKeyAsync(
+CompletableFuture<ApiResponse<ResponseUserApiKey>> createanewApIkeyAsync(
     final String userId,
-    final List<Expand117Enum> expand)
+    final List<Expand117> expand)
 ```
 
 ## Parameters
@@ -34,25 +34,25 @@ CompletableFuture<ResponseUserApiKey> createANewAPIKeyAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `userId` | `String` | Template, Required | User ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseUserApiKey`](../../doc/models/response-user-api-key.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseUserApiKey`](../../doc/models/response-user-api-key.md).
 
 ## Example Usage
 
 ```java
 String userId = "11e95f8ec39de8fbdb0a4f1a";
-usersController.createANewAPIKeyAsync(userId, null).thenAccept(result -> {
+usersController.createanewApIkeyAsync(userId, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -77,15 +77,15 @@ usersController.createANewAPIKeyAsync(userId, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Create a New User
+# Createanewuser
 
 ```java
-CompletableFuture<ResponseUser> createANewUserAsync(
+CompletableFuture<ApiResponse<ResponseUser>> createanewuserAsync(
     final V1UsersRequest body,
-    final List<Expand117Enum> expand)
+    final List<Expand117> expand)
 ```
 
 ## Parameters
@@ -93,11 +93,11 @@ CompletableFuture<ResponseUser> createANewUserAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1UsersRequest`](../../doc/models/v1-users-request.md) | Body, Required | - |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseUser`](../../doc/models/response-user.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseUser`](../../doc/models/response-user.md).
 
 ## Example Usage
 
@@ -107,7 +107,7 @@ V1UsersRequest body = new V1UsersRequest.Builder(
     "Smith",
     "11e95f8ec39de8fbdb0a4f1a",
     "{user_name}",
-    UserTypeCodeEnum.ENUM_100
+    UserTypeCode.ENUM_600
 )
 .accountNumber("5454545454545454")
 .brandingDomainUrl("{branding_domain_url}")
@@ -127,20 +127,19 @@ V1UsersRequest body = new V1UsersRequest.Builder(
 .userApiKey("234bas8dfn8238f923w2")
 .zip("48375")
 .locationId("11e95f8ec39de8fbdb0a4f1a")
-.statusCode(StatusCodeEnum.ENUM_1)
 .apiOnly(false)
 .isInvitation(false)
 .build();
 
-usersController.createANewUserAsync(body, null).thenAccept(result -> {
+usersController.createanewuserAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -541,43 +540,43 @@ usersController.createANewUserAsync(body, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# List All User
+# Listall User
 
 ```java
-CompletableFuture<ResponseUsersCollection> listAllUserAsync(
-    final Page page,
+CompletableFuture<ApiResponse<ResponseUsersCollection>> listallUserAsync(
+    final Page1 page,
     final List<Order21> order,
     final List<FilterBy> filterBy,
-    final List<Expand117Enum> expand,
-    final Format1Enum format,
+    final List<Expand117> expand,
+    final Format1 format,
     final String typeahead,
-    final List<Field60Enum> fields)
+    final List<Field60> fields)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `String` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field60Enum>`](../../doc/models/field-60-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field60>`](../../doc/models/field-60.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`ResponseUsersCollection`](../../doc/models/response-users-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseUsersCollection`](../../doc/models/response-users-collection.md).
 
 ## Example Usage
 
 ```java
-Page page = new Page.Builder()
+Page1 page = new Page1.Builder()
     .number(1)
     .size(50)
     .build();
@@ -585,7 +584,7 @@ Page page = new Page.Builder()
 List<Order21> order = Arrays.asList(
     new Order21.Builder(
         "first_name",
-        OperatorEnum.ASC
+        Operator.ASC
     )
     .build()
 );
@@ -594,7 +593,7 @@ List<FilterBy> filterBy = Arrays.asList(
     new FilterBy.Builder(
         "first_name",
         FilterByOperator.fromOperator1(
-            Operator1Enum.ENUM_1
+            Operator1.ENUM_1
         ),
         FilterByValue.fromFilterByValueCase1(
             FilterByValueCase1.fromString(
@@ -605,15 +604,15 @@ List<FilterBy> filterBy = Arrays.asList(
     .build()
 );
 
-usersController.listAllUserAsync(page, order, filterBy, null, null, null, null).thenAccept(result -> {
+usersController.listallUserAsync(page, order, filterBy, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -1036,13 +1035,13 @@ usersController.listAllUserAsync(page, order, filterBy, null, null, null, null).
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Delete a User Record
+# Deleteauserrecord
 
 ```java
-CompletableFuture<ResponseUser> deleteAUserRecordAsync(
+CompletableFuture<ApiResponse<ResponseUser>> deleteauserrecordAsync(
     final String userId)
 ```
 
@@ -1054,22 +1053,22 @@ CompletableFuture<ResponseUser> deleteAUserRecordAsync(
 
 ## Response Type
 
-[`ResponseUser`](../../doc/models/response-user.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseUser`](../../doc/models/response-user.md).
 
 ## Example Usage
 
 ```java
 String userId = "11e95f8ec39de8fbdb0a4f1a";
 
-usersController.deleteAUserRecordAsync(userId).thenAccept(result -> {
+usersController.deleteauserrecordAsync(userId).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -1467,16 +1466,16 @@ usersController.deleteAUserRecordAsync(userId).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single User Record
+# Viewsingleuserrecord
 
 ```java
-CompletableFuture<ResponseUser> viewSingleUserRecordAsync(
+CompletableFuture<ApiResponse<ResponseUser>> viewsingleuserrecordAsync(
     final String userId,
-    final List<Expand117Enum> expand,
-    final List<Field60Enum> fields)
+    final List<Expand117> expand,
+    final List<Field60> fields)
 ```
 
 ## Parameters
@@ -1484,26 +1483,26 @@ CompletableFuture<ResponseUser> viewSingleUserRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `userId` | `String` | Template, Required | User ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field60Enum>`](../../doc/models/field-60-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field60>`](../../doc/models/field-60.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`ResponseUser`](../../doc/models/response-user.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseUser`](../../doc/models/response-user.md).
 
 ## Example Usage
 
 ```java
 String userId = "11e95f8ec39de8fbdb0a4f1a";
-usersController.viewSingleUserRecordAsync(userId, null, null).thenAccept(result -> {
+usersController.viewsingleuserrecordAsync(userId, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -1901,16 +1900,16 @@ usersController.viewSingleUserRecordAsync(userId, null, null).thenAccept(result 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Update a User Record
+# Updateauserrecord
 
 ```java
-CompletableFuture<ResponseUser> updateAUserRecordAsync(
+CompletableFuture<ApiResponse<ResponseUser>> updateauserrecordAsync(
     final String userId,
     final V1UsersRequest1 body,
-    final List<Expand117Enum> expand)
+    final List<Expand117> expand)
 ```
 
 ## Parameters
@@ -1919,11 +1918,11 @@ CompletableFuture<ResponseUser> updateAUserRecordAsync(
 |  --- | --- | --- | --- |
 | `userId` | `String` | Template, Required | User ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1UsersRequest1`](../../doc/models/v1-users-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseUser`](../../doc/models/response-user.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseUser`](../../doc/models/response-user.md).
 
 ## Example Usage
 
@@ -1950,23 +1949,21 @@ V1UsersRequest1 body = new V1UsersRequest1.Builder()
     .tz("America/New_York")
     .username("{user_name}")
     .userApiKey("234bas8dfn8238f923w2")
-    .userTypeCode(UserTypeCodeEnum.ENUM_100)
     .zip("48375")
     .locationId("11e95f8ec39de8fbdb0a4f1a")
-    .statusCode(StatusCodeEnum.ENUM_1)
     .apiOnly(false)
     .isInvitation(false)
     .build();
 
-usersController.updateAUserRecordAsync(userId, body, null).thenAccept(result -> {
+usersController.updateauserrecordAsync(userId, body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -2367,41 +2364,41 @@ usersController.updateAUserRecordAsync(userId, body, null).thenAccept(result -> 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# View Self Record
+# Viewselfrecord
 
 ```java
-CompletableFuture<ResponseUser> viewSelfRecordAsync(
-    final List<Expand117Enum> expand,
-    final List<Field60Enum> fields)
+CompletableFuture<ApiResponse<ResponseUser>> viewselfrecordAsync(
+    final List<Expand117> expand,
+    final List<Field60> fields)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field60Enum>`](../../doc/models/field-60-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field60>`](../../doc/models/field-60.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`ResponseUser`](../../doc/models/response-user.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseUser`](../../doc/models/response-user.md).
 
 ## Example Usage
 
 ```java
-usersController.viewSelfRecordAsync(null, null).thenAccept(result -> {
+usersController.viewselfrecordAsync(null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -2799,15 +2796,15 @@ usersController.viewSelfRecordAsync(null, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Remove Verification
+# Removeverification
 
 Remove the pending user
 
 ```java
-CompletableFuture<ResponseRemoveVerification> removeVerificationAsync(
+CompletableFuture<ApiResponse<ResponseRemoveVerification>> removeverificationAsync(
     final String userId)
 ```
 
@@ -2819,22 +2816,22 @@ CompletableFuture<ResponseRemoveVerification> removeVerificationAsync(
 
 ## Response Type
 
-[`ResponseRemoveVerification`](../../doc/models/response-remove-verification.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseRemoveVerification`](../../doc/models/response-remove-verification.md).
 
 ## Example Usage
 
 ```java
 String userId = "user_id8";
 
-usersController.removeVerificationAsync(userId).thenAccept(result -> {
+usersController.removeverificationAsync(userId).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -2862,15 +2859,15 @@ usersController.removeVerificationAsync(userId).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Send Verification
+# Sendverification
 
 Send an verification email to the pending user
 
 ```java
-CompletableFuture<ResponseSendVerification> sendVerificationAsync(
+CompletableFuture<ApiResponse<ResponseSendVerification>> sendverificationAsync(
     final String userId)
 ```
 
@@ -2882,22 +2879,22 @@ CompletableFuture<ResponseSendVerification> sendVerificationAsync(
 
 ## Response Type
 
-[`ResponseSendVerification`](../../doc/models/response-send-verification.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseSendVerification`](../../doc/models/response-send-verification.md).
 
 ## Example Usage
 
 ```java
 String userId = "user_id8";
 
-usersController.sendVerificationAsync(userId).thenAccept(result -> {
+usersController.sendverificationAsync(userId).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -2925,5 +2922,5 @@ usersController.sendVerificationAsync(userId).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

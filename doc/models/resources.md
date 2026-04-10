@@ -3,6 +3,8 @@
 
 Resource Information on `expand`
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Resources`
@@ -18,6 +20,7 @@ Resource Information on `expand`
 | `LastUsedDate` | `Integer` | Optional | Last Used Date | Integer getLastUsedDate() | setLastUsedDate(Integer lastUsedDate) |
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -29,7 +32,11 @@ Resource Information on `expand`
   "last_used_date": 1422040992,
   "created_ts": 1422040992,
   "modified_ts": 1422040992,
-  "priv": "priv0"
+  "priv": "priv0",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

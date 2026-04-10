@@ -1,12 +1,12 @@
 # 3 DS Transactions
 
 ```java
-M3DSTransactionsController m3DSTransactionsController = client.getM3DSTransactionsController();
+M3DsTransactionsController m3DsTransactionsController = client.getM3DsTransactionsController();
 ```
 
 ## Class Name
 
-`M3DSTransactionsController`
+`M3DsTransactionsController`
 
 
 # 3 DS Transactions Request
@@ -14,7 +14,7 @@ M3DSTransactionsController m3DSTransactionsController = client.getM3DSTransactio
 For getting results of successful 3DS authentication attempts
 
 ```java
-CompletableFuture<ResponseThreeDSTransaction> m3DSTransactionsRequestAsync(
+CompletableFuture<ApiResponse<ResponseThreeDsTransaction>> m3DsTransactionsRequestAsync(
     final String threeDsServerTransId,
     final String productTransactionId)
 ```
@@ -28,7 +28,7 @@ CompletableFuture<ResponseThreeDSTransaction> m3DSTransactionsRequestAsync(
 
 ## Response Type
 
-[`ResponseThreeDSTransaction`](../../doc/models/response-three-ds-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseThreeDsTransaction`](../../doc/models/response-three-ds-transaction.md).
 
 ## Example Usage
 
@@ -36,15 +36,15 @@ CompletableFuture<ResponseThreeDSTransaction> m3DSTransactionsRequestAsync(
 String threeDsServerTransId = "516ef0bf-e510-4895-b0a8-c889f2eaf471";
 String productTransactionId = "11e95f8ec39de8fbdb0a4f1a";
 
-m3DSTransactionsController.m3DSTransactionsRequestAsync(threeDsServerTransId, productTransactionId).thenAccept(result -> {
+m3DsTransactionsController.m3DsTransactionsRequestAsync(threeDsServerTransId, productTransactionId).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -75,5 +75,5 @@ m3DSTransactionsController.m3DSTransactionsRequestAsync(threeDsServerTransId, pr
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

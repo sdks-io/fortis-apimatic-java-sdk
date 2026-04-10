@@ -1,6 +1,8 @@
 
 # List 10
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `List10`
@@ -31,8 +33,8 @@
 | `ItemFooter` | `String` | Optional | Item footer<br><br>**Constraints**: *Maximum Length*: `250` | String getItemFooter() | setItemFooter(String itemFooter) |
 | `AmountDue` | `Double` | Optional | Amount Due | Double getAmountDue() | setAmountDue(Double amountDue) |
 | `NotificationEmail` | `String` | Optional | Notification email<br><br>**Constraints**: *Maximum Length*: `640` | String getNotificationEmail() | setNotificationEmail(String notificationEmail) |
-| `StatusId` | [`StatusIdEnum`](../../doc/models/status-id-enum.md) | Optional | (DEPRECATED) Status Id | StatusIdEnum getStatusId() | setStatusId(StatusIdEnum statusId) |
-| `StatusCode` | [`StatusCode14Enum`](../../doc/models/status-code-14-enum.md) | Optional | Status Code | StatusCode14Enum getStatusCode() | setStatusCode(StatusCode14Enum statusCode) |
+| `StatusId` | `Object` | Optional | - | Object getStatusId() | setStatusId(Object statusId) |
+| `StatusCode` | `Object` | Optional | - | Object getStatusCode() | setStatusCode(Object statusCode) |
 | `Note` | `String` | Optional | Note<br><br>**Constraints**: *Maximum Length*: `200` | String getNote() | setNote(String note) |
 | `NotificationDaysBeforeDueDate` | `Integer` | Optional | Notification days before due date<br><br>**Constraints**: `>= 0`, `<= 99` | Integer getNotificationDaysBeforeDueDate() | setNotificationDaysBeforeDueDate(Integer notificationDaysBeforeDueDate) |
 | `NotificationDaysAfterDueDate` | `Integer` | Optional | Notification days after due date<br><br>**Constraints**: `>= 0`, `<= 99` | Integer getNotificationDaysAfterDueDate() | setNotificationDaysAfterDueDate(Integer notificationDaysAfterDueDate) |
@@ -56,21 +58,22 @@
 | `Active` | `Boolean` | Optional | Active status | Boolean getActive() | setActive(Boolean active) |
 | `PaymentStatusId` | `Integer` | Optional | Payment Status Id<br><br>**Constraints**: `>= 1`, `<= 3` | Integer getPaymentStatusId() | setPaymentStatusId(Integer paymentStatusId) |
 | `IsActive` | `Boolean` | Optional | Register is active | Boolean getIsActive() | setIsActive(Boolean isActive) |
-| `QuickInvoiceSetting` | [`QuickInvoiceSetting`](../../doc/models/quick-invoice-setting.md) | Optional | Quick Invoice Setting Information on `expand` | QuickInvoiceSetting getQuickInvoiceSetting() | setQuickInvoiceSetting(QuickInvoiceSetting quickInvoiceSetting) |
+| `QuickInvoiceSetting` | [`QuickInvoiceSetting1`](../../doc/models/quick-invoice-setting-1.md) | Optional | - | QuickInvoiceSetting1 getQuickInvoiceSetting() | setQuickInvoiceSetting(QuickInvoiceSetting1 quickInvoiceSetting) |
 | `QuickInvoiceViews` | [`List<QuickInvoiceView>`](../../doc/models/quick-invoice-view.md) | Optional | Quick Invoice View Information on `expand` | List<QuickInvoiceView> getQuickInvoiceViews() | setQuickInvoiceViews(List<QuickInvoiceView> quickInvoiceViews) |
-| `Location` | [`Location`](../../doc/models/location.md) | Optional | Location Information on `expand` | Location getLocation() | setLocation(Location location) |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` | CreatedUser getCreatedUser() | setCreatedUser(CreatedUser createdUser) |
-| `ModifiedUser` | [`ModifiedUser`](../../doc/models/modified-user.md) | Optional | Modified User Information on `expand` | ModifiedUser getModifiedUser() | setModifiedUser(ModifiedUser modifiedUser) |
+| `Location` | [`Location18`](../../doc/models/location-18.md) | Optional | - | Location18 getLocation() | setLocation(Location18 location) |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - | User9 getCreatedUser() | setCreatedUser(User9 createdUser) |
+| `ModifiedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - | User9 getModifiedUser() | setModifiedUser(User9 modifiedUser) |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` | List<Changelog> getChangelogs() | setChangelogs(List<Changelog> changelogs) |
-| `Contact` | [`Contact1`](../../doc/models/contact-1.md) | Optional | Contact Information on `expand` | Contact1 getContact() | setContact(Contact1 contact) |
+| `Contact` | [`Contact3`](../../doc/models/contact-3.md) | Optional | - | Contact3 getContact() | setContact(Contact3 contact) |
 | `LogEmails` | [`List<LogEmail>`](../../doc/models/log-email.md) | Optional | Log Email Information on `expand` | List<LogEmail> getLogEmails() | setLogEmails(List<LogEmail> logEmails) |
-| `LogSms` | [`LogSms`](../../doc/models/log-sms.md) | Optional | Log Sms Information on `expand` | LogSms getLogSms() | setLogSms(LogSms logSms) |
+| `LogSms` | [`LogSms1`](../../doc/models/log-sms-1.md) | Optional | - | LogSms1 getLogSms() | setLogSms(LogSms1 logSms) |
 | `Transactions` | [`List<Transaction>`](../../doc/models/transaction.md) | Optional | Transaction Information on `expand` | List<Transaction> getTransactions() | setTransactions(List<Transaction> transactions) |
-| `CcProductTransaction` | [`CcProductTransaction`](../../doc/models/cc-product-transaction.md) | Optional | Cc Product Transaction Information on `expand` | CcProductTransaction getCcProductTransaction() | setCcProductTransaction(CcProductTransaction ccProductTransaction) |
-| `AchProductTransaction` | [`AchProductTransaction`](../../doc/models/ach-product-transaction.md) | Optional | Ach Product Transaction Information on `expand` | AchProductTransaction getAchProductTransaction() | setAchProductTransaction(AchProductTransaction achProductTransaction) |
-| `EmailBlacklist` | [`EmailBlacklist`](../../doc/models/email-blacklist.md) | Optional | Email Blacklist Information on `expand` | EmailBlacklist getEmailBlacklist() | setEmailBlacklist(EmailBlacklist emailBlacklist) |
-| `SmsBlacklist` | [`SmsBlacklist`](../../doc/models/sms-blacklist.md) | Optional | Sms Blacklist Information on `expand` | SmsBlacklist getSmsBlacklist() | setSmsBlacklist(SmsBlacklist smsBlacklist) |
+| `CcProductTransaction` | [`ProductTransaction1`](../../doc/models/product-transaction-1.md) | Optional | - | ProductTransaction1 getCcProductTransaction() | setCcProductTransaction(ProductTransaction1 ccProductTransaction) |
+| `AchProductTransaction` | [`ProductTransaction1`](../../doc/models/product-transaction-1.md) | Optional | - | ProductTransaction1 getAchProductTransaction() | setAchProductTransaction(ProductTransaction1 achProductTransaction) |
+| `EmailBlacklist` | [`EmailBlacklist1`](../../doc/models/email-blacklist-1.md) | Optional | - | EmailBlacklist1 getEmailBlacklist() | setEmailBlacklist(EmailBlacklist1 emailBlacklist) |
+| `SmsBlacklist` | [`SmsBlacklist1`](../../doc/models/sms-blacklist-1.md) | Optional | - | SmsBlacklist1 getSmsBlacklist() | setSmsBlacklist(SmsBlacklist1 smsBlacklist) |
 | `PaymentUrl` | `String` | Optional | Payment Url Information on `expand` | String getPaymentUrl() | setPaymentUrl(String paymentUrl) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -97,8 +100,6 @@
   "item_footer": "Thank you",
   "amount_due": 245.36,
   "notification_email": "email@domain.com",
-  "status_id": 1,
-  "status_code": 1,
   "note": "some note",
   "notification_days_before_due_date": 3,
   "notification_days_after_due_date": 7,
@@ -119,7 +120,11 @@
   "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "active": true,
   "payment_status_id": 1,
-  "is_active": true
+  "is_active": true,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

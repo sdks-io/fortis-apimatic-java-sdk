@@ -1,6 +1,8 @@
 
 # V1 Tokens Wallet Request
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `V1TokensWalletRequest`
@@ -18,11 +20,11 @@
 | `TokenC1` | `String` | Optional | Custom field 1 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` | String getTokenC1() | setTokenC1(String tokenC1) |
 | `TokenC2` | `String` | Optional | Custom field 2 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` | String getTokenC2() | setTokenC2(String tokenC2) |
 | `TokenC3` | `String` | Optional | Custom field 3 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` | String getTokenC3() | setTokenC3(String tokenC3) |
-| `AchSecCode` | [`AchSecCode3Enum`](../../doc/models/ach-sec-code-3-enum.md) | Optional | SEC code for the account | AchSecCode3Enum getAchSecCode() | setAchSecCode(AchSecCode3Enum achSecCode) |
-| `BillingAddress` | [`BillingAddress`](../../doc/models/billing-address.md) | Optional | Billing Address Object | BillingAddress getBillingAddress() | setBillingAddress(BillingAddress billingAddress) |
+| `AchSecCode` | `Object` | Optional | - | Object getAchSecCode() | setAchSecCode(Object achSecCode) |
+| `BillingAddress` | [`BillingAddress7`](../../doc/models/billing-address-7.md) | Optional | - | BillingAddress7 getBillingAddress() | setBillingAddress(BillingAddress7 billingAddress) |
 | `ContactId` | `String` | Optional | Used to associate the Token with a Contact.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getContactId() | setContactId(String contactId) |
 | `CustomerId` | `String` | Optional | Used to store a customer identification number.<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `50` | String getCustomerId() | setCustomerId(String customerId) |
-| `IdentityVerification` | [`IdentityVerification2`](../../doc/models/identity-verification-2.md) | Optional | Identity verification | IdentityVerification2 getIdentityVerification() | setIdentityVerification(IdentityVerification2 identityVerification) |
+| `IdentityVerification` | [`IdentityVerification5`](../../doc/models/identity-verification-5.md) | Optional | - | IdentityVerification5 getIdentityVerification() | setIdentityVerification(IdentityVerification5 identityVerification) |
 | `LocationId` | `String` | Required | A valid Location Id associated with the Contact for this Token<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getLocationId() | setLocationId(String locationId) |
 | `PreviousAccountVaultApiId` | `String` | Optional | Can be used to pull payment info from a previous token api id.<br><br>**Constraints**: *Maximum Length*: `64` | String getPreviousAccountVaultApiId() | setPreviousAccountVaultApiId(String previousAccountVaultApiId) |
 | `PreviousTokenApiId` | `String` | Optional | Can be used to pull payment info from a previous token api id.<br><br>**Constraints**: *Maximum Length*: `64` | String getPreviousTokenApiId() | setPreviousTokenApiId(String previousTokenApiId) |
@@ -42,8 +44,9 @@
 | `AcsTransactionId` | `String` | Optional | ACS Transaction ID<br><br>**Constraints**: *Maximum Length*: `36` | String getAcsTransactionId() | setAcsTransactionId(String acsTransactionId) |
 | `Joi` | [`Joi4`](../../doc/models/joi-4.md) | Optional | - | Joi4 getJoi() | setJoi(Joi4 joi) |
 | `WalletData` | `String` | Required | Wallet Data | String getWalletData() | setWalletData(String walletData) |
-| `WalletProvider` | [`WalletProviderEnum`](../../doc/models/wallet-provider-enum.md) | Required | Wallet Provider | WalletProviderEnum getWalletProvider() | setWalletProvider(WalletProviderEnum walletProvider) |
+| `WalletProvider` | [`WalletProvider`](../../doc/models/wallet-provider.md) | Required | - | WalletProvider getWalletProvider() | setWalletProvider(WalletProvider walletProvider) |
 | `WalletKeyId` | `String` | Optional | Wallet Key ID | String getWalletKeyId() | setWalletKeyId(String walletKeyId) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -58,7 +61,6 @@
   "token_c1": "token custom 1",
   "token_c2": "token custom 2",
   "token_c3": "token custom 3",
-  "ach_sec_code": "WEB",
   "contact_id": "11e95f8ec39de8fbdb0a4f1a",
   "customer_id": "123456",
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
@@ -77,9 +79,13 @@
   "secure_auth_data": "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
   "three_ds_server_trans_id": "d65e93c3-35ab-41ba-b307-767bfc19eae",
   "acs_transaction_id": "13c701a3-5a88-4c45-89e9-ef65e50a8bf9",
-  "wallet_data": "wallet_data0",
+  "wallet_data": "wallet_data2",
   "wallet_provider": "GooglePay",
-  "wallet_key_id": "11ee2bd392f32cb8aefd5bb5"
+  "wallet_key_id": "11ee2bd392f32cb8aefd5bb5",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

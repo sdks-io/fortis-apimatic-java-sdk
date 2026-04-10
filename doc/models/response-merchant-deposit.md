@@ -1,6 +1,8 @@
 
 # Response Merchant Deposit
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ResponseMerchantDeposit`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Type` | [`Type47Enum`](../../doc/models/type-47-enum.md) | Optional | Resource Type<br><br>**Default**: `Type47Enum.MERCHANTDEPOSIT` | Type47Enum getType() | setType(Type47Enum type) |
+| `Type` | [`Type47`](../../doc/models/type-47.md) | Optional | - | Type47 getType() | setType(Type47 type) |
 | `Data` | [`Data14`](../../doc/models/data-14.md) | Optional | - | Data14 getData() | setData(Data14 data) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -26,7 +29,15 @@
       "deposit",
       "adjustment",
       "fee"
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

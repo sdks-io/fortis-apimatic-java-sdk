@@ -1,6 +1,8 @@
 
 # Addon
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Addon`
@@ -15,6 +17,7 @@
 | `LocationSetupUrl` | `String` | Optional | Location Setup URL<br><br>**Constraints**: *Maximum Length*: `512` | String getLocationSetupUrl() | setLocationSetupUrl(String locationSetupUrl) |
 | `UserSetupUrl` | `String` | Optional | User Setup URL<br><br>**Constraints**: *Maximum Length*: `512` | String getUserSetupUrl() | setUserSetupUrl(String userSetupUrl) |
 | `EncryptUrlParams` | `Boolean` | Optional | Encrypt URL Params | Boolean getEncryptUrlParams() | setEncryptUrlParams(Boolean encryptUrlParams) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -25,7 +28,11 @@
   "secret": "secret4",
   "iframe_url": "iframe_url4",
   "location_setup_url": "location_setup_url0",
-  "user_setup_url": "user_setup_url6"
+  "user_setup_url": "user_setup_url6",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -1,6 +1,8 @@
 
 # V1 Terminals Request 1
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `V1TerminalsRequest1`
@@ -13,15 +15,15 @@
 | `DefaultProductTransactionId` | `String` | Optional | Product Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getDefaultProductTransactionId() | setDefaultProductTransactionId(String defaultProductTransactionId) |
 | `TerminalApplicationId` | `String` | Optional | Terminal Application ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getTerminalApplicationId() | setTerminalApplicationId(String terminalApplicationId) |
 | `TerminalCvmId` | `String` | Optional | Terminal CVM ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getTerminalCvmId() | setTerminalCvmId(String terminalCvmId) |
-| `TerminalManufacturerCode` | [`TerminalManufacturerCodeEnum`](../../doc/models/terminal-manufacturer-code-enum.md) | Optional | Terminal Manufacturer Code | TerminalManufacturerCodeEnum getTerminalManufacturerCode() | setTerminalManufacturerCode(TerminalManufacturerCodeEnum terminalManufacturerCode) |
+| `TerminalManufacturerCode` | `Object` | Optional | - | Object getTerminalManufacturerCode() | setTerminalManufacturerCode(Object terminalManufacturerCode) |
 | `Title` | `String` | Optional | Terminal Name<br><br>**Constraints**: *Maximum Length*: `64` | String getTitle() | setTitle(String title) |
 | `MacAddress` | `String` | Optional | Terminal MAC Address<br><br>**Constraints**: *Pattern*: `^([0-9a-fA-F]{2}[:-]?){5}([0-9a-fA-F]{2})$` | String getMacAddress() | setMacAddress(String macAddress) |
 | `LocalIpAddress` | `String` | Optional | Terminal Local IP Address | String getLocalIpAddress() | setLocalIpAddress(String localIpAddress) |
 | `Port` | `Integer` | Optional | Terminal Port<br><br>**Default**: `10009`<br><br>**Constraints**: `>= 0`, `<= 65535` | Integer getPort() | setPort(Integer port) |
 | `SerialNumber` | `String` | Optional | Terminal Serial Number<br><br>**Constraints**: *Maximum Length*: `24`, *Pattern*: `^[a-zA-Z0-9]*$` | String getSerialNumber() | setSerialNumber(String serialNumber) |
 | `TerminalNumber` | `String` | Optional | Terminal Number<br><br>**Constraints**: *Minimum Length*: `15`, *Maximum Length*: `15` | String getTerminalNumber() | setTerminalNumber(String terminalNumber) |
-| `TerminalTimeouts` | [`TerminalTimeouts12`](../../doc/models/terminal-timeouts-12.md) | Optional | The following options outlines some configurable timeout values that can be used to customize the experience at the terminal for the cardholder.<br><br>> These timeouts are specific to Ingenico devices only. | TerminalTimeouts12 getTerminalTimeouts() | setTerminalTimeouts(TerminalTimeouts12 terminalTimeouts) |
-| `TipPercents` | [`TipPercents`](../../doc/models/tip-percents.md) | Optional | A JSON of tip percents the JSON MUST contain only these three fields: percent_1, percent_2, percent_3 | TipPercents getTipPercents() | setTipPercents(TipPercents tipPercents) |
+| `TerminalTimeouts` | [`TerminalTimeouts1`](../../doc/models/terminal-timeouts-1.md) | Optional | - | TerminalTimeouts1 getTerminalTimeouts() | setTerminalTimeouts(TerminalTimeouts1 terminalTimeouts) |
+| `TipPercents` | [`TipPercents1`](../../doc/models/tip-percents-1.md) | Optional | - | TipPercents1 getTipPercents() | setTipPercents(TipPercents1 tipPercents) |
 | `LocationApiId` | `String` | Optional | Location Api ID<br><br>**Constraints**: *Maximum Length*: `64` | String getLocationApiId() | setLocationApiId(String locationApiId) |
 | `TerminalApiId` | `String` | Optional | Terminal Api ID<br><br>**Constraints**: *Maximum Length*: `64` | String getTerminalApiId() | setTerminalApiId(String terminalApiId) |
 | `HeaderLine1` | `String` | Optional | Header Line 1<br><br>**Constraints**: *Maximum Length*: `32` | String getHeaderLine1() | setHeaderLine1(String headerLine1) |
@@ -46,8 +48,9 @@
 | `IsProvisioned` | `Boolean` | Optional | Is Provisioned | Boolean getIsProvisioned() | setIsProvisioned(Boolean isProvisioned) |
 | `TipEnable` | `Boolean` | Optional | Tip Enable | Boolean getTipEnable() | setTipEnable(Boolean tipEnable) |
 | `ValidatedDecryption` | `Boolean` | Optional | Validated Decryption | Boolean getValidatedDecryption() | setValidatedDecryption(Boolean validatedDecryption) |
-| `CommunicationType` | [`CommunicationTypeEnum`](../../doc/models/communication-type-enum.md) | Optional | Communication Type | CommunicationTypeEnum getCommunicationType() | setCommunicationType(CommunicationTypeEnum communicationType) |
+| `CommunicationType` | `Object` | Optional | - | Object getCommunicationType() | setCommunicationType(Object communicationType) |
 | `Active` | `Boolean` | Optional | Active | Boolean getActive() | setActive(Boolean active) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -57,7 +60,6 @@
   "default_product_transaction_id": "11e95f8ec39de8fbdb0a4f1a",
   "terminal_application_id": "11e95f8ec39de8fbdb0a4f1a",
   "terminal_cvm_id": "11e95f8ec39de8fbdb0a4f1a",
-  "terminal_manufacturer_code": "1",
   "title": "My terminal",
   "mac_address": "3D:F2:C9:A6:B3:4F",
   "local_ip_address": "192.168.0.10",
@@ -86,8 +88,15 @@
   "is_provisioned": false,
   "tip_enable": false,
   "validated_decryption": false,
-  "communication_type": "http",
-  "active": true
+  "active": true,
+  "terminal_manufacturer_code": {
+    "key1": "val1",
+    "key2": "val2"
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

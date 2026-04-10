@@ -1,6 +1,8 @@
 
 # List 5
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `List5`
@@ -13,7 +15,7 @@
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
 | `AccountNumber` | `String` | Optional | Account number<br><br>**Constraints**: *Maximum Length*: `32`, *Pattern*: `^[a-zA-Z0-9\-_]+$` | String getAccountNumber() | setAccountNumber(String accountNumber) |
-| `Address` | [`Address1`](../../doc/models/address-1.md) | Optional | Address | Address1 getAddress() | setAddress(Address1 address) |
+| `Address` | [`Address6`](../../doc/models/address-6.md) | Optional | - | Address6 getAddress() | setAddress(Address6 address) |
 | `BrandingDomainId` | `String` | Optional | GUID for Branding Domain<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getBrandingDomainId() | setBrandingDomainId(String brandingDomainId) |
 | `ContactEmailTrxReceiptDefault` | `Boolean` | Optional | If true, will email contact receipt for any transaction | Boolean getContactEmailTrxReceiptDefault() | setContactEmailTrxReceiptDefault(Boolean contactEmailTrxReceiptDefault) |
 | `DefaultAch` | `String` | Optional | GUID for Location's default ACH Product Transaction<br><br>**Constraints**: *Minimum Length*: `24`, *Maximum Length*: `36` | String getDefaultAch() | setDefaultAch(String defaultAch) |
@@ -33,17 +35,18 @@
 | `ShowContactNotes` | `Boolean` | Optional | If set to true will show 'Notes' tab on Contact | Boolean getShowContactNotes() | setShowContactNotes(Boolean showContactNotes) |
 | `ShowContactFiles` | `Boolean` | Optional | If set to true will show 'Files' tab on Contact | Boolean getShowContactFiles() | setShowContactFiles(Boolean showContactFiles) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
-| `LocationType` | [`LocationTypeEnum`](../../doc/models/location-type-enum.md) | Optional | Location Type | LocationTypeEnum getLocationType() | setLocationType(LocationTypeEnum locationType) |
+| `LocationType` | `Object` | Optional | - | Object getLocationType() | setLocationType(Object locationType) |
 | `BrandingDomainUrl` | `String` | Optional | Branding domain URL | String getBrandingDomainUrl() | setBrandingDomainUrl(String brandingDomainUrl) |
-| `BrandingDomain` | [`BrandingDomain`](../../doc/models/branding-domain.md) | Optional | Branding domain array | BrandingDomain getBrandingDomain() | setBrandingDomain(BrandingDomain brandingDomain) |
+| `BrandingDomain` | [`BrandingDomain2`](../../doc/models/branding-domain-2.md) | Optional | - | BrandingDomain2 getBrandingDomain() | setBrandingDomain(BrandingDomain2 brandingDomain) |
 | `ProductTransactions` | [`List<ProductTransaction1>`](../../doc/models/product-transaction-1.md) | Optional | Product Transactions array | List<ProductTransaction1> getProductTransactions() | setProductTransactions(List<ProductTransaction1> productTransactions) |
-| `ProductFile` | [`ProductFile`](../../doc/models/product-file.md) | Optional | Product file array | ProductFile getProductFile() | setProductFile(ProductFile productFile) |
-| `ProductAccountvault` | [`ProductAccountvault`](../../doc/models/product-accountvault.md) | Optional | Product Token array (legacy) | ProductAccountvault getProductAccountvault() | setProductAccountvault(ProductAccountvault productAccountvault) |
-| `ProductToken` | [`ProductToken`](../../doc/models/product-token.md) | Optional | Product Token array | ProductToken getProductToken() | setProductToken(ProductToken productToken) |
-| `ProductRecurring` | [`ProductRecurring`](../../doc/models/product-recurring.md) | Optional | Product recurring array | ProductRecurring getProductRecurring() | setProductRecurring(ProductRecurring productRecurring) |
+| `ProductFile` | [`ProductFile1`](../../doc/models/product-file-1.md) | Optional | - | ProductFile1 getProductFile() | setProductFile(ProductFile1 productFile) |
+| `ProductAccountvault` | [`ProductAccountvault1`](../../doc/models/product-accountvault-1.md) | Optional | - | ProductAccountvault1 getProductAccountvault() | setProductAccountvault(ProductAccountvault1 productAccountvault) |
+| `ProductToken` | [`ProductToken1`](../../doc/models/product-token-1.md) | Optional | - | ProductToken1 getProductToken() | setProductToken(ProductToken1 productToken) |
+| `ProductRecurring` | [`ProductRecurring1`](../../doc/models/product-recurring-1.md) | Optional | - | ProductRecurring1 getProductRecurring() | setProductRecurring(ProductRecurring1 productRecurring) |
 | `Tags` | [`List<Tag>`](../../doc/models/tag.md) | Optional | Tags array | List<Tag> getTags() | setTags(List<Tag> tags) |
 | `Terminals` | [`List<Terminal2>`](../../doc/models/terminal-2.md) | Optional | Terminals array | List<Terminal2> getTerminals() | setTerminals(List<Terminal2> terminals) |
 | `AdditionalAccess` | [`AdditionalAccess`](../../doc/models/additional-access.md) | Optional | - | AdditionalAccess getAdditionalAccess() | setAdditionalAccess(AdditionalAccess additionalAccess) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -72,14 +75,24 @@
   "show_contact_notes": true,
   "show_contact_files": true,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "location_type": "merchant",
   "branding_domain_url": "subdomain.sandbox.domain.com",
   "address": {
     "city": "city6",
     "state": "state2",
     "postal_code": "postal_code8",
-    "country": "US",
-    "street": "street6"
+    "country": {
+      "key1": "val1",
+      "key2": "val2"
+    },
+    "street": "street6",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

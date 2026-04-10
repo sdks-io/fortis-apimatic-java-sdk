@@ -16,7 +16,7 @@ This method can be used to pre-populate data on the Merchant Processing Applicat
 Properties that are marked "Required" indicate the minimum required data for creating and saving an MPA. When using this method, you must provide data for each "Required" property, or you will not receive an Application ID. Properties that are marked "Required for completion" are those which need to be provided to Fortis before the Merchant Processing Application can be approved. These properties may be omitted or left blank when using this method, however, the merchant will be required to provide this data before the application can be submitted. Properties that are marked "Conditionally Required" may be required for completion of the Merchant Processing Application, depending on the values provided for other fields. See the description for each of these properties for more information about their requirement criteria.
 
 ```java
-CompletableFuture<ResponseOnboarding> merchantBoardingAsync(
+CompletableFuture<ApiResponse<ResponseOnboarding>> merchantBoardingAsync(
     final V1OnboardingRequest body)
 ```
 
@@ -28,13 +28,13 @@ CompletableFuture<ResponseOnboarding> merchantBoardingAsync(
 
 ## Response Type
 
-[`ResponseOnboarding`](../../doc/models/response-onboarding.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseOnboarding`](../../doc/models/response-onboarding.md).
 
 ## Example Usage
 
 ```java
 V1OnboardingRequest body = new V1OnboardingRequest.Builder(
-    new PrimaryPrincipal1.Builder(
+    new PrimaryPrincipal2.Builder(
         "Bob",
         "Fairview"
     )
@@ -52,7 +52,7 @@ V1OnboardingRequest body = new V1OnboardingRequest.Builder(
     "1234YourTemplateCode",
     "email@domain.com",
     "Discount Home Goods",
-    new Location20.Builder(
+    new Location19.Builder(
         "555-555-1212"
     )
     .addressLine1("1200 West Hartford Pkwy")
@@ -61,8 +61,8 @@ V1OnboardingRequest body = new V1OnboardingRequest.Builder(
     .stateProvince("DE")
     .postalCode("55022")
     .build(),
-    null,
-    new Contact11.Builder(
+    AppDelivery.DIRECT,
+    new Contact13.Builder(
         "555-555-3456"
     )
     .firstName("Jeffery")
@@ -70,11 +70,9 @@ V1OnboardingRequest body = new V1OnboardingRequest.Builder(
     .email("jtodd@example.com")
     .build()
 )
-.businessCategory(BusinessCategoryEnum.EDUCATION)
 .swipedPercent(0)
 .keyedPercent(0)
 .ecommercePercent(100)
-.ownershipType(OwnershipTypeEnum.LLP)
 .fedTaxId("0000000000")
 .ccAverageTicketRange(5)
 .ccMonthlyVolumeRange(1)
@@ -93,9 +91,9 @@ onBoardingController.merchantBoardingAsync(body).thenAccept(result -> {
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -184,6 +182,6 @@ onBoardingController.merchantBoardingAsync(body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

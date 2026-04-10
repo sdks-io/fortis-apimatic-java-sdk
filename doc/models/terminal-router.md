@@ -1,6 +1,8 @@
 
 # Terminal Router
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `TerminalRouter`
@@ -16,6 +18,7 @@
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -27,7 +30,11 @@
   "created_ts": 1422040992,
   "modified_ts": 1422040992,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "location_api_id": "location_api_id6"
+  "location_api_id": "location_api_id6",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

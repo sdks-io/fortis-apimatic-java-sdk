@@ -3,6 +3,8 @@
 
 Product file array
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ProductFile`
@@ -25,6 +27,7 @@ Product file array
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
 | `Active` | `Boolean` | Optional | Active | Boolean getActive() | setActive(Boolean active) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -39,7 +42,11 @@ Product file array
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "free_bytes": 216.62,
   "byte_increment": 219.94,
-  "max_file_size_bytes": 237.34
+  "max_file_size_bytes": 237.34,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

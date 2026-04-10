@@ -14,7 +14,7 @@ MerchantDetailsController merchantDetailsController = client.getMerchantDetailsC
 Merchant Details
 
 ```java
-CompletableFuture<ResponseMerchantDetails> merchantDetailsAsync(
+CompletableFuture<ApiResponse<ResponseMerchantDetails>> merchantDetailsAsync(
     final V1WalletProviderMerchantDetailsRequest body)
 ```
 
@@ -26,7 +26,7 @@ CompletableFuture<ResponseMerchantDetails> merchantDetailsAsync(
 
 ## Response Type
 
-[`ResponseMerchantDetails`](../../doc/models/response-merchant-details.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseMerchantDetails`](../../doc/models/response-merchant-details.md).
 
 ## Example Usage
 
@@ -42,9 +42,9 @@ merchantDetailsController.merchantDetailsAsync(body).thenAccept(result -> {
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -80,6 +80,6 @@ merchantDetailsController.merchantDetailsAsync(body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

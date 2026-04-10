@@ -3,6 +3,8 @@
 
 Array of merchant addresses.
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Address81`
@@ -17,7 +19,8 @@ Array of merchant addresses.
 | `StateProvince` | `String` | Required | State or province of address.<br><br>**Constraints**: *Maximum Length*: `2` | String getStateProvince() | setStateProvince(String stateProvince) |
 | `PostalCode` | `String` | Required | Postal code of address.<br><br>**Constraints**: *Maximum Length*: `10` | String getPostalCode() | setPostalCode(String postalCode) |
 | `CountryCode` | `String` | Required | Country of address.<br><br>**Constraints**: *Maximum Length*: `2` | String getCountryCode() | setCountryCode(String countryCode) |
-| `AddressType` | [`AddressTypeEnum`](../../doc/models/address-type-enum.md) | Required | Address type of address.<br><br>**Constraints**: *Maximum Length*: `20` | AddressTypeEnum getAddressType() | setAddressType(AddressTypeEnum addressType) |
+| `AddressType` | [`AddressType`](../../doc/models/address-type.md) | Required | **Constraints**: *Maximum Length*: `20` | AddressType getAddressType() | setAddressType(AddressType addressType) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -29,7 +32,11 @@ Array of merchant addresses.
   "state_province": "TX",
   "postal_code": "75087",
   "country_code": "US",
-  "address_type": "location"
+  "address_type": "corporate",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

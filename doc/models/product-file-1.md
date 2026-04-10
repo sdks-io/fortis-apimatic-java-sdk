@@ -1,6 +1,8 @@
 
 # Product File 1
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ProductFile1`
@@ -23,6 +25,7 @@
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
 | `Active` | `Boolean` | Optional | Active | Boolean getActive() | setActive(Boolean active) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -37,7 +40,11 @@
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "free_bytes": 13.42,
   "byte_increment": 16.74,
-  "max_file_size_bytes": 221.86
+  "max_file_size_bytes": 221.86,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

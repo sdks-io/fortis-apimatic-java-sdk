@@ -3,6 +3,8 @@
 
 Transaction Batch Information on `expand`
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `TransactionBatch`
@@ -28,6 +30,7 @@ Transaction Batch Information on `expand`
 | `TotalVoidCount` | `Integer` | Optional | Total Void Count | Integer getTotalVoidCount() | setTotalVoidCount(Integer totalVoidCount) |
 | `TotalBlindRefundAmount` | `Integer` | Optional | Total Blind Refund Amount | Integer getTotalBlindRefundAmount() | setTotalBlindRefundAmount(Integer totalBlindRefundAmount) |
 | `TotalBlindRefundCount` | `Integer` | Optional | Total Blind Refund Count | Integer getTotalBlindRefundCount() | setTotalBlindRefundCount(Integer totalBlindRefundCount) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -49,7 +52,11 @@ Transaction Batch Information on `expand`
   "total_void_amount": 2342,
   "total_void_count": 17,
   "total_blind_refund_amount": 2342,
-  "total_blind_refund_count": 16
+  "total_blind_refund_count": 16,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -1,6 +1,8 @@
 
 # List 8
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `List8`
@@ -13,7 +15,7 @@
 | `CompanyId` | `String` | Optional | Company Id | String getCompanyId() | setCompanyId(String companyId) |
 | `MerchantId` | `String` | Optional | Merchant Id | String getMerchantId() | setMerchantId(String merchantId) |
 | `Service` | `String` | Optional | Service | String getService() | setService(String service) |
-| `DepositTypes` | [`List<DepositTypeEnum>`](../../doc/models/deposit-type-enum.md) | Optional | - | List<DepositTypeEnum> getDepositTypes() | setDepositTypes(List<DepositTypeEnum> depositTypes) |
+| `DepositTypes` | [`List<DepositType>`](../../doc/models/deposit-type.md) | Optional | - | List<DepositType> getDepositTypes() | setDepositTypes(List<DepositType> depositTypes) |
 | `DepositAmount` | `Double` | Optional | Deposit Amount | Double getDepositAmount() | setDepositAmount(Double depositAmount) |
 | `BatchAmount` | `Double` | Optional | Batch Amount | Double getBatchAmount() | setBatchAmount(Double batchAmount) |
 | `AdjustmentAmount` | `Double` | Optional | Adjustment Amount | Double getAdjustmentAmount() | setAdjustmentAmount(Double adjustmentAmount) |
@@ -28,6 +30,7 @@
 | `TransactionDate` | `String` | Optional | Transaction Date<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` | String getTransactionDate() | setTransactionDate(String transactionDate) |
 | `DepositAccount` | `String` | Optional | Deposit Account | String getDepositAccount() | setDepositAccount(String depositAccount) |
 | `Details` | [`List<Detail2>`](../../doc/models/detail-2.md) | Optional | - | List<Detail2> getDetails() | setDetails(List<Detail2> details) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -52,7 +55,11 @@
   "deposit_types": [
     "fee",
     "deposit"
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

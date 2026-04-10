@@ -1,6 +1,8 @@
 
 # Response Transaction Ach Retry
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ResponseTransactionAchRetry`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Type` | [`Type99Enum`](../../doc/models/type-99-enum.md) | Optional | Resource Type<br><br>**Default**: `Type99Enum.TRANSACTIONACHRETRY` | Type99Enum getType() | setType(Type99Enum type) |
+| `Type` | [`Type99`](../../doc/models/type-99.md) | Optional | - | Type99 getType() | setType(Type99 type) |
 | `Data` | [`Data26`](../../doc/models/data-26.md) | Optional | - | Data26 getData() | setData(Data26 data) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -22,7 +25,15 @@
     "return_fee": 208,
     "id": "id0",
     "retry_transaction_id": "retry_transaction_id6",
-    "return_fee_transaction_id": "return_fee_transaction_id4"
+    "return_fee_transaction_id": "return_fee_transaction_id4",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

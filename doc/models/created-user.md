@@ -3,6 +3,8 @@
 
 User Information on `expand`
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `CreatedUser`
@@ -30,20 +32,20 @@ User Information on `expand`
 | `RequiresNewPassword` | `String` | Optional | Requires New Password<br><br>**Constraints**: *Maximum Length*: `1` | String getRequiresNewPassword() | setRequiresNewPassword(String requiresNewPassword) |
 | `TermsConditionCode` | `String` | Optional | Terms Condition (This field is required when updating your own password). | String getTermsConditionCode() | setTermsConditionCode(String termsConditionCode) |
 | `Tz` | `String` | Optional | Time zone<br><br>**Constraints**: *Maximum Length*: `30` | String getTz() | setTz(String tz) |
-| `UiPrefs` | [`UiPrefs`](../../doc/models/ui-prefs.md) | Optional | Ui Prefs | UiPrefs getUiPrefs() | setUiPrefs(UiPrefs uiPrefs) |
+| `UiPrefs` | [`UiPrefs1`](../../doc/models/ui-prefs-1.md) | Optional | - | UiPrefs1 getUiPrefs() | setUiPrefs(UiPrefs1 uiPrefs) |
 | `Username` | `String` | Optional | Username<br><br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `64` | String getUsername() | setUsername(String username) |
 | `UserApiKey` | `String` | Optional | User Api Key<br><br>**Constraints**: *Minimum Length*: `16`, *Maximum Length*: `64` | String getUserApiKey() | setUserApiKey(String userApiKey) |
 | `UserHashKey` | `String` | Optional | User Hash Key<br><br>**Constraints**: *Minimum Length*: `24`, *Maximum Length*: `36` | String getUserHashKey() | setUserHashKey(String userHashKey) |
-| `UserTypeCode` | [`UserTypeCodeEnum`](../../doc/models/user-type-code-enum.md) | Optional | User Type | UserTypeCodeEnum getUserTypeCode() | setUserTypeCode(UserTypeCodeEnum userTypeCode) |
+| `UserTypeCode` | [`UserTypeCode`](../../doc/models/user-type-code.md) | Optional | - | UserTypeCode getUserTypeCode() | setUserTypeCode(UserTypeCode userTypeCode) |
 | `Password` | `String` | Optional | Password<br><br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `128`, *Pattern*: ``^(?=.*[`!@#$%^&*()_+\-=\[\]{};':"\\\|,.<>\/?~])(?=.*[0-9])(?=.*[a-zA-Z]).*$`` | String getPassword() | setPassword(String password) |
 | `Zip` | `String` | Optional | Zip<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `10`, *Pattern*: `^[a-zA-Z0-9\-\s]+$` | String getZip() | setZip(String zip) |
 | `LocationId` | `String` | Optional | Location ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getLocationId() | setLocationId(String locationId) |
 | `ContactApiId` | `String` | Optional | ContactApi Id | String getContactApiId() | setContactApiId(String contactApiId) |
 | `PrimaryLocationApiId` | `String` | Optional | Primary LocationApi ID | String getPrimaryLocationApiId() | setPrimaryLocationApiId(String primaryLocationApiId) |
-| `StatusCode` | [`StatusCodeEnum`](../../doc/models/status-code-enum.md) | Optional | Status Code | StatusCodeEnum getStatusCode() | setStatusCode(StatusCodeEnum statusCode) |
+| `StatusCode` | `Object` | Optional | - | Object getStatusCode() | setStatusCode(Object statusCode) |
 | `ApiOnly` | `Boolean` | Optional | API Only | Boolean getApiOnly() | setApiOnly(Boolean apiOnly) |
 | `IsInvitation` | `Boolean` | Optional | Is Invitation | Boolean getIsInvitation() | setIsInvitation(Boolean isInvitation) |
-| `Address` | [`Address2`](../../doc/models/address-2.md) | Optional | Address | Address2 getAddress() | setAddress(Address2 address) |
+| `Address` | [`Address3`](../../doc/models/address-3.md) | Optional | - | Address3 getAddress() | setAddress(Address3 address) |
 | `Id` | `String` | Optional | User ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getId() | setId(String id) |
 | `Status` | `Boolean` | Optional | Status | Boolean getStatus() | setStatus(Boolean status) |
 | `LoginAttempts` | `Integer` | Optional | Login Attempts | Integer getLoginAttempts() | setLoginAttempts(Integer loginAttempts) |
@@ -58,6 +60,7 @@ User Information on `expand`
 | `CurrentLogin` | `Integer` | Optional | Current Login Timestamp | Integer getCurrentLogin() | setCurrentLogin(Integer currentLogin) |
 | `SftpAccess` | `Boolean` | Optional | SFTP Access | Boolean getSftpAccess() | setSftpAccess(Boolean sftpAccess) |
 | `LogApiResponseBodyTs` | `Integer` | Optional | Log Api Response Body | Integer getLogApiResponseBodyTs() | setLogApiResponseBodyTs(Integer logApiResponseBodyTs) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -83,10 +86,8 @@ User Information on `expand`
   "tz": "America/New_York",
   "username": "{user_name}",
   "user_api_key": "234bas8dfn8238f923w2",
-  "user_type_code": 100,
   "zip": "48375",
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
-  "status_code": 1,
   "api_only": false,
   "is_invitation": false,
   "id": "11e95f8ec39de8fbdb0a4f1a",
@@ -99,7 +100,11 @@ User Information on `expand`
   "terms_accepted_ts": 1422040992,
   "terms_agree_ip": "192.168.0.10",
   "current_login": 1422040992,
-  "log_api_response_body_ts": 1422040992
+  "log_api_response_body_ts": 1422040992,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -1,6 +1,8 @@
 
 # Data 19
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Data19`
@@ -15,6 +17,7 @@
 | `Success` | `Boolean` | Optional | Success | Boolean getSuccess() | setSuccess(Boolean success) |
 | `SmsSuccess` | `Boolean` | Optional | SMS Success | Boolean getSmsSuccess() | setSmsSuccess(Boolean smsSuccess) |
 | `Email` | `String` | Optional | Email<br><br>**Constraints**: *Maximum Length*: `64` | String getEmail() | setEmail(String email) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -25,7 +28,11 @@
   "sms_log_id": "11e95f8ec39de8fbdb0a4f1a",
   "success": true,
   "sms_success": true,
-  "email": "email@domain.com"
+  "email": "email@domain.com",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

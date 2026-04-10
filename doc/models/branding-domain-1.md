@@ -3,6 +3,8 @@
 
 Branding Domain Information on `expand`
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `BrandingDomain1`
@@ -18,7 +20,7 @@ Branding Domain Information on `expand`
 | `AllowContactSignup` | `Boolean` | Optional | Allow Contact Signup. | Boolean getAllowContactSignup() | setAllowContactSignup(Boolean allowContactSignup) |
 | `AllowContactRegistration` | `Boolean` | Optional | Allow Contact Registration. | Boolean getAllowContactRegistration() | setAllowContactRegistration(Boolean allowContactRegistration) |
 | `AllowContactLogin` | `Boolean` | Optional | Allow Contact Login. | Boolean getAllowContactLogin() | setAllowContactLogin(Boolean allowContactLogin) |
-| `RegistrationFields` | [`List<RegistrationFieldEnum>`](../../doc/models/registration-field-enum.md) | Optional | Registration Fields | List<RegistrationFieldEnum> getRegistrationFields() | setRegistrationFields(List<RegistrationFieldEnum> registrationFields) |
+| `RegistrationFields` | [`List<RegistrationField>`](../../doc/models/registration-field.md) | Optional | Registration Fields | List<RegistrationField> getRegistrationFields() | setRegistrationFields(List<RegistrationField> registrationFields) |
 | `CompanyName` | `String` | Optional | Company Name.<br><br>**Constraints**: *Maximum Length*: `32` | String getCompanyName() | setCompanyName(String companyName) |
 | `NavColor` | `String` | Optional | Nav Color.<br><br>**Constraints**: *Maximum Length*: `7` | String getNavColor() | setNavColor(String navColor) |
 | `ButtonPrimaryColor` | `String` | Optional | Button Primary Color.<br><br>**Constraints**: *Maximum Length*: `7` | String getButtonPrimaryColor() | setButtonPrimaryColor(String buttonPrimaryColor) |
@@ -38,12 +40,13 @@ Branding Domain Information on `expand`
 | `CustomJavascript` | `String` | Optional | Custom Javascript.<br><br>**Constraints**: *Maximum Length*: `2048`, *Pattern*: `^<script\b[^>]*>([\s\S]*?)<\/script>$` | String getCustomJavascript() | setCustomJavascript(String customJavascript) |
 | `CustomTheme` | `String` | Optional | Custom Theme<br><br>**Constraints**: *Maximum Length*: `48` | String getCustomTheme() | setCustomTheme(String customTheme) |
 | `CustomCss` | `String` | Optional | Custom CSS<br><br>**Constraints**: *Maximum Length*: `2048` | String getCustomCss() | setCustomCss(String customCss) |
-| `ContactUserDefaultEntryPage` | [`ContactUserDefaultEntryPageEnum`](../../doc/models/contact-user-default-entry-page-enum.md) | Optional | Contact User Default Entry Page | ContactUserDefaultEntryPageEnum getContactUserDefaultEntryPage() | setContactUserDefaultEntryPage(ContactUserDefaultEntryPageEnum contactUserDefaultEntryPage) |
+| `ContactUserDefaultEntryPage` | `Object` | Optional | - | Object getContactUserDefaultEntryPage() | setContactUserDefaultEntryPage(Object contactUserDefaultEntryPage) |
 | `ContactUserDefaultAuthRoles` | `List<Object>` | Optional | Contact User Default Auth Role | List<Object> getContactUserDefaultAuthRoles() | setContactUserDefaultAuthRoles(List<Object> contactUserDefaultAuthRoles) |
 | `CustomStylesheetUrl` | `String` | Optional | Custom Stylesheet URL<br><br>**Constraints**: *Maximum Length*: `256` | String getCustomStylesheetUrl() | setCustomStylesheetUrl(String customStylesheetUrl) |
 | `Id` | `String` | Optional | Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getId() | setId(String id) |
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -61,12 +64,15 @@ Branding Domain Information on `expand`
   ],
   "email_reply_to": "email@domain.com",
   "email": "email@domain.com",
-  "contact_user_default_entry_page": "dashboard",
   "custom_stylesheet_url": "https://127.0.0.1/receiver",
   "id": "11e95f8ec39de8fbdb0a4f1a",
   "created_ts": 1422040992,
   "modified_ts": 1422040992,
-  "logo": "logo6"
+  "logo": "logo6",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -1,6 +1,8 @@
 
 # Detail 2
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Detail2`
@@ -17,6 +19,7 @@
 | `ReportedDate` | `String` | Optional | Reported Date<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` | String getReportedDate() | setReportedDate(String reportedDate) |
 | `SettledDate` | `String` | Optional | Settled Date<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` | String getSettledDate() | setSettledDate(String settledDate) |
 | `Mid` | `String` | Optional | Merchant ID | String getMid() | setMid(String mid) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -28,7 +31,11 @@
   "processor_batch_number": "processor_batch_number6",
   "product_code": "product_code8",
   "deposit_detail_type": "deposit_detail_type6",
-  "memo": "memo6"
+  "memo": "memo6",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

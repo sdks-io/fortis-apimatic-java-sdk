@@ -3,6 +3,8 @@
 
 Contains information for the Cardholder. This field is required unless market or regional mandate restricts sending this information.
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Cardholder`
@@ -11,37 +13,54 @@ Contains information for the Cardholder. This field is required unless market or
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `AddressMatch` | [`AddressMatchEnum`](../../doc/models/address-match-enum.md) | Optional | Indicates whether the Cardholder Shipping Address and Cardholder Billing Address are the same.<br>If the field is not set and the shipping and billing addresses are the same, the 3DS Server will set the value to Y. Otherwise, the value will not be changed.<br><br>> Y - Shipping Address matches Billing Address<br>> <br>> N - Shipping Address does not match Billing Address | AddressMatchEnum getAddressMatch() | setAddressMatch(AddressMatchEnum addressMatch) |
-| `BillingAddress` | [`BillingAddress24`](../../doc/models/billing-address-24.md) | Optional | Cardholder billing address object | BillingAddress24 getBillingAddress() | setBillingAddress(BillingAddress24 billingAddress) |
+| `AddressMatch` | [`AddressMatch`](../../doc/models/address-match.md) | Optional | - | AddressMatch getAddressMatch() | setAddressMatch(AddressMatch addressMatch) |
+| `BillingAddress` | [`BillingAddress13`](../../doc/models/billing-address-13.md) | Optional | - | BillingAddress13 getBillingAddress() | setBillingAddress(BillingAddress13 billingAddress) |
 | `Email` | `String` | Optional | The email address associated with the account that is either entered by the Cardholder, or is on file with the 3DS Requestor. This field shall meet requirements of Section 3.4 of IETF RFC 5322.<br><br>This field is required unless market or regional mandate restricts sending this information.<br><br>**Constraints**: *Maximum Length*: `256` | String getEmail() | setEmail(String email) |
-| `HomePhone` | [`HomePhone`](../../doc/models/home-phone.md) | Optional | The home phone provided by the Cardholder. Refer to ITU-E.164 for additional information on format and length.<br><br>This field is required if available, unless market or regional mandate restricts sending this information. | HomePhone getHomePhone() | setHomePhone(HomePhone homePhone) |
-| `MobilePhone` | [`MobilePhone`](../../doc/models/mobile-phone.md) | Optional | The mobile phone provided by the Cardholder. Refer to ITU-E.164 for additional information on format and length.<br><br>This field is required if available, unless market or regional mandate restricts sending this information. | MobilePhone getMobilePhone() | setMobilePhone(MobilePhone mobilePhone) |
-| `WorkPhone` | [`WorkPhone`](../../doc/models/work-phone.md) | Optional | The work phone provided by the Cardholder. Refer to ITU-E.164 for additional information on format and length.<br><br>This field is required if available, unless market or regional mandate restricts sending this information. | WorkPhone getWorkPhone() | setWorkPhone(WorkPhone workPhone) |
+| `HomePhone` | [`HomePhone2`](../../doc/models/home-phone-2.md) | Optional | - | HomePhone2 getHomePhone() | setHomePhone(HomePhone2 homePhone) |
+| `MobilePhone` | [`MobilePhone2`](../../doc/models/mobile-phone-2.md) | Optional | - | MobilePhone2 getMobilePhone() | setMobilePhone(MobilePhone2 mobilePhone) |
+| `WorkPhone` | [`WorkPhone2`](../../doc/models/work-phone-2.md) | Optional | - | WorkPhone2 getWorkPhone() | setWorkPhone(WorkPhone2 workPhone) |
 | `CardholderName` | `String` | Optional | Name of the Cardholder.<br><br>This field is required unless market or regional mandate restricts sending this information.<br><br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `45` | String getCardholderName() | setCardholderName(String cardholderName) |
-| `ShippingAddress` | [`ShippingAddress`](../../doc/models/shipping-address.md) | Optional | Cardholder shipping address object | ShippingAddress getShippingAddress() | setShippingAddress(ShippingAddress shippingAddress) |
+| `ShippingAddress` | [`ShippingAddress2`](../../doc/models/shipping-address-2.md) | Optional | - | ShippingAddress2 getShippingAddress() | setShippingAddress(ShippingAddress2 shippingAddress) |
 | `TaxId` | `String` | Optional | Tax ID is the Cardholder's tax identification.<br><br>This field is required depending on the rules provided by the Directory Server.<br>Available for supporting EMV 3DS 2.3.1 and later versions.<br><br>**Constraints**: *Maximum Length*: `45` | String getTaxId() | setTaxId(String taxId) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
 ```json
 {
-  "address_match": "N",
   "email": "fortis@example.com",
   "cardholder_name": "John Doe",
+  "address_match": "Y",
   "billing_address": {
     "city": "city2",
     "country_code": "country_code8",
     "address_line_1": "address_line_12",
     "address_line_2": "address_line_28",
-    "address_line_3": "address_line_34"
+    "address_line_3": "address_line_34",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "home_phone": {
     "cc": "cc8",
-    "subscriber": "subscriber0"
+    "subscriber": "subscriber0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "mobile_phone": {
     "cc": "cc8",
-    "subscriber": "subscriber0"
+    "subscriber": "subscriber0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

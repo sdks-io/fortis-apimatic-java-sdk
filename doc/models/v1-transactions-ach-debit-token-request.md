@@ -1,6 +1,8 @@
 
 # V1 Transactions Ach Debit Token Request
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `V1TransactionsAchDebitTokenRequest`
@@ -10,7 +12,7 @@
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `AdditionalAmounts` | [`List<AdditionalAmount>`](../../doc/models/additional-amount.md) | Optional | Additional amounts | List<AdditionalAmount> getAdditionalAmounts() | setAdditionalAmounts(List<AdditionalAmount> additionalAmounts) |
-| `BillingAddress` | [`BillingAddress1`](../../doc/models/billing-address-1.md) | Optional | Billing Address Object | BillingAddress1 getBillingAddress() | setBillingAddress(BillingAddress1 billingAddress) |
+| `BillingAddress` | [`BillingAddress2`](../../doc/models/billing-address-2.md) | Optional | - | BillingAddress2 getBillingAddress() | setBillingAddress(BillingAddress2 billingAddress) |
 | `CheckinDate` | `String` | Optional | Checkin Date - The time difference between checkin_date and checkout_date must be less than or equal to 99 days. NOTE: if checkin_date is in the future, set the advance_deposit to 1<br><br>> Required if merchant industry type is lodging.<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` | String getCheckinDate() | setCheckinDate(String checkinDate) |
 | `CheckoutDate` | `String` | Optional | Checkout Date - The time difference between checkin_date and checkout_date must be less than or equal to 99 days.<br><br>> Required if merchant industry type is lodging.<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` | String getCheckoutDate() | setCheckoutDate(String checkoutDate) |
 | `ClerkNumber` | `String` | Optional | Clerk or Employee Identifier<br><br>**Constraints**: *Maximum Length*: `16` | String getClerkNumber() | setClerkNumber(String clerkNumber) |
@@ -19,14 +21,14 @@
 | `CustomData` | `Object` | Optional | A field that allows custom JSON to be entered to store extra data. | Object getCustomData() | setCustomData(Object customData) |
 | `CustomerId` | `String` | Optional | Can be used by Merchants to identify Contacts in our system by an ID from another system.<br><br>**Constraints**: *Maximum Length*: `64` | String getCustomerId() | setCustomerId(String customerId) |
 | `Description` | `String` | Optional | Description<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `64` | String getDescription() | setDescription(String description) |
-| `IdentityVerification` | [`IdentityVerification27`](../../doc/models/identity-verification-27.md) | Optional | Identity Verification | IdentityVerification27 getIdentityVerification() | setIdentityVerification(IdentityVerification27 identityVerification) |
-| `IiasInd` | [`IiasIndEnum`](../../doc/models/iias-ind-enum.md) | Optional | Possible values are '0', '1','2' | IiasIndEnum getIiasInd() | setIiasInd(IiasIndEnum iiasInd) |
+| `IdentityVerification` | [`IdentityVerification10`](../../doc/models/identity-verification-10.md) | Optional | - | IdentityVerification10 getIdentityVerification() | setIdentityVerification(IdentityVerification10 identityVerification) |
+| `IiasInd` | `Object` | Optional | - | Object getIiasInd() | setIiasInd(Object iiasInd) |
 | `ImageFront` | `String` | Optional | A base64 encoded string for the image.  Used with Check21 ACH transactions. | String getImageFront() | setImageFront(String imageFront) |
 | `ImageBack` | `String` | Optional | A base64 encoded string for the image.  Used with Check21 ACH transactions. | String getImageBack() | setImageBack(String imageBack) |
 | `Installment` | `Boolean` | Optional | Flag that is allowed to be passed on card not present industries to signify the transaction is a fixed installment plan transaction. | Boolean getInstallment() | setInstallment(Boolean installment) |
 | `InstallmentNumber` | `Integer` | Optional | If this is a fixed installment plan and installment field is being passed as 1, then this field must have a vlue of 1-999 specifying the current installment number that is running.<br><br>**Constraints**: `>= 1`, `<= 999` | Integer getInstallmentNumber() | setInstallmentNumber(Integer installmentNumber) |
 | `InstallmentCount` | `Integer` | Optional | If this is a fixed installment plan and installment field is being passed as 1, then this field must have a vlue of 1-999 specifying the total number of installments on the plan. This number must be grater than or equal to installment_number.<br><br>**Constraints**: `>= 1`, `<= 999` | Integer getInstallmentCount() | setInstallmentCount(Integer installmentCount) |
-| `RecurringFlag` | [`RecurringFlagEnum`](../../doc/models/recurring-flag-enum.md) | Optional | Recurring Flag | RecurringFlagEnum getRecurringFlag() | setRecurringFlag(RecurringFlagEnum recurringFlag) |
+| `RecurringFlag` | `Object` | Optional | - | Object getRecurringFlag() | setRecurringFlag(Object recurringFlag) |
 | `InstallmentCounter` | `Integer` | Optional | Installment Counter<br><br>**Constraints**: `>= 1`, `<= 999` | Integer getInstallmentCounter() | setInstallmentCounter(Integer installmentCounter) |
 | `InstallmentTotal` | `Integer` | Optional | Installment Total<br><br>**Constraints**: `>= 1`, `<= 999` | Integer getInstallmentTotal() | setInstallmentTotal(Integer installmentTotal) |
 | `Subscription` | `Boolean` | Optional | Subscription | Boolean getSubscription() | setSubscription(Boolean subscription) |
@@ -62,9 +64,9 @@
 | `AutoDeclineCvvOverride` | `Boolean` | Optional | Auto Decline CVV Override | Boolean getAutoDeclineCvvOverride() | setAutoDeclineCvvOverride(Boolean autoDeclineCvvOverride) |
 | `AutoDeclineStreetOverride` | `Boolean` | Optional | Auto Decline Street Override | Boolean getAutoDeclineStreetOverride() | setAutoDeclineStreetOverride(Boolean autoDeclineStreetOverride) |
 | `AutoDeclineZipOverride` | `Boolean` | Optional | Auto Decline Zip Override | Boolean getAutoDeclineZipOverride() | setAutoDeclineZipOverride(Boolean autoDeclineZipOverride) |
-| `EbtType` | [`EbtTypeEnum`](../../doc/models/ebt-type-enum.md) | Optional | EBT Type | EbtTypeEnum getEbtType() | setEbtType(EbtTypeEnum ebtType) |
+| `EbtType` | `Object` | Optional | - | Object getEbtType() | setEbtType(Object ebtType) |
 | `AchIdentifier` | `String` | Optional | Required for ACH transactions in certain scenarios.<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getAchIdentifier() | setAchIdentifier(String achIdentifier) |
-| `AchSecCode` | [`AchSecCode31Enum`](../../doc/models/ach-sec-code-31-enum.md) | Optional | Required for ACH transactions if account_vault_id is not provided.<br><br>> Only CCD, PPD, TEL, and WEB are supported for FortisAch. | AchSecCode31Enum getAchSecCode() | setAchSecCode(AchSecCode31Enum achSecCode) |
+| `AchSecCode` | `Object` | Optional | - | Object getAchSecCode() | setAchSecCode(Object achSecCode) |
 | `EffectiveDate` | `String` | Optional | For ACH only, this is optional and defaults to current day.<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` | String getEffectiveDate() | setEffectiveDate(String effectiveDate) |
 | `AccountHolderName` | `String` | Optional | For CC, this is the 'Name (as it appears) on Card'. For ACH, this is the 'Name on Account'.<br><br>> Required for ACH transactions if account_vault_id is not provided. For CC transactions that are run through a terminal, this field may be overwritten by data acquired from the credit card track data.<br><br>**Constraints**: *Maximum Length*: `32` | String getAccountHolderName() | setAccountHolderName(String accountHolderName) |
 | `AccountVaultId` | `String` | Optional | DEPRECATED (Use token_id instead).<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getAccountVaultId() | setAccountVaultId(String accountVaultId) |
@@ -72,6 +74,7 @@
 | `AccountVaultApiId` | `String` | Optional | DEPRECATED (Use token_api_id instead).<br><br>**Constraints**: *Maximum Length*: `36` | String getAccountVaultApiId() | setAccountVaultApiId(String accountVaultApiId) |
 | `TokenApiId` | `String` | Optional | This can be supplied in place of account_vault_id if you would like to use an token for the transaction and are using your own custom api_id's to track accountvaults in the system.<br><br>**Constraints**: *Maximum Length*: `36` | String getTokenApiId() | setTokenApiId(String tokenApiId) |
 | `Joi` | [`Joi`](../../doc/models/joi.md) | Optional | - | Joi getJoi() | setJoi(Joi joi) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -87,13 +90,11 @@
   },
   "customer_id": "customerid",
   "description": "some description",
-  "iias_ind": 1,
   "image_front": "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
   "image_back": "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
   "installment": true,
   "installment_number": 1,
   "installment_count": 1,
-  "recurring_flag": "yes",
   "installment_counter": 1,
   "installment_total": 1,
   "subscription": false,
@@ -128,25 +129,27 @@
   "auto_decline_cvv_override": false,
   "auto_decline_street_override": false,
   "auto_decline_zip_override": false,
-  "ebt_type": "food_stamp",
   "ach_identifier": "P",
-  "ach_sec_code": "C21",
   "effective_date": "2021-12-01",
   "account_holder_name": "smith",
   "account_vault_id": "11e95f8ec39de8fbdb0a4f1a",
   "token_id": "11e95f8ec39de8fbdb0a4f1a",
   "additional_amounts": [
     {
-      "type": "cashback",
+      "type": {
+        "key1": "val1",
+        "key2": "val2"
+      },
       "amount": 6,
-      "account_type": "cash_benefit",
-      "currency": 154.64
-    },
-    {
-      "type": "cashback",
-      "amount": 6,
-      "account_type": "cash_benefit",
-      "currency": 154.64
+      "account_type": {
+        "key1": "val1",
+        "key2": "val2"
+      },
+      "currency": 154.64,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
   ],
   "billing_address": {
@@ -154,7 +157,15 @@
     "state": "state6",
     "postal_code": "postal_code0",
     "street": "street8",
-    "phone": "phone2"
+    "phone": "phone2",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

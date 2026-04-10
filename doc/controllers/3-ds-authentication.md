@@ -1,12 +1,12 @@
 # 3 DS Authentication
 
 ```java
-M3DSAuthenticationController m3DSAuthenticationController = client.getM3DSAuthenticationController();
+M3DsAuthenticationController m3DsAuthenticationController = client.getM3DsAuthenticationController();
 ```
 
 ## Class Name
 
-`M3DSAuthenticationController`
+`M3DsAuthenticationController`
 
 
 # 3 DS Authentication Request
@@ -14,7 +14,7 @@ M3DSAuthenticationController m3DSAuthenticationController = client.getM3DSAuthen
 Makes a 3DS Authentication request to authenticate a card or begin the challenge flow.  If a challenge is required, a POST should be made to acs_url using the value of base64_encoded_challenge_request for the value of "creq" using x-www-form-urlencoded for the challenge request to the ACS.
 
 ```java
-CompletableFuture<ResponseThreeDSAuthentication> m3DSAuthenticationRequestAsync(
+CompletableFuture<ApiResponse<ResponseThreeDsAuthentication>> m3DsAuthenticationRequestAsync(
     final V1MerchantThreedsecureAuthenticationRequest body)
 ```
 
@@ -26,46 +26,45 @@ CompletableFuture<ResponseThreeDSAuthentication> m3DSAuthenticationRequestAsync(
 
 ## Response Type
 
-[`ResponseThreeDSAuthentication`](../../doc/models/response-three-ds-authentication.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseThreeDsAuthentication`](../../doc/models/response-three-ds-authentication.md).
 
 ## Example Usage
 
 ```java
 V1MerchantThreedsecureAuthenticationRequest body = new V1MerchantThreedsecureAuthenticationRequest.Builder(
     "11ee3860e2fc7f5ea67d36b3",
-    DeviceChannelEnum.ENUM_02,
-    MessageCategoryEnum.ENUM_01,
-    new ThreeDsRequestor.Builder(
-        ThreeDsRequestorAuthenticationIndEnum.ENUM_01
+    DeviceChannel.ENUM_02,
+    MessageCategory.ENUM_82,
+    new ThreeDsRequestor1.Builder(
+        ThreeDsRequestorAuthenticationInd.ENUM_90
     )
     .threeDsRequestorChallengeInd(Arrays.asList(
-            ThreeDsRequestorChallengeIndEnum.ENUM_03
+            ThreeDsRequestorChallengeInd.ENUM_03
         ))
     .build(),
-    new CardholderAccount.Builder(
+    new CardholderAccount1.Builder(
         "5454545454545454",
-        SchemeIdEnum.VISA
+        SchemeId.VISA
     )
     .expireDate("2508")
     .build()
 )
-.preferredProtocolVersion(PreferredProtocolVersionEnum.ENUM_220)
 .enforcePreferredProtocolVersion(true)
 .threeDsCompInd("Y")
 .build();
 
-m3DSAuthenticationController.m3DSAuthenticationRequestAsync(body).thenAccept(result -> {
+m3DsAuthenticationController.m3DsAuthenticationRequestAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof ResponseErrorException) {
-        ResponseErrorException responseErrorException = (ResponseErrorException) cause;
-        responseErrorException.printStackTrace();
-    } else if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof V1MerchantThreedsecureAuthentication400ErrorException) {
+        V1MerchantThreedsecureAuthentication400ErrorException v1MerchantThreedsecureAuthentication400ErrorException = (V1MerchantThreedsecureAuthentication400ErrorException) cause;
+        v1MerchantThreedsecureAuthentication400ErrorException.printStackTrace();
+    } else if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -101,7 +100,7 @@ m3DSAuthenticationController.m3DSAuthenticationRequestAsync(body).thenAccept(res
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | Bad Request | [`ResponseErrorException`](../../doc/models/response-error-exception.md) |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 400 | Bad Request | [`V1MerchantThreedsecureAuthentication400ErrorException`](../../doc/models/v1-merchant-threedsecure-authentication-400-error-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

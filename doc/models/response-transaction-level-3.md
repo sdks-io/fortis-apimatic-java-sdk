@@ -1,6 +1,8 @@
 
 # Response Transaction Level 3
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `ResponseTransactionLevel3`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Type` | [`Type116Enum`](../../doc/models/type-116-enum.md) | Optional | Resource Type<br><br>**Default**: `Type116Enum.TRANSACTIONLEVEL3` | Type116Enum getType() | setType(Type116Enum type) |
+| `Type` | [`Type116`](../../doc/models/type-116.md) | Optional | - | Type116 getType() | setType(Type116 type) |
 | `Data` | [`Data29`](../../doc/models/data-29.md) | Optional | - | Data29 getData() | setData(Data29 data) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -25,8 +28,20 @@
       "duty_amount": 182,
       "freight_amount": 60,
       "national_tax": 999999998900,
-      "sales_tax": 999999998900
+      "sales_tax": 999999998900,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

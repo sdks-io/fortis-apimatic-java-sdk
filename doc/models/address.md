@@ -3,6 +3,8 @@
 
 Address of contact
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Address`
@@ -16,6 +18,7 @@ Address of contact
 | `PostalCode` | `String` | Optional | Postal code of contact<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `10`, *Pattern*: `^[a-zA-Z0-9\-\s]+$` | String getPostalCode() | setPostalCode(String postalCode) |
 | `Country` | `String` | Optional | The alpha 2 or alpha 3 format country code. If alpha 3 is provided, it will be converted to alpha 2. | String getCountry() | setCountry(String country) |
 | `Street` | `String` | Optional | Street of contact<br><br>**Constraints**: *Maximum Length*: `32`, *Pattern*: `^[\w\#\,\.\-\'\&\s\/]+$` | String getStreet() | setStreet(String street) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -25,7 +28,11 @@ Address of contact
   "state": "Michigan",
   "postal_code": "48375",
   "country": "USA",
-  "street": "street8"
+  "street": "street8",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

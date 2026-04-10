@@ -1,12 +1,12 @@
 # Transactions-EBT Card
 
 ```java
-TransactionsEBTCardController transactionsEBTCardController = client.getTransactionsEBTCardController();
+TransactionsEbtCardController transactionsEbtCardController = client.getTransactionsEbtCardController();
 ```
 
 ## Class Name
 
-`TransactionsEBTCardController`
+`TransactionsEbtCardController`
 
 ## Methods
 
@@ -19,9 +19,9 @@ TransactionsEBTCardController transactionsEBTCardController = client.getTransact
 Create a new keyed EBT voucher clear refund transaction
 
 ```java
-CompletableFuture<ResponseTransaction> eBTVoucherClearRefundAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ebtVoucherClearRefundAsync(
     final V1TransactionsEbtVoucherClearRefundKeyedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -29,11 +29,11 @@ CompletableFuture<ResponseTransaction> eBTVoucherClearRefundAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsEbtVoucherClearRefundKeyedRequest`](../../doc/models/v1-transactions-ebt-voucher-clear-refund-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -50,13 +50,11 @@ V1TransactionsEbtVoucherClearRefundKeyedRequest body = new V1TransactionsEbtVouc
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -91,7 +89,6 @@ V1TransactionsEbtVoucherClearRefundKeyedRequest body = new V1TransactionsEbtVouc
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -101,28 +98,26 @@ V1TransactionsEbtVoucherClearRefundKeyedRequest body = new V1TransactionsEbtVouc
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
 .accountHolderName("smith")
-.entryModeId(EntryModeIdEnum.K)
 .trackData("T051904524T 741025349520O 8520748520963")
 .pin("1234")
 .ksn("1234")
 .build();
 
-transactionsEBTCardController.eBTVoucherClearRefundAsync(body, null).thenAccept(result -> {
+transactionsEbtCardController.ebtVoucherClearRefundAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -1186,7 +1181,7 @@ transactionsEBTCardController.eBTVoucherClearRefundAsync(body, null).thenAccept(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -1195,9 +1190,9 @@ transactionsEBTCardController.eBTVoucherClearRefundAsync(body, null).thenAccept(
 Create a new keyed EBT voucher clear sale transaction
 
 ```java
-CompletableFuture<ResponseTransaction> eBTVoucherClearSaleAsync(
+CompletableFuture<ApiResponse<ResponseTransaction>> ebtVoucherClearSaleAsync(
     final V1TransactionsEbtVoucherClearSaleKeyedRequest body,
-    final List<Expand60Enum> expand)
+    final List<Expand60> expand)
 ```
 
 ## Parameters
@@ -1205,11 +1200,11 @@ CompletableFuture<ResponseTransaction> eBTVoucherClearSaleAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsEbtVoucherClearSaleKeyedRequest`](../../doc/models/v1-transactions-ebt-voucher-clear-sale-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`ResponseTransaction`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseTransaction`](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -1226,13 +1221,11 @@ V1TransactionsEbtVoucherClearSaleKeyedRequest body = new V1TransactionsEbtVouche
 .customData(ApiHelper.deserialize("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"))
 .customerId("customerid")
 .description("some description")
-.iiasInd(IiasIndEnum.ENUM_1)
 .imageFront("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .imageBack("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=")
 .installment(true)
 .installmentNumber(1)
 .installmentCount(1)
-.recurringFlag(RecurringFlagEnum.YES)
 .installmentCounter(1)
 .installmentTotal(1)
 .subscription(false)
@@ -1267,7 +1260,6 @@ V1TransactionsEbtVoucherClearSaleKeyedRequest body = new V1TransactionsEbtVouche
 .autoDeclineCvvOverride(false)
 .autoDeclineStreetOverride(false)
 .autoDeclineZipOverride(false)
-.ebtType(EbtTypeEnum.FOOD_STAMP)
 .secureAuthData("vVwL7UNHCf8W8M2LAfvRChNHN7c%3D")
 .secureProtocolVersion(2)
 .secureCryptogram("ZVVEVDJITHpTNE9yNlNHMUh0R0E=")
@@ -1277,28 +1269,26 @@ V1TransactionsEbtVoucherClearSaleKeyedRequest body = new V1TransactionsEbtVouche
 .threeDsServerTransId("d65e93c3-35ab-41ba-b307-767bfc19eae")
 .clerkId("1234")
 .voucherNumber("1234")
-.initiationType(InitiationTypeEnum.M103)
 .billPayment(true)
 .delayCharge(true)
 .deferredAuth(true)
 .ebtFoodEligibleAmount(0)
 .ebtCashEligibleAmount(0)
 .accountHolderName("smith")
-.entryModeId(EntryModeIdEnum.K)
 .trackData("T051904524T 741025349520O 8520748520963")
 .pin("1234")
 .ksn("1234")
 .build();
 
-transactionsEBTCardController.eBTVoucherClearSaleAsync(body, null).thenAccept(result -> {
+transactionsEbtCardController.ebtVoucherClearSaleAsync(body, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else if (cause instanceof Response412Exception) {
         Response412Exception response412Exception = (Response412Exception) cause;
         response412Exception.printStackTrace();
@@ -2362,6 +2352,6 @@ transactionsEBTCardController.eBTVoucherClearSaleAsync(body, null).thenAccept(re
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

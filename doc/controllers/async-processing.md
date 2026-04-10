@@ -14,7 +14,7 @@ AsyncProcessingController asyncProcessingController = client.getAsyncProcessingC
 Retrieve the current status for a particular code.
 
 ```java
-CompletableFuture<ResponseAsyncStatus> statusCheckAsync(
+CompletableFuture<ApiResponse<ResponseAsyncStatus>> statusCheckAsync(
     final UUID statusCode)
 ```
 
@@ -26,7 +26,7 @@ CompletableFuture<ResponseAsyncStatus> statusCheckAsync(
 
 ## Response Type
 
-[`ResponseAsyncStatus`](../../doc/models/response-async-status.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ResponseAsyncStatus`](../../doc/models/response-async-status.md).
 
 ## Example Usage
 
@@ -39,9 +39,9 @@ asyncProcessingController.statusCheckAsync(statusCode).thenAccept(result -> {
 }).exceptionally(exception -> {
     Throwable cause = exception.getCause();
 
-    if (cause instanceof Response401tokenException) {
-        Response401tokenException response401tokenException = (Response401tokenException) cause;
-        response401tokenException.printStackTrace();
+    if (cause instanceof Response401TokenException) {
+        Response401TokenException response401TokenException = (Response401TokenException) cause;
+        response401TokenException.printStackTrace();
     } else {
         // fallback for unexpected errors
         exception.printStackTrace();
@@ -71,5 +71,5 @@ asyncProcessingController.statusCheckAsync(statusCode).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

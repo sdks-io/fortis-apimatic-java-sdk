@@ -1,6 +1,8 @@
 
 # Data 10
 
+*This model accepts additional fields of type Object.*
+
 ## Structure
 
 `Data10`
@@ -13,7 +15,7 @@
 | `CreatedTs` | `Integer` | Optional | Created Time Stamp | Integer getCreatedTs() | setCreatedTs(Integer createdTs) |
 | `ModifiedTs` | `Integer` | Optional | Modified Time Stamp | Integer getModifiedTs() | setModifiedTs(Integer modifiedTs) |
 | `AccountNumber` | `String` | Optional | Account number<br><br>**Constraints**: *Maximum Length*: `32`, *Pattern*: `^[a-zA-Z0-9\-_]+$` | String getAccountNumber() | setAccountNumber(String accountNumber) |
-| `Address` | [`Address1`](../../doc/models/address-1.md) | Optional | Address | Address1 getAddress() | setAddress(Address1 address) |
+| `Address` | [`Address6`](../../doc/models/address-6.md) | Optional | - | Address6 getAddress() | setAddress(Address6 address) |
 | `BrandingDomainId` | `String` | Optional | GUID for Branding Domain<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getBrandingDomainId() | setBrandingDomainId(String brandingDomainId) |
 | `ContactEmailTrxReceiptDefault` | `Boolean` | Optional | If true, will email contact receipt for any transaction | Boolean getContactEmailTrxReceiptDefault() | setContactEmailTrxReceiptDefault(Boolean contactEmailTrxReceiptDefault) |
 | `DefaultAch` | `String` | Optional | GUID for Location's default ACH Product Transaction<br><br>**Constraints**: *Minimum Length*: `24`, *Maximum Length*: `36` | String getDefaultAch() | setDefaultAch(String defaultAch) |
@@ -33,29 +35,30 @@
 | `ShowContactNotes` | `Boolean` | Optional | If set to true will show 'Notes' tab on Contact | Boolean getShowContactNotes() | setShowContactNotes(Boolean showContactNotes) |
 | `ShowContactFiles` | `Boolean` | Optional | If set to true will show 'Files' tab on Contact | Boolean getShowContactFiles() | setShowContactFiles(Boolean showContactFiles) |
 | `CreatedUserId` | `String` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` | String getCreatedUserId() | setCreatedUserId(String createdUserId) |
-| `LocationType` | [`LocationTypeEnum`](../../doc/models/location-type-enum.md) | Optional | Location Type | LocationTypeEnum getLocationType() | setLocationType(LocationTypeEnum locationType) |
+| `LocationType` | `Object` | Optional | - | Object getLocationType() | setLocationType(Object locationType) |
 | `ParentName` | `String` | Optional | Name of the parent location | String getParentName() | setParentName(String parentName) |
 | `TicketHashKey` | `String` | Optional | Ticket Hash Key<br><br>**Constraints**: *Maximum Length*: `36` | String getTicketHashKey() | setTicketHashKey(String ticketHashKey) |
 | `AdditionalAccess` | [`AdditionalAccess`](../../doc/models/additional-access.md) | Optional | - | AdditionalAccess getAdditionalAccess() | setAdditionalAccess(AdditionalAccess additionalAccess) |
-| `Parent` | [`Parent3`](../../doc/models/parent-3.md) | Optional | Parent Information on `expand` | Parent3 getParent() | setParent(Parent3 parent) |
+| `Parent` | [`AccountVaultCauProductTransaction`](../../doc/models/account-vault-cau-product-transaction.md) | Optional | - | AccountVaultCauProductTransaction getParent() | setParent(AccountVaultCauProductTransaction parent) |
 | `Users` | [`List<User9>`](../../doc/models/user-9.md) | Optional | User Information on `expand` | List<User9> getUsers() | setUsers(List<User9> users) |
 | `IsDeletable` | `Boolean` | Optional | Is Deletable Information on `expand` | Boolean getIsDeletable() | setIsDeletable(Boolean isDeletable) |
 | `Terminals` | [`List<Terminal2>`](../../doc/models/terminal-2.md) | Optional | Terminal Information on `expand` | List<Terminal2> getTerminals() | setTerminals(List<Terminal2> terminals) |
-| `BrandingDomain` | [`BrandingDomain1`](../../doc/models/branding-domain-1.md) | Optional | Branding Domain Information on `expand` | BrandingDomain1 getBrandingDomain() | setBrandingDomain(BrandingDomain1 brandingDomain) |
-| `ProductInvoice` | [`ProductInvoice`](../../doc/models/product-invoice.md) | Optional | Product Invoice Information on `expand` | ProductInvoice getProductInvoice() | setProductInvoice(ProductInvoice productInvoice) |
+| `BrandingDomain` | [`BrandingDomain2`](../../doc/models/branding-domain-2.md) | Optional | - | BrandingDomain2 getBrandingDomain() | setBrandingDomain(BrandingDomain2 brandingDomain) |
+| `ProductInvoice` | [`ProductInvoice1`](../../doc/models/product-invoice-1.md) | Optional | - | ProductInvoice1 getProductInvoice() | setProductInvoice(ProductInvoice1 productInvoice) |
 | `ProductFiles` | [`List<ProductFile1>`](../../doc/models/product-file-1.md) | Optional | Product File Information on `expand` | List<ProductFile1> getProductFiles() | setProductFiles(List<ProductFile1> productFiles) |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` | CreatedUser getCreatedUser() | setCreatedUser(CreatedUser createdUser) |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - | User9 getCreatedUser() | setCreatedUser(User9 createdUser) |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` | List<Changelog> getChangelogs() | setChangelogs(List<Changelog> changelogs) |
 | `ProductTransactions` | [`List<ProductTransaction1>`](../../doc/models/product-transaction-1.md) | Optional | Product Transaction Information on `expand` | List<ProductTransaction1> getProductTransactions() | setProductTransactions(List<ProductTransaction1> productTransactions) |
 | `TerminalRouters` | [`List<TerminalRouter>`](../../doc/models/terminal-router.md) | Optional | Terminal Router Information on `expand` | List<TerminalRouter> getTerminalRouters() | setTerminalRouters(List<TerminalRouter> terminalRouters) |
-| `DeveloperCompany` | [`DeveloperCompany`](../../doc/models/developer-company.md) | Optional | Developer Company Information on `expand` | DeveloperCompany getDeveloperCompany() | setDeveloperCompany(DeveloperCompany developerCompany) |
+| `DeveloperCompany` | [`DeveloperCompany1`](../../doc/models/developer-company-1.md) | Optional | - | DeveloperCompany1 getDeveloperCompany() | setDeveloperCompany(DeveloperCompany1 developerCompany) |
 | `DeveloperCompanyId` | `String` | Optional | Developer Company Id Information on `expand` | String getDeveloperCompanyId() | setDeveloperCompanyId(String developerCompanyId) |
 | `Helppages` | [`List<Helppage>`](../../doc/models/helppage.md) | Optional | Helppage Information on `expand` | List<Helppage> getHelppages() | setHelppages(List<Helppage> helppages) |
-| `QuickInvoiceSetting` | [`QuickInvoiceSetting`](../../doc/models/quick-invoice-setting.md) | Optional | Quick Invoice Setting Information on `expand` | QuickInvoiceSetting getQuickInvoiceSetting() | setQuickInvoiceSetting(QuickInvoiceSetting quickInvoiceSetting) |
+| `QuickInvoiceSetting` | [`QuickInvoiceSetting1`](../../doc/models/quick-invoice-setting-1.md) | Optional | - | QuickInvoiceSetting1 getQuickInvoiceSetting() | setQuickInvoiceSetting(QuickInvoiceSetting1 quickInvoiceSetting) |
 | `LocationBillingAccounts` | [`List<LocationBillingAccount>`](../../doc/models/location-billing-account.md) | Optional | Location Billing Account Information on `expand` | List<LocationBillingAccount> getLocationBillingAccounts() | setLocationBillingAccounts(List<LocationBillingAccount> locationBillingAccounts) |
 | `Marketplaces` | [`List<Marketplace>`](../../doc/models/marketplace.md) | Optional | Marketplace Information on `expand` | List<Marketplace> getMarketplaces() | setMarketplaces(List<Marketplace> marketplaces) |
 | `Locationmarketplaces` | [`List<Locationmarketplace>`](../../doc/models/locationmarketplace.md) | Optional | Locationmarketplaces Information on `expand` | List<Locationmarketplace> getLocationmarketplaces() | setLocationmarketplaces(List<Locationmarketplace> locationmarketplaces) |
 | `Addons` | [`List<Addon>`](../../doc/models/addon.md) | Optional | Addons Information on `expand` | List<Addon> getAddons() | setAddons(List<Addon> addons) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 ## Example (as JSON)
 
@@ -84,7 +87,6 @@
   "show_contact_notes": true,
   "show_contact_files": true,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "location_type": "merchant",
   "ticket_hash_key": "A5F443CADF4AE34BBCAADF4",
   "is_deletable": true,
   "developer_company_id": "sample developer company id",
@@ -92,8 +94,19 @@
     "city": "city6",
     "state": "state2",
     "postal_code": "postal_code8",
-    "country": "US",
-    "street": "street6"
+    "country": {
+      "key1": "val1",
+      "key2": "val2"
+    },
+    "street": "street6",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```
