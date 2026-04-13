@@ -115,7 +115,7 @@ public final class FortisApiClient implements Configuration {
 
     private static final CompatibilityFactory compatibilityFactory = new CompatibilityFactoryImpl();
 
-    private static String userAgent = "Java SDK, Version: 1.0.4, on OS {os-info}";
+    private static String userAgent = "Java SDK, Version: 1.0.5, on OS {os-info}";
 
     /**
      * Current API environment.
